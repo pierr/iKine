@@ -1,0 +1,13 @@
+########## Projet Application pour masseurs-kinésithérapeutes ################
+
+Authors: Audric Debladis, Emeline Parizel, Yoni Soleiman et Pierre Besson
+
+Contact: project-kine@googlegroups.com
+
+But: Réalisation d'un logiciel de gestion de cabinet, de patient, d'ordonnance et de séances pour les masseurs-kinésithérapeutes.
+
+Organisation des répertoires:
+	-Spécification
+		+Maquettes => Dossier qui contient les maquettes des pages de l'application, réalisées avec l'outil Pencil.
+		+CahierDesCharges => Contient le cahier des charges ainsi que les documents utiles pour sa réalisation
+		+RecueilBesoin => Contient les documents relatifs au recueil des besoins 
