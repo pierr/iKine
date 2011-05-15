@@ -10,4 +10,31 @@ Organisation des répertoires:
 	-Spécification
 		+Maquettes => Dossier qui contient les maquettes des pages de l'application, réalisées avec l'outil Pencil.
 		+CahierDesCharges => Contient le cahier des charges ainsi que les documents utiles pour sa réalisation
-		+RecueilBesoin => Contient les documents relatifs au recueil des besoins 
+		+RecueilBesoin => Contient les documents relatifs au recueil des besoins
+		
+	-kine_app 
+	  +contient tous les dossiers necessaire au développement sous Ruby on Rails
+		app/	Core application (app) code, including models, views, controllers, and helpers
+		config/	Application configuration
+		db/	Files to manipulate the database
+		doc/	Documentation for the application
+		lib/	Library modules
+		log/	Application log files
+		public/	Data accessible to the public (e.g., web browsers), such as images and cascading style sheets (CSS)
+		script/rails	A script provided by Rails for generating code, opening console sessions, or starting a local web server
+		test/	Application tests (made obsolete by the spec/ directory in Section 3.1.2)
+		tmp/	Temporary files
+		vendor/	Third-party code such as plugins and gems
+		README	A brief description of the application
+		Rakefile	Utility tasks available via the rake command
+		Gemfile	Gem requirements for this app
+		config.ru	A configuration file for Rack middleware
+		#Le fichier .gitignore normalement crée a été déplacé au niveau supérieur.
+		
+	-.gitignore
+		+Contient tous les fichiers et dossiers qu'on ne veut pas ajouter sur github et le paratge de code
+
+Informations sur le framework et les versions des langages, gestionnaires utilisés.
+Ruby on Rails : version =>  Rails 3.0.7
+Ruby => version =>ruby-1.9.2-p136
+Gem => version => 1.5.0
