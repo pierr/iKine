@@ -34,6 +34,9 @@ Organisation des répertoires:
 	-.gitignore
 		+Contient tous les fichiers et dossiers qu'on ne veut pas ajouter sur github et le paratge de code
 
+Wiki du site:
+	La page sur Git: https://github.com/pierr/Kine/wiki/Git
+
 Informations sur le framework et les versions des langages, gestionnaires utilisés.
 Ruby on Rails : version =>  Rails 3.0.7
 Ruby => version =>ruby-1.9.2-p136
