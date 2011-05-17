@@ -190,3 +190,161 @@ Started GET "/patient/create" for 127.0.0.1 at 2011-05-17 20:37:04 +0200
   Processing by PatientController#create as HTML
 Rendered patient/create.html.erb within layouts/application (2.2ms)
 Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/create" for 127.0.0.1 at 2011-05-17 23:06:29 +0200
+  Processing by PatientController#create as HTML
+Rendered patient/create.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/custom.css" for 127.0.0.1 at 2011-05-17 23:06:30 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/custom.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2011-05-17 23:06:30 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patient/creat" for 127.0.0.1 at 2011-05-17 23:27:07 +0200
+
+ActionController::RoutingError (No route matches "/patient/creat"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (27.4ms)
+
+
+Started GET "/pat" for 127.0.0.1 at 2011-05-17 23:27:09 +0200
+
+ActionController::RoutingError (No route matches "/pat"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/pa" for 127.0.0.1 at 2011-05-17 23:27:09 +0200
+
+ActionController::RoutingError (No route matches "/pa"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/page" for 127.0.0.1 at 2011-05-17 23:27:10 +0200
+
+ActionController::RoutingError (No route matches "/page"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2011-05-17 23:27:10 +0200
+
+ActionController::RoutingError (No route matches "/pages"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/" for 127.0.0.1 at 2011-05-17 23:27:11 +0200
+
+ActionController::RoutingError (No route matches "/pages"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/ho" for 127.0.0.1 at 2011-05-17 23:27:13 +0200
+
+ActionController::RoutingError (No route matches "/pages/ho"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/hom" for 127.0.0.1 at 2011-05-17 23:27:13 +0200
+
+ActionController::RoutingError (No route matches "/pages/hom"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:27:13 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/custom.css" for 127.0.0.1 at 2011-05-17 23:27:13 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/custom.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2011-05-17 23:27:13 +0200
+
+ActionController::RoutingError (No route matches "/images/logo.png"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:41:01 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/custom.css" for 127.0.0.1 at 2011-05-17 23:41:01 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/custom.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:45:52 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:50:46 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:51:25 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:51:26 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:52:05 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:52:53 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
