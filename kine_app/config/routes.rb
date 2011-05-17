@@ -6,7 +6,13 @@ KineApp::Application.routes.draw do
   get "patient/create"
 
   get "patient/update"
-
+  #This has to be solve this is not correct
+  match 'root_path' => redirect('/pages/home')
+  match 'about_path' => redirect('/pages/home')
+  match 'contact_path' => redirect('/pages/home')
+  match 'help_path' => redirect('/pages/home')
+  match 'signup_path' => redirect('/pages/home')
+  match 'signin_path' => redirect('/pages/home')
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

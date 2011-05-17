@@ -348,3 +348,707 @@ Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:52:53 +0200
   Processing by PagesController#home as HTML
 Rendered pages/home.html.erb within layouts/application (1.9ms)
 Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:56:38 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-17 23:59:15 +0200
+  Processing by PagesController#home as HTML
+ERROR: compiling _app_views_layouts_application_html_erb__914888555595672641_2155375000_414189004330787590 RAISED /Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views/layouts/application.html.erb:17: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...p", :class => "round", :width="200") );@output_buffer.safe_c...
+...                               ^
+/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views/layouts/application.html.erb:17: syntax error, unexpected ')', expecting keyword_end
+...ass => "round", :width="200") );@output_buffer.safe_concat('
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb__914888555595672641_2155375000_414189004330787590(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+  <head>
+    <title>');@output_buffer.append= ( title );@output_buffer.safe_concat('</title>
+    ');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+    ');@output_buffer.append= ( stylesheet_link_tag 'blueprint/screen', :media => 'screen' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( stylesheet_link_tag 'blueprint/print',  :media => 'print' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <!--[if lt IE 8]>');@output_buffer.append= ( stylesheet_link_tag 'blueprint/ie' );@output_buffer.safe_concat('<![endif]-->
+    ');@output_buffer.append= ( stylesheet_link_tag 'custom', :media => 'screen' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </head>
+  <body>
+    <div class="container">
+      <header>
+        ');@output_buffer.append= ( image_tag("iKine.png", :alt => "Sample App", :class => "round", :width="200") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <nav class="round">
+          <ul>
+            <li>');@output_buffer.append= ( link_to "Home", '#' );@output_buffer.safe_concat('</li>
+            <li>');@output_buffer.append= ( link_to "Help", '#' );@output_buffer.safe_concat('</li>
+            <li>');@output_buffer.append= ( link_to "Sign in", '#' );@output_buffer.safe_concat('</li>
+          </ul>
+        </nav>
+      </header>
+      <section class="round">
+        ');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </section>
+    </div>
+  </body>
+</html>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/template.rb:255:in `module_eval'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/template.rb:255:in `compile'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `block in render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/pierrebesson/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__1341241526249556253__process_action__1248617709890065129__callbacks'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `block in action'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/Users/pierrebesson/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/pierrebesson/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/pierrebesson/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered pages/home.html.erb within layouts/application (32.6ms)
+Completed   in 37ms
+
+ActionView::Template::Error (/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views/layouts/application.html.erb:17: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...p", :class => "round", :width="200") );@output_buffer.safe_c...
+...                               ^
+/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views/layouts/application.html.erb:17: syntax error, unexpected ')', expecting keyword_end
+...ass => "round", :width="200") );@output_buffer.safe_concat('
+...                               ^):
+    14:   <body>
+    15:     <div class="container">
+    16:       <header>
+    17:         <%= image_tag("iKine.png", :alt => "Sample App", :class => "round", :width="200") %>
+    18:         <nav class="round">
+    19:           <ul>
+    20:             <li><%= link_to "Home", '#' %></li>
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.9ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:00:25 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:00:50 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:00:51 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:01:00 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:01:13 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:01:20 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:02:36 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 00:27:52 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:16:52 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered pages/home.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:17:49 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered pages/home.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:18:42 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (0.7ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered pages/home.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:26:11 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.9ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100af5680>:0x00000100aeea10>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2153196600_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.5ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:31:59 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (5.2ms)
+Completed   in 10ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100f5c8b8>:0x00000100f59938>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2155527020_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:00 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.1ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x0000010298fa50>:0x0000010298b9c8>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2169259340_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:00 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (5.7ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100fc2ff0>:0x00000100fbccb8>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2155726160_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:01 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.1ms)
+Completed   in 39ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100a9f898>:0x00000100fc3f68>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2157370160_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.6ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:02 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.6ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000101175848>:0x00000101150660>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2156499560_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.6ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:02 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.9ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x000001009be8e8>:0x000001009b0658>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2152549360_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.2ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x000001012dd488>:0x000001012da990>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2157363540_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.9ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (42.8ms)
+Completed   in 51ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100e37898>:0x00000100e29a90>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2154906180_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.8ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (19.2ms)
+Completed   in 25ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x000001028526b0>:0x0000010284c508>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2168592400_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.9ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100ea6fb8>:0x00000100ea3138>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2155142000_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (39.5ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (44.9ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (5.8ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x000001028bf170>:0x000001028bbac0>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2168831820_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.2ms)
+Completed   in 14ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100f0e0a0>:0x00000100f0bf80>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2155366600_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (7.2ms)
+Completed   in 12ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x0000010292f650>:0x0000010292b820>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2169065040_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (5.1ms)
+Completed   in 10ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100f882d8>:0x00000100f80da8>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2155606900_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:32:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (6.1ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x000001029d0e10>:0x000001029cbbe0>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb__242629078119089566_2169392260_414189004330787590'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.9ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:33:03 +0200
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (19.7ms)
+Completed   in 24ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00000100f93160>:0x00000100f8dc60>):
+    5:   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
+    6: </p>
+    7: 
+    8: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  app/views/pages/home.html.erb:8:in `_app_views_pages_home_html_erb___3892834924563838345_2155634020__1908668617827905100'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:33:52 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (9.5ms)
+Rendered pages/home.html.erb within layouts/application (13.7ms)
+Completed   in 18ms
+
+ActionView::Template::Error (undefined local variable or method `home_path' for #<#<Class:0x000001028018f0>:0x00000101c500d8>):
+    2:  <%= image_tag("iKine.png", :alt => "Sample App", :class => "round",  :height=> "70") %><!--Permet de charger le logo -->
+    3:   <nav class="round">
+    4:     <ul>
+    5:       <li><%= link_to "Home", home_path %></li>
+    6:       <li><%= link_to "Help", help_path %></li>
+    7:       <li><%= link_to "Sign in", signin_path %></li>
+    8:     </ul>
+  app/views/layouts/_header.html.erb:5:in `_app_views_layouts__header_html_erb__3856707145634273920_2162206800_4382178835148590279'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2166238780618534150_2162316600__1908668617827905100'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.3ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-05-18 01:34:37 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (0.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered pages/home.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/hom" for 127.0.0.1 at 2011-05-18 01:35:21 +0200
+
+ActionController::RoutingError (No route matches "/pages/hom"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/p" for 127.0.0.1 at 2011-05-18 01:35:22 +0200
+
+ActionController::RoutingError (No route matches "/p"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/ro" for 127.0.0.1 at 2011-05-18 01:35:23 +0200
+
+ActionController::RoutingError (No route matches "/ro"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/rr" for 127.0.0.1 at 2011-05-18 01:35:24 +0200
+
+ActionController::RoutingError (No route matches "/rr"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/r" for 127.0.0.1 at 2011-05-18 01:35:24 +0200
+
+ActionController::RoutingError (No route matches "/r"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/roo" for 127.0.0.1 at 2011-05-18 01:35:25 +0200
+
+ActionController::RoutingError (No route matches "/roo"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/root" for 127.0.0.1 at 2011-05-18 01:35:25 +0200
+
+ActionController::RoutingError (No route matches "/root"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/root_" for 127.0.0.1 at 2011-05-18 01:35:26 +0200
+
+ActionController::RoutingError (No route matches "/root_"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/root_p" for 127.0.0.1 at 2011-05-18 01:35:27 +0200
+
+ActionController::RoutingError (No route matches "/root_p"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/root_pat" for 127.0.0.1 at 2011-05-18 01:35:27 +0200
+
+ActionController::RoutingError (No route matches "/root_pat"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/root_path" for 127.0.0.1 at 2011-05-18 01:35:27 +0200
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 01:35:27 +0200
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 01:35:55 +0200
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 01:35:55 +0200
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 01:35:56 +0200
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/hom" for 127.0.0.1 at 2011-05-18 01:35:59 +0200
+
+ActionController::RoutingError (No route matches "/hom"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/root" for 127.0.0.1 at 2011-05-18 01:36:01 +0200
+
+ActionController::RoutingError (No route matches "/root"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/root_" for 127.0.0.1 at 2011-05-18 01:36:01 +0200
+
+ActionController::RoutingError (No route matches "/root_"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 01:36:02 +0200
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
