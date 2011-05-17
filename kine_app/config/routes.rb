@@ -1,4 +1,8 @@
 KineApp::Application.routes.draw do
+  get "patient/create"
+
+  get "patient/update"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
