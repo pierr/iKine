@@ -6,5 +6,10 @@ class PagesController < ApplicationController
   def contact
     @mode="Contact"
   end
-
+  def help
+     @mode = "Help"
+  end
+  def about 
+    @mode="About"
+  end 
 end

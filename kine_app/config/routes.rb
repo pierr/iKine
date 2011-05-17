@@ -1,4 +1,10 @@
 KineApp::Application.routes.draw do
+  #This has to be solve this is not correct
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
+  root :to => 'pages#home'
+
   get "pages/home"
 
   get "pages/contact"
@@ -6,15 +12,17 @@ KineApp::Application.routes.draw do
   get "patient/create"
 
   get "patient/update"
-  #This has to be solve this is not correct
-  match 'root_path' => redirect('/pages/home')
-  match 'about_path' => redirect('/pages/home')
-  match 'contact_path' => redirect('/pages/home')
-  match 'help_path' => redirect('/pages/home')
-  match 'signup_path' => redirect('/pages/home')
-  match 'signin_path' => redirect('/pages/home')
+
+  #match 'root_path' => redirect('/pages/home')
+  #match 'about_path' => redirect('/pages/home')
+  #match 'contact_path' => redirect('/pages/home')
+  #  match 'help_path' => redirect('/pages/home')
+  #  match 'signup_path' => redirect('/pages/home')
+  #  match 'signin_path' => redirect('/pages/home')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -41,7 +49,7 @@ KineApp::Application.routes.draw do
 
   # Sample resource route with sub-resources:
   #   resources :products do
-  #     resources :comments, :sales
+  #      :comments, :sales
   #     resource :seller
   #   end
 
