@@ -1,0 +1,192 @@
+
+
+Started GET "/patient/create" for 127.0.0.1 at 2011-05-17 20:23:42 +0200
+  Processing by PatientController#create as HTML
+Rendered patient/create.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/creat" for 127.0.0.1 at 2011-05-17 20:23:53 +0200
+
+ActionController::RoutingError (No route matches "/patient/creat"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patient/cr" for 127.0.0.1 at 2011-05-17 20:23:54 +0200
+
+ActionController::RoutingError (No route matches "/patient/cr"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/patient/c" for 127.0.0.1 at 2011-05-17 20:23:54 +0200
+
+ActionController::RoutingError (No route matches "/patient/c"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patient/" for 127.0.0.1 at 2011-05-17 20:23:54 +0200
+
+ActionController::RoutingError (No route matches "/patient"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patient/u" for 127.0.0.1 at 2011-05-17 20:24:07 +0200
+
+ActionController::RoutingError (No route matches "/patient/u"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/patient/up" for 127.0.0.1 at 2011-05-17 20:24:07 +0200
+
+ActionController::RoutingError (No route matches "/patient/up"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/patient/update" for 127.0.0.1 at 2011-05-17 20:24:08 +0200
+  Processing by PatientController#update as HTML
+Rendered patient/update.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 19ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/update" for 127.0.0.1 at 2011-05-17 20:30:40 +0200
+  Processing by PatientController#update as HTML
+Rendered patient/update.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 86ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/update" for 127.0.0.1 at 2011-05-17 20:32:58 +0200
+  Processing by PatientController#update as HTML
+Rendered patient/update.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/update" for 127.0.0.1 at 2011-05-17 20:34:14 +0200
+  Processing by PatientController#update as HTML
+Rendered patient/update.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2011-05-17 20:34:15 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2011-05-17 20:34:15 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patient/update" for 127.0.0.1 at 2011-05-17 20:34:16 +0200
+  Processing by PatientController#update as HTML
+Rendered patient/update.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2011-05-17 20:34:16 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2011-05-17 20:34:16 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/patient/updat" for 127.0.0.1 at 2011-05-17 20:34:25 +0200
+
+ActionController::RoutingError (No route matches "/patient/updat"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/patient/u" for 127.0.0.1 at 2011-05-17 20:34:26 +0200
+
+ActionController::RoutingError (No route matches "/patient/u"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patient/" for 127.0.0.1 at 2011-05-17 20:34:26 +0200
+
+ActionController::RoutingError (No route matches "/patient"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/patient/cre" for 127.0.0.1 at 2011-05-17 20:34:27 +0200
+
+ActionController::RoutingError (No route matches "/patient/cre"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/patient/creap" for 127.0.0.1 at 2011-05-17 20:34:28 +0200
+
+ActionController::RoutingError (No route matches "/patient/creap"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patient/creat" for 127.0.0.1 at 2011-05-17 20:34:28 +0200
+
+ActionController::RoutingError (No route matches "/patient/creat"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/patient/create" for 127.0.0.1 at 2011-05-17 20:34:28 +0200
+  Processing by PatientController#create as HTML
+Rendered patient/create.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/blueprint/screen.css" for 127.0.0.1 at 2011-05-17 20:34:28 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/stylesheets/blueprint/print.css" for 127.0.0.1 at 2011-05-17 20:34:28 +0200
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/patient/create" for 127.0.0.1 at 2011-05-17 20:37:04 +0200
+  Processing by PatientController#create as HTML
+Rendered patient/create.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
