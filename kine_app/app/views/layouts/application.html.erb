@@ -12,6 +12,7 @@
         <%= yield %>
       </section>
       <%= render 'layouts/footer' %>
+	  <%= debug(params) if Rails.env.development? %><!-- Cette ligne sert à pouvoir debogger le Ruby-->
     </div>
   </body>
 </html>

@@ -1457,3 +1457,692 @@ Migrating to AddEmailUniquenessIndex (20110518134853)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 15:58:03 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (26.6ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered users/new.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 15:58:06 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/home.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 15:58:12 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'bess@enst.fr') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("surname", "firstname", "email", "phone", "created_at", "updated_at") VALUES ('Besson', 'Pierre', 'bess@enst.fr', '0661184963', '2011-05-18 13:59:39.580857', '2011-05-18 13:59:39.580857')[0m
+
+
+Started GET "/signu" for 127.0.0.1 at 2011-05-18 16:07:20 +0200
+
+ActionController::RoutingError (No route matches "/signu"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/s" for 127.0.0.1 at 2011-05-18 16:07:21 +0200
+
+ActionController::RoutingError (No route matches "/s"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 16:07:21 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/home.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/us" for 127.0.0.1 at 2011-05-18 16:07:21 +0200
+
+ActionController::RoutingError (No route matches "/us"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-05-18 16:07:22 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user." for 127.0.0.1 at 2011-05-18 16:07:22 +0200
+
+ActionController::RoutingError (No route matches "/user."):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-05-18 16:07:23 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:07:23 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:24 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:41 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:42 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:42 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:43 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:43 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:43 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:43 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:44 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:07:44 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:07:45 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered users/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signu" for 127.0.0.1 at 2011-05-18 16:08:15 +0200
+
+ActionController::RoutingError (No route matches "/signu"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/s" for 127.0.0.1 at 2011-05-18 16:08:16 +0200
+
+ActionController::RoutingError (No route matches "/s"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 16:08:17 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (0.9ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/home.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/us" for 127.0.0.1 at 2011-05-18 16:08:17 +0200
+
+ActionController::RoutingError (No route matches "/us"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/usere" for 127.0.0.1 at 2011-05-18 16:08:18 +0200
+
+ActionController::RoutingError (No route matches "/usere"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-05-18 16:08:18 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:08:19 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/2" for 127.0.0.1 at 2011-05-18 16:08:20 +0200
+
+ActionController::RoutingError (No route matches "/user/2"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:08:21 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:08:22 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:44 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.6ms)
+Rendered users/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:47 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:48 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (28.9ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:48 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 11ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:48 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered users/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:48 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:48 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:49 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (2.3ms)
+Rendered users/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:49 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:49 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (5.6ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered users/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:08:49 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered users/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:11:01 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (29.0ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/new.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 40ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 16:11:02 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered users/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 16:11:05 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hom" for 127.0.0.1 at 2011-05-18 16:11:08 +0200
+
+ActionController::RoutingError (No route matches "/hom"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 16:11:08 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (0.9ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/home.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/us" for 127.0.0.1 at 2011-05-18 16:11:09 +0200
+
+ActionController::RoutingError (No route matches "/us"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-05-18 16:11:09 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user." for 127.0.0.1 at 2011-05-18 16:11:10 +0200
+
+ActionController::RoutingError (No route matches "/user."):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-05-18 16:11:10 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:11:11 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/2" for 127.0.0.1 at 2011-05-18 16:11:11 +0200
+
+ActionController::RoutingError (No route matches "/user/2"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:11:13 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:11:14 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:12:46 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:12:52 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 16:12:53 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/u" for 127.0.0.1 at 2011-05-18 16:13:00 +0200
+
+ActionController::RoutingError (No route matches "/u"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-05-18 16:13:00 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:13:01 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/2" for 127.0.0.1 at 2011-05-18 16:13:04 +0200
+
+ActionController::RoutingError (No route matches "/user/2"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:13:06 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:13:06 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:14:32 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/user/sj" for 127.0.0.1 at 2011-05-18 16:14:34 +0200
+
+ActionController::RoutingError (No route matches "/user/sj"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/s" for 127.0.0.1 at 2011-05-18 16:14:34 +0200
+
+ActionController::RoutingError (No route matches "/user/s"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/sho" for 127.0.0.1 at 2011-05-18 16:14:35 +0200
+
+ActionController::RoutingError (No route matches "/user/sho"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/show" for 127.0.0.1 at 2011-05-18 16:14:35 +0200
+
+ActionController::RoutingError (No route matches "/user/show"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/show/" for 127.0.0.1 at 2011-05-18 16:14:36 +0200
+
+ActionController::RoutingError (No route matches "/user/show"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/show/1" for 127.0.0.1 at 2011-05-18 16:14:37 +0200
+
+ActionController::RoutingError (No route matches "/user/show/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/show/1" for 127.0.0.1 at 2011-05-18 16:15:04 +0200
+
+ActionController::RoutingError (No route matches "/user/show/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user/show/" for 127.0.0.1 at 2011-05-18 16:15:09 +0200
+
+ActionController::RoutingError (uninitialized constant UserController):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2011-05-18 16:15:10 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-05-18 16:15:11 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:15:11 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-05-18 16:17:04 +0200
+
+SyntaxError (/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/config/routes.rb:79: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  # You can have the root of your site routed with "root"
+                                                        ^
+/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/config/routes.rb:81: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  # root :to => "welcome#index"
+                        ^):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:24:01 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2011-05-18 16:24:04 +0200
+
+ActionController::RoutingError (No route matches "/user/1"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-05-18 16:24:06 +0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 79ms (Views: 21.8ms | ActiveRecord: 0.7ms)

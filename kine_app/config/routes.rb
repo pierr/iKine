@@ -1,6 +1,7 @@
 KineApp::Application.routes.draw do
-  get "users/new"
 
+  #On ajoute les ressources (les tables accessibles)
+  resources :users  
   #This has to be solve this is not correct
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
@@ -9,15 +10,13 @@ KineApp::Application.routes.draw do
   match '/signup',  :to => 'users#new'
   root :to => 'pages#home'
   
-  get "users/new"
+ # get "users/new"
   get "pages/home"
   get "pages/contact"
   get "pages/about"
   get "pages/help"
   get "patient/create"
-  get "patient/update"
-  
-  
+  get "patient/update"  
 
   #match 'root_path' => redirect('/pages/home')
   #match 'about_path' => redirect('/pages/home')
