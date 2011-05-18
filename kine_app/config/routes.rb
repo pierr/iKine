@@ -1,17 +1,23 @@
 KineApp::Application.routes.draw do
+  get "users/new"
+
   #This has to be solve this is not correct
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
+  match '/home',    :to => 'pages#home'
+  match '/signup',  :to => 'users#new'
   root :to => 'pages#home'
-
+  
+  get "users/new"
   get "pages/home"
-
   get "pages/contact"
-
+  get "pages/about"
+  get "pages/help"
   get "patient/create"
-
   get "patient/update"
+  
+  
 
   #match 'root_path' => redirect('/pages/home')
   #match 'about_path' => redirect('/pages/home')

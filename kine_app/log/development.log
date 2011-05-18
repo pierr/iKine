@@ -1168,3 +1168,207 @@ Rendered layouts/_header.html.erb (0.7ms)
 Rendered layouts/_footer.html.erb (0.4ms)
 Rendered pages/home.html.erb within layouts/application (6.5ms)
 Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 01:57:28 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 01:57:29 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (0.7ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-05-18 01:57:32 +0200
+  Processing by PagesController#about as HTML
+Completed   in 16ms
+
+ActionView::MissingTemplate (Missing template pages/about with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-05-18 01:59:21 +0200
+  Processing by PagesController#about as HTML
+Completed   in 3ms
+
+ActionView::MissingTemplate (Missing template pages/about with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 01:59:22 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (0.7ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 01:59:24 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-18 01:59:36 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/home.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-05-18 01:59:38 +0200
+  Processing by PagesController#about as HTML
+Completed   in 16ms
+
+ActionView::MissingTemplate (Missing template pages/about with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.7ms)
+
+
+Started GET "/pabout" for 127.0.0.1 at 2011-05-18 01:59:53 +0200
+
+ActionController::RoutingError (No route matches "/pabout"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pageabout" for 127.0.0.1 at 2011-05-18 01:59:54 +0200
+
+ActionController::RoutingError (No route matches "/pageabout"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/pagesabout" for 127.0.0.1 at 2011-05-18 01:59:54 +0200
+
+ActionController::RoutingError (No route matches "/pagesabout"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2011-05-18 01:59:54 +0200
+  Processing by PagesController#about as HTML
+Completed   in 3ms
+
+ActionView::MissingTemplate (Missing template pages/about with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/pierrebesson/Dev/rails_projects/Kine/kine_app/app/views"):
+  
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.7ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2011-05-18 02:01:01 +0200
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (0.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/about.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-05-18 02:01:05 +0200
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (0.6ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered pages/contact.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-05-18 02:01:47 +0200
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (7.2ms)
+Rendered pages/contact.html.erb within layouts/application (11.2ms)
+Completed   in 16ms
+
+ActionView::Template::Error (undefined local variable or method `home_path' for #<#<Class:0x0000010144bef0>:0x00000101448d90>):
+    2:  <%= image_tag("iKine.png", :alt => "Sample App", :class => "round",  :height=> "70") %><!--Permet de charger le logo -->
+    3:   <nav class="round">
+    4:     <ul>
+    5:       <li><%= link_to "Home", home_path %></li>
+    6:       <li><%= link_to "Help", help_path %></li>
+    7:       <li><%= link_to "Sign in", 'signin_path' %></li>
+    8:     </ul>
+  app/views/layouts/_header.html.erb:5:in `_app_views_layouts__header_html_erb___4337013552395860070_2158011360_2161931693410219939'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___812139616034188738_2158107520_2059550203275723964'
+
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/pierrebesson/.rvm/gems/ruby-1.9.2-p136@pierreRails/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.3ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-05-18 02:02:48 +0200
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/contact.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 02:02:51 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (0.9ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for 127.0.0.1 at 2011-05-18 02:02:55 +0200
+  Processing by PagesController#help as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/help.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for 127.0.0.1 at 2011-05-18 02:08:52 +0200
+  Processing by PagesController#help as HTML
+Rendered layouts/_stylesheets.html.erb (3.5ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered pages/help.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2011-05-18 02:08:58 +0200
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (26.8ms)
+Rendered pages/home.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-18 02:09:01 +0200
+  Processing by UsersController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered users/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
