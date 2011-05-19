@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   validates :email, :format     => { :with => email_regex },
                     :presence   =>true,
                     :uniqueness =>true
-  # Automatically create the virtual attribute 'password_confirmation'.
+  # Crée automatiquement l'attribut 'password_confirmation'.
   validates :password, :presence     => true,
                        :confirmation => true,
                        :length       => { :within => 6..40 }
@@ -57,6 +57,11 @@ class User < ActiveRecord::Base
      user = find_by_email(email)
      return nil  if user.nil?
      return user if user.has_password?(submitted_password)
+    end
+    
+    def self.authenticate_with_salt(id, cookie_salt)
+        user = find_by_id(id)
+        (user && user.salt == cookie_salt) ? user : nil
     end
 
    private
