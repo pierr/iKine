@@ -2,12 +2,15 @@ KineApp::Application.routes.draw do
 
   #On ajoute les ressources (les tables accessibles)
   resources :users  
+  resources :sessions, :only => [:new, :create, :destroy]
   #This has to be solve this is not correct
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/home',    :to => 'pages#home'
   match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
   root :to => 'pages#home'
   
  # get "users/new"

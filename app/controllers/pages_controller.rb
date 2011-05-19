@@ -1,15 +1,15 @@
 class PagesController < ApplicationController
   def home
-    @mode="Home"
+    @title="Home"
   end
 
   def contact
-    @mode="Contact"
+    @title="Contact"
   end
   def help
-     @mode = "Help"
+     @title = "Help"
   end
   def about 
-    @mode="About"
+    @title="About"
   end 
 end

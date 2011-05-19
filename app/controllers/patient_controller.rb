@@ -1,10 +1,10 @@
 class PatientController < ApplicationController
   def create
-    @mode="Creation"
+    @title="Creation"
   end
 
   def update
-    @mode="Modification"
+    @title="Modification"
   end
 
 end
