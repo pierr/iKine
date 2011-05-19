@@ -3,8 +3,8 @@ class UsersController < ApplicationController
     @mode ="Sign up"
   end
   def show
-     @mode ="Vue"
      @user = User.find(params[:id])
+     @mode = @user.surname
    end
 
 end
