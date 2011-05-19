@@ -47,6 +47,17 @@ class User < ActiveRecord::Base
    def has_password?(submitted_password)
      encrypted_password == encrypt(submitted_password)
    end
+   
+   # Peremt d'autentifier un utilisateur
+     # Params:
+     # - email: email de l'utilisateur
+     # - submitted_password: le mot de passe que l'on veut tester
+     # Return: l'utilisateur si ça correspond (pass et email) , nil sinon
+   def self.authenticate(email, submitted_password)
+     user = find_by_email(email)
+     return nil  if user.nil?
+     return user if user.has_password?(submitted_password)
+    end
 
    private
 
@@ -58,7 +69,7 @@ class User < ActiveRecord::Base
      def encrypt(string)
        secure_hash("#{salt}--#{string}")
      end
-
+     #Permet d'ajouter le timestamp au mot de passe dans la génération du mot de passe crypté comme ça deux users avec le meme mot de passe n'auront pas de problèmes
      def make_salt
        secure_hash("#{Time.now.utc}--#{password}")
      end
