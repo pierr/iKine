@@ -3,16 +3,20 @@
 <%= form_for(@user) do |f| %>
  <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
+    <%= f.label :nom %><br />
+    <%= f.text_field :nom %>
   </div>
   <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname %>
+    <%= f.label :prenom %><br />
+    <%= f.text_field :prenom %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+	<%= f.label :telephone %><br />
+ 	<%= f.telephone_field :telephone %>
   </div>
   <div class="field">
     <%= f.label :password %><br />

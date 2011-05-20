@@ -3,12 +3,14 @@
     <td class="main">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.surname %>
+        <%= @user.nom.concat(" ").concat(@user.prenom) %>
       </h1>
     </td>
     <td class="sidebar round">
-    	<strong>Surname</strong> <%= @user.surname %><br />
-      	<strong>Firstname</strong> <%= @user.firstname %><br />
+    	<strong>Nom</strong> <%= @user.nom %><br />
+      	<strong>Prénom</strong> <%= @user.prenom %><br />
+		<strong>Email</strong> <%= @user.email %><br />
+		<strong>Téléphone</strong> <%= @user.telephone %><br />
 		<strong>URL</strong>  <%= link_to user_path(@user), @user %>
     </td>
   </tr>

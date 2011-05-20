@@ -18,8 +18,9 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
   #C'est pour pouvoir accéder aux variables.(accesseurs)
-  attr_accessible :surname,
-                  :firstname, 
+  attr_accessible :nom,
+                  :prenom,
+                  :telephone, 
                   :email, 
                   :phone,
                   :password,
@@ -28,10 +29,10 @@ class User < ActiveRecord::Base
   #Experssion régulière pour les mails
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   #Ici on s'occupe de la validation des formulaires.
-  validates :surname, :presence =>true,
+  validates :nom, :presence =>true,
                       :length   => { :maximum => 50 }
                       
-  validates :firstname, :presence =>true,
+  validates :prenom, :presence =>true,
                         :length   => { :maximum => 50 }
                         
   validates :email, :format     => { :with => email_regex },

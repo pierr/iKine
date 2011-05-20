@@ -6,17 +6,17 @@ class UsersController < ApplicationController
   end
   def show
      @user = User.find(params[:id])
-     @title = @user.surname
+     @title = @user.nom
    end
    #Permet de creer un nouvel utilisateur.
    def create 
      @user = User.new(params[:user])
      if @user.save
        sign_in @user #On le logue automatiquement
-       flash[:success] = "Bienvenue sur iKine ".concat(@user.firstname).concat(" !")
+       flash[:success] = "Bienvenue sur iKine ".concat(@user.prenom).concat(" !")
        redirect_to user_path(@user)
       else
-        @title = "Sign Up"
+        @title = "S'authentifier"
         render 'new'
       end
   end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
         flash[:success] = "Profile mis a jour."
         redirect_to @user
       else
-        @title = "Edit user"
+        @title = "Modifier user"
         render 'edit'
       end
     end

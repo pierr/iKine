@@ -100,14 +100,14 @@ ActiveRecord::Schema.define(:version => 20110519172913) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "surname"
-    t.string   "firstname"
+    t.string   "nom"
+    t.string   "prenom"
     t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "telephone"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
