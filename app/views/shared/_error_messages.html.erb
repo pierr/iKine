@@ -1,10 +1,11 @@
-<% if @user.errors.any? %>
+<% if object.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "erreur") %> 
-        empèchent cet utilisateur d'être enregistré':</h2>
-    <p>Vous aver les problèmes suivants fields:</p>
+    <h2><%= pluralize(object.errors.count, "erreur") %> 
+        empèche(nt) cet  <%= object.class.to_s.underscore.humanize.downcase %> 
+        d'être enregistré :</h2>
+    <p>Il y a des problèmes avec les champs suivants:</p>
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% object.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
