@@ -4,20 +4,12 @@
   Voici la page d'accueil de l'application.<br />
   Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
 </p>
+<!-- Si l'utilisateur n'est pas loggué on propose la création de compte ou l'authentification-->
+<% if !signed_in? %>
+	<!-- On propose l'inscription -->
+	<%= link_to "S'inscrire!", signup_path, :class => "signup_button round" %>
 
-<%= link_to "S'inscrire!", signup_path, :class => "signup_button round" %>
-
-<%= form_for(:session, :url => sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "envoyer" %>
-  </div>
-<% end %>
+	<!-- On propose le login -->
+	<%= render '/sessions/session' %>
+<% end%>
 
