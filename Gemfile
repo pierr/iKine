@@ -6,8 +6,8 @@ gem 'rails', '3.0.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3',:group => :development
-gem 'gravatar_image_tag', '1.0.0.pre2'
-
+gem 'gravatar_image_tag', '1.0.0.pre2' #Pour avoir le logo gravatar
+gem 'will_paginate', '3.0.pre2' #Pour avoir la paginataion sur les pages
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -33,5 +33,6 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
-  gem 'annotate-models', '1.0.4'
+  gem 'annotate-models', '1.0.4' #Pour annoter les models il faut taper annotate
+  gem 'faker', '0.3.1' #C'est utilisé pour créer de fausses données dans la table
 end
