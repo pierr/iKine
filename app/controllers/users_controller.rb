@@ -9,14 +9,15 @@ class UsersController < ApplicationController
   
   #methode pour creer un utilisateur
   def new
+    redirect_to(root_path) unless !signed_in?
     @user = User.new
     @title ="Sign up"
   end
   
   #methode qui permmet d'afficher un utilisateur
   def show
-     @user = User.find(params[:id])
-     @title = @user.nom
+    @user = User.find(params[:id])
+    @title = @user.nom
   end
   
   # Methode appellee par defaut lors du chargement de la page avec tous les utilisateurs
@@ -26,16 +27,17 @@ class UsersController < ApplicationController
   end
   
   #Permet de creer un nouvel utilisateur.
-  def create 
-     @user = User.new(params[:user])
-     if @user.save
-       sign_in @user #On le logue automatiquement
-       flash[:success] = "Bienvenue sur iKine ".concat(@user.prenom).concat(" !")
-       redirect_to user_path(@user)
-      else
-        @title = "S'authentifier"
-        render 'new'
-      end
+  def create
+    redirect_to(root_path) unless !signed_in? #si l'utilisateur est loggué il n'a pas de raison de creer un nouvel user
+    @user = User.new(params[:user])
+    if @user.save
+      sign_in @user #On le logue automatiquement
+      flash[:success] = "Bienvenue sur iKine ".concat(@user.prenom).concat(" !")
+      redirect_to user_path(@user)
+    else
+      @title = "S'authentifier"
+      render 'new'
+    end
   end
   
   #charge l'utilisateur a modifier
