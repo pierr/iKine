@@ -1,7 +1,12 @@
 KineApp::Application.routes.draw do
 
+  get "seances/new"
+
+  get "seances/show"
+
   #On ajoute les ressources (les tables accessibles)
   resources :users  
+  resources :seances
   resources :sessions, :only => [:new, :create, :destroy]
   #This has to be solve this is not correct
   match '/contact', :to => 'pages#contact'
