@@ -1,0 +1,10 @@
+<h1>Seances#new</h1>
+<%= form_for(@seance) do |f| %>
+  <div class="field">
+    <%= f.label :commentaire %><br />
+    <%= f.text_field :commentaire %>
+  </div>
+  <div class="actions">
+    <%= f.submit "S'inscrire" %>
+  </div>
+<% end %>
