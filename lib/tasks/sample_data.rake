@@ -10,7 +10,14 @@ namespace :db do
                  :password => "kineapp",
                  :password_confirmation => "kineapp")
     admin.toggle!(:admin)
+    admin2 =  User.create!(:nom => "Besson",
+                 :prenom => "Collyne",
+                 :email => "collyne.besson@gmail.com",
+                 :password => "kineapp",
+                 :password_confirmation => "kineapp")
+    admin2.toggle!(:admin)            
     99.times do |n|
+      
       nomprenom  = Faker::Name.name.split
       nom = nomprenom[0]
       prenom = nomprenom[1]

@@ -58,9 +58,19 @@ class UsersController < ApplicationController
     
   #Methode qui permet de détruire un utilisateur
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
-    redirect_to users_path
+    user = User.find(params[:id]) 
+    if user == current_user  && user.admin?
+      flash[:error] = "Vous ne pouvez pas vous detruire vous etes un admin."
+      redirect_to users_path
+    elsif user.admin?
+      flash[:error] = "Vous ne pouvez pas vous detruire #{user.prenom} #{user.nom} qui est un admin."
+      redirect_to users_path
+    else 
+      name = " #{user.nom} #{user.prenom}"
+      user.destroy
+      flash[:success] = name.concat(" a ete detruit.")
+      redirect_to users_path
+    end
   end
   
     #Les methodes en dessous sont privees
