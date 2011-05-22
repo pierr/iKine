@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def show
      @user = User.find(params[:id])
      @title = @user.nom
+     
   end
   
   # Methode appellee par defaut lors du chargement de la page avec tous les utilisateurs
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
      @user = User.new(params[:user])
      if @user.save
        sign_in @user #On le logue automatiquement
-       flash[:success] = "Bienvenue sur iKine ".concat(@user.prenom).concat(" !")
+       flash[:success] = "Bienvenue sur iKine " + @user.prenom + " !"
        redirect_to user_path(@user)
       else
         @title = "S'authentifier"
@@ -68,7 +69,7 @@ class UsersController < ApplicationController
     else 
       name = " #{user.nom} #{user.prenom}"
       user.destroy
-      flash[:success] = name.concat(" a ete detruit.")
+      flash[:success] = name + " a ete detruit."
       redirect_to users_path
     end
   end
