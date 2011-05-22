@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(:version => 20110521192843) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin"
+    t.boolean  "admin",              :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
