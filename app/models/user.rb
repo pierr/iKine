@@ -64,7 +64,13 @@ class User < ActiveRecord::Base
         user = find_by_id(id)
         (user && user.salt == cookie_salt) ? user : nil
     end
-
+    
+    #Implémenter une methode search pour chaque objet qui permet de tout fouilles.
+    def self.search(query)
+      if !query.to_s.strip.empty?
+            tokens = query.split.collect {|c| "%#{c.downcase}%"}
+      end
+    end
    private
 
      def encrypt_password
