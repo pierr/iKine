@@ -1,5 +1,5 @@
 <h1>Tous les utilisateurs</h1>
-
+<%= render 'shared/search'%>
 <%= will_paginate %>
 <ul class="users">
 	<%= render @users %> <!-- En faite rails comprend que il doit appeler render pour chaque user dans @users-->

@@ -75,6 +75,16 @@ class UsersController < ApplicationController
     end
   end
   
+  def search
+
+    @users = User.paginate(:page => params[:page],:conditions => ['nom like ?', "%#{params[:q]}%"])
+    if @users.nil? || @users.size == 0
+      flash[:error] = "Aucun utilisateur n'a le prenom #{params[:q]}"
+    else 
+      flash[:success] = "Voici les utilisateurs qui on pour nom #{params[:q]}"
+    end
+    render 'index'
+  end
     #Les methodes en dessous sont privees
     private
     

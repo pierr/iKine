@@ -49,6 +49,9 @@ KineApp::Application.routes.draw do
   get "pages/help"
   get "patient/create"
   get "patient/update"  
+  
+  get "users/search"
+  match 'search_user' , :to => 'users#search'
 
   #match 'root_path' => redirect('/pages/home')
   #match 'about_path' => redirect('/pages/home')
