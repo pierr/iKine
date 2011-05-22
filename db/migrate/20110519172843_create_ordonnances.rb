@@ -26,9 +26,11 @@ class CreateOrdonnances < ActiveRecord::Migration
       
       t.timestamps
     end
+    add_index :ordonnances, :patient_id
   end
 
   def self.down
+    remove_index :ordonnances, :patient_id
     drop_table :ordonnances
   end
 end
