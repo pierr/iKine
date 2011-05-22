@@ -3,10 +3,7 @@
     <td class="main">
       <h1>
         <%= gravatar_for @user %>
-       <!-- TRES GROSSE ERREUR : en faisant ça, on change le nom du gars en "nom prenom". -->
-		<!%= @user.nom.concat(" ").concat(@user.prenom) %> 
-		<!--La correction est ci dessous...-->
-		<%= @user.nom + " " + @user.prenom %>
+		<%= "#{@user.nom}  #{@user.prenom}" %>
       </h1>
    </td>
     <td class="sidebar round">

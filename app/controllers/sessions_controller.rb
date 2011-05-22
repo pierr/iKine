@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         @title = "S'authentifier"
         render 'new'
       else
-        flash[:success] = "Bienvenue sur iKine " + user.prenom + " !"
+        flash[:success] = "Bienvenue sur iKine #{user.prenom} #{user.nom} !"
         sign_in user
         redirect_back_or user
         # Sign the user in and redirect to the user's show page.

@@ -1,18 +1,9 @@
 <li>
   <%= gravatar_for user, :size => 30 %>
+  <%= link_to  ( "#{user.nom} #{user.prenom}") , user %>
 
-
-<!-- TRES GROSSE ERREUR : en faisant ça, on change le nom du gars en "nom prenom".-->
-<!%= link_to user.nom.concat(" ").concat(user.prenom), user %>
-<!--La correction est ci-dessous. -->
- <%= link_to  ( user.nom + " " + user.prenom ) , user %>
-
-
-
-
-
-
-  <% if current_user.admin? %>
+	<!-- Si l'user est un admin on lui permet de faire des modifs-->
+	<% if current_user.admin? %>
 	| <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
                               	  :title => "Delete #{user.nom} #{user.prenom}" %>
   <% end %>
