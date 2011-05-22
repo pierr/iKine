@@ -3,8 +3,8 @@
 class UsersController < ApplicationController
   
   #Condition a verifier pour  effectuer certaines methodes 
-   before_filter :authenticate, :only => [:edit, :update,:index] #Pour recq�rir l'autentification d'un utilisateur
-   before_filter :correct_user, :only => [:edit, :update]#on v�rifie �galement la correspondance
+   before_filter :authenticate, :only => [:edit, :update,:index] #Pour recqérir l'autentification d'un utilisateur
+   before_filter :correct_user, :only => [:edit, :update]#on vérifie également la correspondance
    before_filter :admin_user,   :only => :destroy
   
   #methode pour creer un utilisateur
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
       end
     end
     
-  #Methode qui permet de d�truire un utilisateur
+  #Methode qui permet de détruire un utilisateur
   def destroy
     user = User.find(params[:id]) 
     if user == current_user  && user.admin?
@@ -78,12 +78,12 @@ class UsersController < ApplicationController
     #Les methodes en dessous sont privees
     private
     
-    #refuse l'acc�s si on est pas loggu�
+    #refuse l'accès si on est pas loggué
     def authenticate
           deny_access unless signed_in?
     end
     
-    #V�rifie que la pages concernant l'utilisateur auquel on veut acc�der est celle de la personne logu�e
+    #V�rifie que la pages concernant l'utilisateur auquel on veut accéder est celle de la personne loguée
     def correct_user
          @user = User.find(params[:id])
          isUser = current_user?(@user)
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
          redirect_to(root_path) unless isUser
     end
     
-    #Methode qui permet de v�rifier si l'utilisateur est l'admin sinon on le redirige vers la page d'accueil
+    #Methode qui permet de vérifier si l'utilisateur est l'admin sinon on le redirige vers la page d'accueil
     def admin_user
           redirect_to(root_path) unless current_user.admin?
     end
