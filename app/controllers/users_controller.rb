@@ -3,21 +3,21 @@
 class UsersController < ApplicationController
   
   #Condition a verifier pour  effectuer certaines methodes 
-   before_filter :authenticate, :only => [:edit, :update,:index] #Pour recqérir l'autentification d'un utilisateur
-   before_filter :correct_user, :only => [:edit, :update]#on vérifie également la correspondance
+   before_filter :authenticate, :only => [:edit, :update,:index] #Pour recq�rir l'autentification d'un utilisateur
+   before_filter :correct_user, :only => [:edit, :update]#on v�rifie �galement la correspondance
    before_filter :admin_user,   :only => :destroy
   
   #methode pour creer un utilisateur
   def new
+    redirect_to(root_path) unless !signed_in?
     @user = User.new
     @title ="Sign up"
   end
   
   #methode qui permmet d'afficher un utilisateur
   def show
-     @user = User.find(params[:id])
-     @title = @user.nom
-     
+    @user = User.find(params[:id])
+    @title = @user.nom
   end
   
   # Methode appellee par defaut lors du chargement de la page avec tous les utilisateurs
@@ -27,16 +27,17 @@ class UsersController < ApplicationController
   end
   
   #Permet de creer un nouvel utilisateur.
-  def create 
-     @user = User.new(params[:user])
-     if @user.save
-       sign_in @user #On le logue automatiquement
-       flash[:success] = "Bienvenue sur iKine " + @user.prenom + " !"
-       redirect_to user_path(@user)
-      else
-        @title = "S'authentifier"
-        render 'new'
-      end
+  def create
+    redirect_to(root_path) unless !signed_in? #si l'utilisateur est loggué il n'a pas de raison de creer un nouvel user
+    @user = User.new(params[:user])
+    if @user.save
+      sign_in @user #On le logue automatiquement
+      flash[:success] = "Bienvenue sur iKine " + @user.prenom + " !"
+      redirect_to user_path(@user)
+    else
+      @title = "S'authentifier"
+      render 'new'
+    end
   end
   
   #charge l'utilisateur a modifier
@@ -57,7 +58,7 @@ class UsersController < ApplicationController
       end
     end
     
-  #Methode qui permet de détruire un utilisateur
+  #Methode qui permet de d�truire un utilisateur
   def destroy
     user = User.find(params[:id]) 
     if user == current_user  && user.admin?
@@ -77,12 +78,12 @@ class UsersController < ApplicationController
     #Les methodes en dessous sont privees
     private
     
-    #refuse l'accès si on est pas loggué
+    #refuse l'acc�s si on est pas loggu�
     def authenticate
           deny_access unless signed_in?
     end
     
-    #Vérifie que la pages concernant l'utilisateur auquel on veut accéder est celle de la personne loguée
+    #V�rifie que la pages concernant l'utilisateur auquel on veut acc�der est celle de la personne logu�e
     def correct_user
          @user = User.find(params[:id])
          isUser = current_user?(@user)
@@ -90,7 +91,7 @@ class UsersController < ApplicationController
          redirect_to(root_path) unless isUser
     end
     
-    #Methode qui permet de vérifier si l'utilisateur est l'admin sinon on le redirige vers la page d'accueil
+    #Methode qui permet de v�rifier si l'utilisateur est l'admin sinon on le redirige vers la page d'accueil
     def admin_user
           redirect_to(root_path) unless current_user.admin?
     end
