@@ -5,6 +5,30 @@ KineApp::Application.routes.draw do
   get "seances/show"
 
   #On ajoute les ressources (les tables accessibles)
+  
+  # Edit d'audric :
+  # en fait, faire resources :toto va créer automatiquement 7 routes :
+  #
+  # Verb   | Path           | action   | used for
+  # -------------------------------------------------------------------------------
+  # GET    | /toto          | index    | display a list of all totos
+  # GET    | /toto/new      | new      | return an HTML form for creating a new toto
+  # POST   | /toto          | create   | create a new toto
+  # GET    | /toto/:id      | show     | display a specific toto
+  # GET    | /toto/:id/edit | edit     | return an HTML form for editing a toto
+  # PUT    | /toto/:id      | update   | update a specific toto
+  # DELETE | /toto/:id      | destroy  | delete a specific toto
+  #
+  
+
+  resources :patients
+
+
+
+
+
+
+
   resources :users  
   resources :seances
   resources :sessions, :only => [:new, :create, :destroy]
