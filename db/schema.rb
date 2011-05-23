@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(:version => 20110521192843) do
     t.datetime "updated_at"
   end
 
+  add_index "ordonnances", ["numero"], :name => "index_ordonnances_on_numero"
+  add_index "ordonnances", ["patient_id"], :name => "index_ordonnances_on_patient_id"
+
   create_table "patients", :force => true do |t|
     t.string   "nom"
     t.string   "prenom"
