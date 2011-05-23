@@ -20,7 +20,7 @@ class OrdonnancesController < ApplicationController
       search
     else
     @title = "Toutes les ordonnances"
-    @ordonnances = Ordonnance.paginate(:page => params[:page])
+    @ordonnances = Ordonnance.order(params[:sort]+ " "+ params[:direction])#paginate(:page => params[:page])
     end
   end
 

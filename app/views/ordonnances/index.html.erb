@@ -1,7 +1,18 @@
 <h1><%= @title%></h1>
 <%= render 'search'%>
-<%= will_paginate %>
-<ul class="ordonnances">
-	<%= render @ordonnances %> <!-- En faite rails comprend que il doit appeler render pour chaque ordonnance dans @ordonnances-->
-</ul>
-<%= will_paginate %>
+
+
+<table class="pretty">
+  <tr>
+    <th><%= sortable "numero"%></th>
+    <th><%= sortable "pathologie"%></th>
+    <th><%= sortable "date" ,"Date d'emission"%></th>
+  </tr>
+  <% for ordonnance in @ordonnances %>
+    <tr>
+      <td><%= ordonnance.numero %></td>
+      <td><%= ordonnance.pathologie %></td>
+      <td><%= ordonnance.numero %></td>
+    </tr>
+  <% end %>
+</table>

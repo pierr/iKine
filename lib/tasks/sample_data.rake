@@ -31,3 +31,10 @@ namespace :db do
     end
   end
 end
+
+namespace :db do
+  desc 'Cree une ordonnance'
+  task :populate_ordonnance => :environment do
+    Ordonnance.create(:numero => "AZERTRTYUIO", :pathologie => "rhume"  )
+  end
+end
