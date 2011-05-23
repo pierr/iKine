@@ -1,3 +1,16 @@
 <h1>Patient | <%=@mode%></h1>
-<p>Find me in app/views/patient/view.html.erb</p>
+<p>Find me in app/views/patient/show.html.erb</p>
 
+<strong>Nom</strong> <%= @patient.nom %> <br/>
+<strong>Prénom</strong> <%= @patient.prenom %> <br/>
+<strong>Email</strong> <%= @patient.email %> <br/>
+<strong>Téléphone</strong> <%= @patient.telephone %> <br/>
+<strong>Civilité</strong> <%= @patient.civilite.nom %> <br/>
+
+<br/>
+<%= link_to "Modifier", edit_patient_path(@patient) , :class => "button round" %>
+<%= link_to "Supprimer", @patient, :method => :delete  , 
+									:confirm => "Voulez-vous vraiment supprimer #{Civilite.find(@patient.civilite_id).nom} #{@patient.nom} #{@patient.prenom} ?",
+									:title => "Supprimer #{Civilite.find(@patient.civilite_id).nom} #{@patient.nom} #{@patient.prenom}" ,
+									:class => "button round" %>
+<%= link_to "Retour à la liste des patients", patients_path, :class => "button round" %>

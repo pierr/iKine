@@ -1,0 +1,22 @@
+<p>Find me in app/views/patient/edit.html.erb</p>
+
+<h1>Tous les utilisateurs</h1>
+<ul class="patients">
+<%= will_paginate %>
+	<% @patients.each do |f| %>
+		<li> <!-- FIXME: : Audric : Il faudrait enlever les listes et faire un tableau. Cette page n'est pas terminée -->
+			<%= link_to "#{f.nom}", f, :title => "Afficher le détail de #{Civilite.find(f.civilite_id).nom} #{f.nom} #{f.prenom}" %>
+			<%= f.prenom %>
+			<%= f.email %>
+			<%= f.telephone %>
+			<%= Civilite.find(f.civilite_id).nom %> <!-- FIXME: : Audric : ce code est pourri, il faudrait stocker car n-appels à la base de données pour l'affichage  
+																des civilités. Il faut en fait créer une variable @civilites qui contienne la liste. -->
+			<%= link_to "Supprimer", f, :method => :delete, 
+				:confirm => "Voulez-vous vraiment supprimer #{Civilite.find(f.civilite_id).nom} #{f.nom} #{f.prenom} ?",
+				:title => "Supprimer #{Civilite.find(f.civilite_id).nom} #{f.nom} #{f.prenom}" %>
+		</li>
+	<% end %>
+<%= will_paginate %>
+</ul>
+
+<%= link_to "Créer un nouveau patient" , new_patient_path  , :class => "button round" %>

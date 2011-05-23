@@ -7,4 +7,7 @@ class Patient < ActiveRecord::Base
   has_many :ordonnances
   has_many :rdvs
   
+  
+  validates :nom, :presence =>true
+  
 end
