@@ -1,21 +1,146 @@
+<script type="text/javascript">
+	function changeOnglet(_this){
+		var getOnglets 	= document.getElementById('mes_onglets').getElementsByTagName('li');
+		for(var i = 0; i < getOnglets.length; i++){
+			if(getOnglets[i].id){
+				if(getOnglets[i].id == _this.id){
+					getOnglets[i].className = 'mon_onglet_selected';
+					document.getElementById('c' + _this.id).style.display 			= 'block';
+				}
+				else{
+					getOnglets[i].className = 'mon_onglet';
+					document.getElementById('c' + getOnglets[i].id).style.display 	= 'none';
+				}
+			}
+		}			
+	}		
+</script>
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+	}
+	body{
+		width: 400px;
+		margin: 10px auto;
+	}
+	a{
+		text-decoration: none;
+		color: #666;
+	}
+	ul, li{
+		list-style: none;
+	}
+	.mon_onglet{
+		float: left;
+		padding: 2px 10px;
+		margin-right: 5px;
+		color: #333;
+		background: #d8f8ca;
+		border: 1px solid #68ce3e;
+		cursor: pointer;
+		margin-bottom: -1px;
+	}	
+	.mon_onglet:hover{
+		background: #b8efa1;
+	}				
+	.mon_onglet_selected{
+		float: left;
+		padding: 2px 10px;
+		margin-right: 5px;
+		color: #333;
+		background: #b8efa1;
+		border-top: 1px solid #68ce3e;
+		border-right: 1px solid #68ce3e;
+		border-left: 1px solid #68ce3e;	
+		border-bottom: 1px solid #b8efa1;	
+		cursor: pointer;	
+		margin-bottom: -1px;
+	}					
+	.clear{
+		clear: both;
+	}
+	.mon_contenu{
+		color: #666;
+		background: #b8efa1;
+		border: 1px solid #68ce3e;
+		padding: 10px;				
+	}
+	#mes_contenus, #mes_onglets{
+		/*width: 400px;*/
+	}
+</style>
+
+
+
+
+
+
+
+
 <h1>Patient | <%=@mode%></h1>
 <p>Find me in app/views/patient/edit.html.erb</p>
+
+<!-- Avant : 
+<!%= form_for(@patient) do |f| %>
+	<!%= render 'shared/error_messages', :object => f.object %>
+	<!div class="field">
+		<!%= f.label :nom %><!%= f.text_field :nom %><br>
+		<!%= f.label :prenom %><!%= f.text_field :prenom %><br>
+		<!%= f.label :email %><!%= f.email_field :email %><br>
+		<!%= f.label :telephone %><!%= f.telephone_field :telephone %><br>
+		<!%= f.label :civilite %><!%= f.collection_select(:civilite_id , Civilite.all , :id , :nom)%>
+	<!/div>
+	<!div class="actions">
+		<!%= f.submit "Enregistrer" %>
+		<!%= link_to "Annuler" , patients_path  , :class => "button round" %>
+	<!/div>
+<!% end %>-->
+
+<!-- Après avec onglet :-->
+<div id="mes_onglets">
+	<ul>
+		<li id="o_1" class="mon_onglet_selected" onclick="changeOnglet(this);">Onglet 1</li>
+		<li id="o_2" class="mon_onglet" onclick="changeOnglet(this);">Onglet 2</li>
+		<li id="o_3" class="mon_onglet" onclick="changeOnglet(this);">Onglet 3</li>
+		<li id="o_4" class="mon_onglet" onclick="changeOnglet(this);">Onglet 4</li>
+		<li class="mon_onglet"><a href="http://www.google.fr" target="_blank">Lien vers google</a></li>
+		<div class="clear"></div>
+	</ul>
+</div>
 
 
 <%= form_for(@patient) do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 	<div class="field">
-		<%= f.label :nom %><%= f.text_field :nom %><br>
-		<%= f.label :prenom %><%= f.text_field :prenom %><br>
-		<%= f.label :email %><%= f.email_field :email %><br>
-		<%= f.label :telephone %><%= f.telephone_field :telephone %><br>
-		<%= f.label :civilite %><%= f.collection_select(:civilite_id , Civilite.all , :id , :nom)%>
+		<div id="mes_contenus">
+			<div id="co_1" class="mon_contenu">
+				<%= f.label :nom %><%= f.text_field :nom %><br>
+			</div>
+			<div id="co_2" class="mon_contenu" style="display: none;">
+				<%= f.label :prenom %><%= f.text_field :prenom %><br>
+			</div>
+			<div id="co_3" class="mon_contenu" style="display: none;">
+				<%= f.label :email %><%= f.email_field :email %><br>
+			</div>
+			<div id="co_4" class="mon_contenu" style="display: none;">
+				<%= f.label :telephone %><%= f.telephone_field :telephone %><br>
+				<%= f.label :civilite %><%= f.collection_select(:civilite_id , Civilite.all , :id , :nom)%>
+			</div>
+		</div>
 	</div>
 	<div class="actions">
 		<%= f.submit "Enregistrer" %>
 		<%= link_to "Annuler" , patients_path  , :class => "button round" %>
 	</div>
 <% end %>
+
+
+
+
+
 
 
 
