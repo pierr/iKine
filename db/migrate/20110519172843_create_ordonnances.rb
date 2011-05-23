@@ -26,7 +26,8 @@ class CreateOrdonnances < ActiveRecord::Migration
       
       t.timestamps
     end
-    add_index :ordonnances, :patient_id
+    add_index :ordonnances, :patient_id #FIXME : audric => Pourquoi il y a un index sur les patient id => Un patient peut avoir plusieurs ordonnances non?
+    add_index :ordonnances, :numero   
   end
 
   def self.down

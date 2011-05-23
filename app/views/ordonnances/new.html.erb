@@ -1,0 +1,8 @@
+<h1> <%=@title%> </h1>
+<%= form_for(@ordonnance) do |f| %>
+  <%= render 'fields', :f=>f%>
+  <div class="actions">
+    <%= f.submit "Créer" %>
+  </div>
+<% end %>
+

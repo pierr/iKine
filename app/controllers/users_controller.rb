@@ -83,9 +83,7 @@ class UsersController < ApplicationController
     private
     
     #refuse l'accès si on est pas loggué
-    def authenticate
-          deny_access unless signed_in?
-    end
+
     
     #V�rifie que la pages concernant l'utilisateur auquel on veut accéder est celle de la personne loguée
     def correct_user

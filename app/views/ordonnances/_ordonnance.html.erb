@@ -1,0 +1,9 @@
+<li>
+  <%= link_to  ( "#{ordonnance.numero}") , ordonnance %>
+
+	<!-- Si l'user est un admin on lui permet de faire des modifs-->
+	<% if current_user.admin? %>
+	| <%= link_to "delete", user, :method => :delete, :confirm => "Etes vous certain?",
+                              	  :title => "Delete #{ordonnance.numero}" %>
+  <% end %>
+</li>

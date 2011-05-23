@@ -3,7 +3,7 @@
 <h1>Tous les utilisateurs</h1>
 <ul class="patients">
 <%= will_paginate %>
-	<% @patients.each do |f| %>
+	<% @patients.each do |f| %> <!--TODO: :Audric tu peux mettre ce formulaire dans un fichier à inclure et faire qu'il soit appellé automatiquement par chaque patient regarde dans user/index render @users qui appelel tout seul _user -->
 		<li> <!-- FIXME: : Audric : Il faudrait enlever les listes et faire un tableau. Cette page n'est pas terminée -->
 			<%= link_to "#{f.nom}", f, :title => "Afficher le détail de #{Civilite.find(f.civilite_id).nom} #{f.nom} #{f.prenom}" %>
 			<%= f.prenom %>

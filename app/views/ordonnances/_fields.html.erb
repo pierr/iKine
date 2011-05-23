@@ -1,0 +1,28 @@
+<%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </div>
+ <div class="field">
+    <%= f.label :pathologie %><br />
+    <%= f.text_field :pathologie %>
+  </div>
+  <div class="field">
+	<%= f.label :date %><br />
+ 	<%= date_select :ordonnance, :date %>
+
+  </div>
+  <div class="field">
+	<%= f.label :paye, "Seance Paye ?" %><br />
+ 	<%= f.text_field :paye %>
+  </div>
+	
+    <!--            :pathologie,
+   #             :date,
+                :prise_en_charge,
+  #              :type_prise_en_charge,
+#                :paye,
+ #               :nombre_seances,
+                :bilan,
+                :caisse,
+                :mutuelle-->

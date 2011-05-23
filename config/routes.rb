@@ -1,5 +1,13 @@
 KineApp::Application.routes.draw do
 
+  get "ordonnances/new"
+
+  get "ordonnances/show"
+
+  get "ordonnances/index"
+
+  get "ordonnances/edit"
+
   get "seances/new"
 
   get "seances/show"
@@ -22,16 +30,10 @@ KineApp::Application.routes.draw do
   
 
   resources :patients
-
-
-
-
-
-
-
   resources :users  
   resources :seances
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :ordonnances
   #This has to be solve this is not correct
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
@@ -51,7 +53,10 @@ KineApp::Application.routes.draw do
   get "patient/update"  
   
   get "users/search"
+  
+  # FIXME: pierre Pour les moteurs de recherche (on pourra surment faire mieux vu qu'on renvoi sur l'index)
   match 'search_user' , :to => 'users#index'
+  match 'search_ordonnance', :to => 'ordonnances#index'
 
   #match 'root_path' => redirect('/pages/home')
   #match 'about_path' => redirect('/pages/home')
