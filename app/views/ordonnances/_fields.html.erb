@@ -9,17 +9,19 @@
   </div>
   <div class="field">
 	<%= f.label :date %><br />
- 	<%= date_select :ordonnance, :date %>
-
+ 	<%= f.date_select :date %>
+  </div>
+	
+	<div class="field">
+	<%= f.label :prise_en_charge %><br />
+ 	<%= f.select :prise_en_charge, [['Secu', 1], ['Smerep', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
   </div>
   <div class="field">
 	<%= f.label :paye, "Seance Paye ?" %><br />
- 	<%= f.text_field :paye %>
+ 	<%= f.check_box :paye %>
   </div>
 	
     <!--            :pathologie,
-   #             :date,
-                :prise_en_charge,
   #              :type_prise_en_charge,
 #                :paye,
  #               :nombre_seances,
