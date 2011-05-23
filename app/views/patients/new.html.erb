@@ -19,7 +19,7 @@
 
 <!-- Après avec onglet :-->
 <div id="mes_onglets">
-	<ul>
+	<ul class="liste_onglet" >
 		<li id="o_1" class="mon_onglet_selected" onclick="changeOnglet(this);">Onglet 1</li>
 		<li id="o_2" class="mon_onglet" onclick="changeOnglet(this);">Onglet 2</li>
 		<li id="o_3" class="mon_onglet" onclick="changeOnglet(this);">Onglet 3</li>
@@ -28,6 +28,7 @@
 		<div class="clear"></div>
 	</ul>
 </div>
+
 
 
 <%= form_for(@patient) do |f| %>
