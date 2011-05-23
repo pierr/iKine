@@ -5,4 +5,5 @@ tmp/**/*
 *.DS_Store
 tmp/
 .project
+.settings/
 
