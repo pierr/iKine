@@ -22,8 +22,12 @@ class UsersController < ApplicationController
   
   # Methode appellee par defaut lors du chargement de la page avec tous les utilisateurs
   def index
+      if !params[:q].nil?
+        search
+      else
       @title = "All users"
       @users = User.paginate(:page => params[:page])
+      end
   end
   
   #Permet de creer un nouvel utilisateur.
@@ -75,16 +79,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def search
-
-    @users = User.paginate(:page => params[:page],:conditions => ['nom like ?', "%#{params[:q]}%"])
-    if @users.nil? || @users.size == 0
-      flash[:error] = "Aucun utilisateur n'a le prenom #{params[:q]}"
-    else 
-      flash[:success] = "Voici les utilisateurs qui on pour nom #{params[:q]}"
-    end
-    render 'index'
-  end
     #Les methodes en dessous sont privees
     private
     
@@ -104,5 +98,14 @@ class UsersController < ApplicationController
     #Methode qui permet de vérifier si l'utilisateur est l'admin sinon on le redirige vers la page d'accueil
     def admin_user
           redirect_to(root_path) unless current_user.admin?
+    end
+    
+    def search
+      @users = User.paginate(:page => params[:page],:conditions => ['nom like ?', "%#{params[:q]}%"])
+      if @users.nil? || @users.size == 0
+        flash[:error] = "Aucun utilisateur n'a le prenom #{params[:q]}"
+      else 
+        flash[:success] = "Voici les utilisateurs qui ont leur nom  qui contient #{params[:q]}"
+      end
     end
 end

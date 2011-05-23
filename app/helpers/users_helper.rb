@@ -4,4 +4,6 @@ module UsersHelper
                                               :class => 'gravatar',
                                               :gravatar => options)
   end
+  
+  
 end

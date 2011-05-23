@@ -51,7 +51,7 @@ KineApp::Application.routes.draw do
   get "patient/update"  
   
   get "users/search"
-  match 'search_user' , :to => 'users#search'
+  match 'search_user' , :to => 'users#index'
 
   #match 'root_path' => redirect('/pages/home')
   #match 'about_path' => redirect('/pages/home')
