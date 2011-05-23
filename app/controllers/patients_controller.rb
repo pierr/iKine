@@ -7,17 +7,11 @@ class PatientsController < ApplicationController
   def create
     @title="mode create"
     @patient = Patient.new(params[:patient])
-     print("\n_______________\n")
-   print(@patient.id) 
-    print("\n_______________\n") 
-       if(! @patient.save)
-      render 'new'
+    if(! @patient.save)
+        render 'new'
+    else 
+       redirect_to(@patient)
     end
-    
-    print("\n_______________\n")
-   print(@patient.id) 
-    print("\n_______________\n")    
-    render 'show'
   end
 
   def update
@@ -29,14 +23,11 @@ class PatientsController < ApplicationController
   end
 
   def destroy
-    
-    print("\n\n\n\n\n j'arrive dans destroy\n")
     @title="mode destroy"
     @patient = Patient.find(params[:id]) 
     @patient.delete 
     
-    index #TODO : Audric : Est-ce qu'on fait ça ou est-ce qu'on dit qu'on met des "render 'aaa' dans def aaa ? "
-    render 'index' # FIXME : Audric : Comprendre pourquoi cette méthode est mauvaise : le :id reste dans params et ça fout une grosse merde ...
+    redirect_to patients_path # FIXME : Audric : FIXED :)
   end
 
   def edit
