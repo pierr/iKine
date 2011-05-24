@@ -1,6 +1,8 @@
 <h1><%= @title%></h1>
 <%= render 'search'%>
-
 <div id = "ordonnances">
 	<%=render 'ordonnances'%>
+</div>
+<div class="actions">
+	<%= link_to "Créer une ordonnance" , new_ordonnance_path  , :class => "signup_button round" %>
 </div>

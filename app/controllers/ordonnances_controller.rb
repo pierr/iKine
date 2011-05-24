@@ -4,6 +4,8 @@ class OrdonnancesController < ApplicationController
   
   #Appellé pour la Page de creation d'une ordonnance
   def new
+    @onglets = ["pierre","besson"]
+    @onglet_selected = 2
     @title = "Ordonnances | Mode creation" 
     @ordonnance = Ordonnance.new
   end
