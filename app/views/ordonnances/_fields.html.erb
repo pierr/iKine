@@ -11,20 +11,38 @@
 	<%= f.label :date %><br />
  	<%= f.date_select :date %>
   </div>
-	
-	<div class="field">
-	<%= f.label :prise_en_charge %><br />
- 	<%= f.select :prise_en_charge, [['Secu', 1], ['Smerep', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
+  <div class="field">
+	<%= f.label :caisse %><br />
+	<%= f.select :caisse, [['Secu', 1], ['Smerep', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
   </div>
+  <div class="field">
+	<%= f.label :mutuelle %><br />
+	<%= f.select :mutuelle, [['Smam', 1], ['mutuelle', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
+  </div>
+  <div class="field">
+	<%= f.label :prise_en_charge %><br />
+ 	<%= f.select :prise_en_charge, [['Prise en charge 1', 1], ['Prise en charge 2', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
+  </div>
+  <div class="field">
+	<%= f.label :type_prise_en_charge , "Type de prise en charge"%><br />
+ 	<%= f.select :type_prise_en_charge, [['100%', 1], ['20%', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
+  </div>
+
+  <div class="field">
+	<%= f.label :nombre_seances, "Nombre de séances" %><br />
+ 	<%= f.number_field :nombre_seances %>
+  </div>
+
   <div class="field">
 	<%= f.label :paye, "Seance Paye ?" %><br />
  	<%= f.check_box :paye %>
   </div>
+   <div class="field">
+	<%= f.label :bilan %><br />
+ 	<%= f.text_area :bilan %>
+  </div>
+
+
 	
-    <!--            :pathologie,
-  #              :type_prise_en_charge,
-#                :paye,
- #               :nombre_seances,
-                :bilan,
-                :caisse,
+    <!--         
                 :mutuelle-->
