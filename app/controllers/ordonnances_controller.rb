@@ -20,8 +20,8 @@ class OrdonnancesController < ApplicationController
     if !params[:q].nil? #ici on teste si il 
       search
     else
-    @title = "Toutes les ordonnances"
-    @ordonnances = Ordonnance.order(sort_column+ " "+ sort_direction)#paginate(:page => params[:page])
+      @title = "Toutes les ordonnances"
+      @ordonnances = Ordonnance.search(params[:search]).order(sort_column+ " "+ sort_direction).paginate(:per_page => 5, :page => params[:page])
     end
   end
 
@@ -38,6 +38,7 @@ class OrdonnancesController < ApplicationController
   
   #Methode de recherche d'une ordonnance
   def search
+    @ordonnances = Ordonnance.all
   end
   
   def sort_column

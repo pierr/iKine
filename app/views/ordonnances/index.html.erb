@@ -1,18 +1,6 @@
 <h1><%= @title%></h1>
 <%= render 'search'%>
 
-
-<table class="pretty">
-  <tr>
-    <th><%= sortable "numero"%></th>
-    <th><%= sortable "pathologie"%></th>
-    <th><%= sortable "date" ,"Date d'emission"%></th>
-  </tr>
-  <% for ordonnance in @ordonnances %>
-    <tr>
-      <td><%= ordonnance.numero %></td>
-      <td><%= ordonnance.pathologie %></td>
-      <td><%= ordonnance.numero %></td>
-    </tr>
-  <% end %>
-</table>
+<div id = "ordonnances">
+	<%=render 'ordonnances'%>
+</div>

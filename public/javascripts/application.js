@@ -19,3 +19,23 @@ function changeOnglet(_this){
 		}
 	}			
 }
+
+/**
+*Fonction pour faire des liens ajax sur les tablaux tri etc et la barre de recherch
+*/
+$(function() {
+  $("#ordonnances th a, #ordonnances .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  
+  $("#ordonnances_search").submit(function() {
+    $.get(this.action, $(this).serialize(), null, "script");
+    return false;
+  });
+
+  $("#ordonnances_search input").keyup(function() {
+    $.get($("#ordonnances_search").attr("action"), $("#ordonnances_search").serialize(), null, "script");
+    return false;
+  });
+});
