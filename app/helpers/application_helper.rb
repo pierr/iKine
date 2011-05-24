@@ -22,6 +22,8 @@ module ApplicationHelper
       link_to title, params.merge(:sort =>column ,:direction => direction , :page=>nil), {:class => css_class}
    end
    
+   #Methode qui permet de generer des onglets portant le nom de ceux presents dans le tableau qu'on passe en parametre
+   #par defaut on prend le premier
    def onglets(onglets, selected = 1)
      html_a_rendre = "
        <div id='mes_onglets'>
@@ -40,5 +42,24 @@ module ApplicationHelper
       </div>
      ".html_safe
     return html_a_rendre
+   end
+   
+   def debut_contenu_onglets
+    return 	"<div id='mes_contenus'> <!-- Debut des onglets-->".html_safe
+   end
+   def fin_contenu_onglets
+    return "</div> <!-- fin des onglet-->".html_safe
+   end
+   def debut_contenu_onglet(num_onglet, is_selected = false)
+    html_a_rendre = "<div id='co_#{num_onglet}' class='mon_contenu'".html_safe
+    if !is_selected
+      html_a_rendre = html_a_rendre + "style='display: none;'>".html_safe
+    end
+    html_a_rendre = html_a_rendre + "<!--<Debut de l onglet #{num_onglet}-->".html_safe
+    return html_a_rendre
+   end
+   
+   def fin_contenu_onglet(num_onglet)
+     return "</div> <!-- fin de l onglet #{num_onglet}-->".html_safe
    end
 end
