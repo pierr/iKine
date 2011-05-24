@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user #On le logue automatiquement
-      flash[:success] = "Bienvenue sur iKine #{@user.prenom} #{user.nom} !"
+      flash[:success] = "Bienvenue sur iKine #{@user.prenom} #{@user.nom} !"
       redirect_to user_path(@user)
     else
       @title = "S'authentifier"
