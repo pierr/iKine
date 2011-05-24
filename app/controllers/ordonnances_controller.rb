@@ -1,5 +1,6 @@
 class OrdonnancesController < ApplicationController
   before_filter :authenticate, :only => [:edit, :update,:index] #On veut que l'utilisateur soit autentifié avant d'accéder à la page
+  helper_method :sort_column, :sort_direction
   
   #Appellé pour la Page de creation d'une ordonnance
   def new
@@ -20,7 +21,7 @@ class OrdonnancesController < ApplicationController
       search
     else
     @title = "Toutes les ordonnances"
-    @ordonnances = Ordonnance.order(params[:sort]+ " "+ params[:direction])#paginate(:page => params[:page])
+    @ordonnances = Ordonnance.order(sort_column+ " "+ sort_direction)#paginate(:page => params[:page])
     end
   end
 
@@ -39,6 +40,10 @@ class OrdonnancesController < ApplicationController
   def search
   end
   
-
-
+  def sort_column
+    Ordonnance.column_names.include?(params[:sort]) ? params[:sort] : "numero"
+  end
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end
