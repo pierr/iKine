@@ -1,4 +1,7 @@
 <%= render 'shared/error_messages', :object => f.object %>
+
+<%=onglets @onglets, @onglet_selected%>
+
 <%=debut_contenu_onglets%> 
 	<%=debut_contenu_onglet 1, true%> 
 		<div class="field">
@@ -49,7 +52,3 @@
 		<%= fin_contenu_onglet 2%>
 		
 <%= fin_contenu_onglets%>
-
-	
-    <!--         
-                :mutuelle-->

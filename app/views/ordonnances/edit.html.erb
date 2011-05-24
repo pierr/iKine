@@ -1,2 +1,9 @@
-<h1>Ordonnances#edit</h1>
-<p>Find me in app/views/ordonnances/edit.html.erb</p>
+<h1> <%=@title%> </h1>
+<%=onglets @onglets, @onglet_selected%>
+<%= form_for(@ordonnance) do |f| %>
+  <%= render 'fields', :f=>f%>
+  <div class="actions">
+    <%= f.submit "Enregistrer", :class => "button" %>
+  </div>
+<% end %>
+

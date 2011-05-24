@@ -1,2 +1,53 @@
-<h1>Ordonnances#show</h1>
-<p>Find me in app/views/ordonnances/show.html.erb</p>
+<h1>Ordonnances numero <%= "#{@ordonnance.numero}"%></h1>
+<%=onglets @onglets, @onglet_selected%>
+
+<%=debut_contenu_onglets%> 
+	<%=debut_contenu_onglet 1, true%> 
+		<div class="field">
+    		<strong>Numero</strong><br />
+    		<%=  @ordonnance.numero %>
+  		</div>
+ 		<div class="field">
+			<strong>Pathologie</strong><br />
+    		<%=  @ordonnance.pathologie %>
+  		</div>
+  		<div class="field">
+			<strong>Date</strong><br />
+    		<%=  @ordonnance.date %>
+  		</div>
+  		<div class="field">
+			<strong>Caisse</strong><br />
+    		<%=  @ordonnance.caisse %>
+	  	</div>
+  		<div class="field">
+			<strong>Mutuelle</strong><br />
+    		<%=  @ordonnance.mutuelle %>
+  		</div>
+	<%= fin_contenu_onglet 1%>
+	
+	<%= debut_contenu_onglet 2%>
+  		<div class="field">
+			<strong>Prise en charge</strong><br />
+    		<%=  @ordonnance.prise_en_charge %>
+  		</div>
+  		<div class="field">
+			<strong>Type de prise en charge</strong><br />
+    		<%=  @ordonnance.type_prise_en_charge %>
+  		</div>
+
+  		<div class="field">
+			<strong>Nombre de scéances</strong><br />
+    		<%=  @ordonnance.nombre_seances %>
+  		</div>
+
+  		<div class="field">
+			<strong>Payé</strong><br />
+    		<%=  @ordonnance.paye %>
+  		</div>
+   		<div class="field">
+			<strong>Bilan</strong><br />
+    		<%=  @ordonnance.bilan %>
+		</div>
+		<%= fin_contenu_onglet 2%>
+		
+<%= fin_contenu_onglets%>
