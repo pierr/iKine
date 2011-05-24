@@ -28,7 +28,7 @@ namespace :db do
       nomprenom  = Faker::Name.name.split
       nom = nomprenom[0]
       prenom = nomprenom[1]
-      email = "exemple-#{n+1}@ikine.com"
+      email = Faker::Internet.email
       password  = "kineapp"
       User.create!(:nom => nom,
                    :prenom => prenom,
@@ -42,8 +42,12 @@ end
 namespace :db do
   desc 'Cree une ordonnance'
   task :populate_ordonnances => :environment do
-    99.times do |n|
-      numero = "numero #{n}"
+    2.times do |n|
+      if n == 1
+        numero = "a#{n}"
+      else 
+        numero = "b#{n}"
+      end
       pathologie = "path #{n}"
       date = Date.today
       nombre_seances = n

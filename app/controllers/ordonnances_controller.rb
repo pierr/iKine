@@ -17,12 +17,7 @@ class OrdonnancesController < ApplicationController
 #Afficher une liste d'ordonnance
   def index
     @title = "Rechercher une/des ordonnance(s)"
-    if !params[:q].nil? #ici on teste si il 
-      search
-    else
-      @title = "Toutes les ordonnances"
-      @ordonnances = Ordonnance.search(params[:search]).order(sort_column+ " "+ sort_direction).paginate(:per_page => 5, :page => params[:page])
-    end
+      @ordonnances = Ordonnance.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
   end
 
   #Modifier une ordonnance
@@ -45,6 +40,6 @@ class OrdonnancesController < ApplicationController
     Ordonnance.column_names.include?(params[:sort]) ? params[:sort] : "numero"
   end
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

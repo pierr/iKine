@@ -34,7 +34,7 @@ class Ordonnance < ActiveRecord::Base
   belongs_to :patient
   belongs_to :medecin
   has_many :seances
-  default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
+  #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
   
   ordonnance_regex = /\A[\w+\-.]\z/i  #Une regexp pour les numeros d'ordonnances
     
@@ -45,8 +45,8 @@ class Ordonnance < ActiveRecord::Base
   validates_presence_of :pathologie, :date, :nombre_seances
   
   validates_associated :patient, :medecin, :seances #s'assurer que les objets liés existent bien
-  #Methode qui permet de rechercher des ordonnances
-  
+ 
+ #Methode qui permet de rechercher des ordonnances
   def self.search(search)
     if search
       where('numero LIKE ?', "%#{search}%")
