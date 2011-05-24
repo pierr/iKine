@@ -38,9 +38,9 @@ class Ordonnance < ActiveRecord::Base
   
   ordonnance_regex = /\A[\w+\-.]\z/i  #Une regexp pour les numeros d'ordonnances
     
-  validates :numero, :format     => { :with => ordonnance_regex },
-                    :presence   =>true,
-                    :uniqueness =>true
+  validates :numero, # :format     => { :with => ordonnance_regex },
+            :presence   =>true,
+            :uniqueness =>true
   
   validates_presence_of :pathologie, :date, :nombre_seances
   
