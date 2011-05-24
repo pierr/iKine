@@ -45,6 +45,14 @@ class Ordonnance < ActiveRecord::Base
   validates_presence_of :pathologie, :date, :nombre_seances
   
   validates_associated :patient, :medecin, :seances #s'assurer que les objets liés existent bien
+  #Methode qui permet de rechercher des ordonnances
   
+  def self.search(search)
+    if search
+      where('numero LIKE ?', "%#{search}%")
+    else
+      scoped #Comme all mais ne fait pas la requete
+    end
+  end
   
 end

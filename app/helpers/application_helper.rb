@@ -12,5 +12,13 @@ module ApplicationHelper
    #methode pour charger le logo
    def logo
        image_tag("iKine.png", :alt => "iKine", :class => "round",  :height=> "70") #Permet de charger le logo
-    end
+   end
+   
+   #methode qui permet de générer un lien qui fait un tri sur la colonne column avec pour champ titl
+   def sortable(column, title = nil)
+      title ||= column.titleize
+      direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc" 
+      css_class = column == sort_column ? "current #{sort_direction}" : nil
+      link_to title, params.merge(:sort =>column ,:direction => direction , :page=>nil), {:class => css_class}
+   end
 end
