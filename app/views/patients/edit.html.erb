@@ -1,19 +1,75 @@
 <h1>Patient | <%=@mode%></h1>
 <p>Find me in app/views/patient/edit.html.erb</p>
 
+<!-- Avant : 
+<!%= form_for(@patient) do |f| %>
+	<!%= render 'shared/error_messages', :object => f.object %>
+	<!div class="field">
+		<!%= f.label :nom %><!%= f.text_field :nom %><br>
+		<!%= f.label :prenom %><!%= f.text_field :prenom %><br>
+		<!%= f.label :email %><!%= f.email_field :email %><br>
+		<!%= f.label :telephone %><!%= f.telephone_field :telephone %><br>
+		<!%= f.label :civilite %><!%= f.collection_select(:civilite_id , Civilite.all , :id , :nom)%>
+	<!/div>
+	<!div class="actions">
+		<!%= f.submit "Enregistrer" %>
+		<!%= link_to "Annuler" , patients_path  , :class => "button round" %>
+	<!/div>
+<!% end %>-->
+
+<!-- Après avec onglet :-->
+
+
+
+
+
 
 <%= form_for(@patient) do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
+
+	<div id="mes_onglets">
+		<ul class="liste_onglet" >
+			<li id="o_1" class="mon_onglet_selected" onclick="changeOnglet(this);">Onglet 1</li>
+			<li id="o_2" class="mon_onglet" onclick="changeOnglet(this);">Onglet 2</li>
+			<li id="o_3" class="mon_onglet" onclick="changeOnglet(this);">Onglet 3</li>
+			<li id="o_4" class="mon_onglet" onclick="changeOnglet(this);">Onglet 4</li>
+			<li class="mon_onglet"><a href="http://www.google.fr" target="_blank">Lien vers google</a></li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+
 	<div class="field">
-		<%= f.label :nom %><%= f.text_field :nom %><br>
-		<%= f.label :prenom %><%= f.text_field :prenom %><br>
-		<%= f.label :email %><%= f.email_field :email %><br>
-		<%= f.label :telephone %><%= f.telephone_field :telephone %><br>
-		<%= f.label :civilite %><%= f.collection_select(:civilite_id , Civilite.all , :id , :nom)%>
+		<div id="mes_contenus">
+			<div id="co_1" class="mon_contenu">
+				<%= f.label :nom %><%= f.text_field :nom %><br><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
+				<%=fields_for @adresse do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
+    				<%= t.label :nom,  "AdReSsE" %><%=t.text_field :nom%>
+  				<%end%>
+			</div>
+			<div id="co_2" class="mon_contenu" style="display: none;">
+				<%= f.label :prenom %><%= f.text_field :prenom %><br>
+			</div>
+			<div id="co_3" class="mon_contenu" style="display: none;">
+				<%= f.label :email %><%= f.email_field :email %><br>
+			</div>
+			<div id="co_4" class="mon_contenu" style="display: none;">
+				<%= f.label :telephone %><%= f.telephone_field :telephone %><br>
+				<%= f.label :civilite %><%= f.collection_select(:civilite_id , Civilite.all , :id , :nom)%>
+			</div>
+		</div>
 	</div>
 	<div class="actions">
 		<%= f.submit "Enregistrer" %>
-		<%= link_to "Annuler", @patient  , :class => "button round" %>
+		<%= link_to "Annuler" , @patient  , :class => "button round" %>
 	</div>
 <% end %>
+
+
+
+
+
+
+
+
+
 
