@@ -85,7 +85,7 @@ class UsersController < ApplicationController
     #refuse l'accès si on est pas loggué
 
     
-    #V�rifie que la pages concernant l'utilisateur auquel on veut accéder est celle de la personne loguée
+    #Vérifie que la pages concernant l'utilisateur auquel on veut accéder est celle de la personne loguée
     def correct_user
          @user = User.find(params[:id])
          isUser = current_user?(@user)
