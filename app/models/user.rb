@@ -35,8 +35,9 @@ class User < ActiveRecord::Base
                       
   validates :prenom, :presence =>true,
                         :length   => { :maximum => 50 }
-                        
-  validates :email, :format     => { :with => email_regex },
+                    
+                    #:format     => { :with => email_regex },
+  validates :email, :email_format => true,
                     :presence   =>true,
                     :uniqueness =>true
   # Crée automatiquement l'attribut 'password_confirmation'.

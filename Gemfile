@@ -10,6 +10,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2' #Pour avoir le logo gravatar
 gem 'will_paginate', '3.0.pre2' #Pour avoir la paginataion sur les pages
 gem 'rails3-jquery-autocomplete' #Pour avoir une autocompletion sur certains champs
 gem 'jquery-rails'
+gem 'client_side_validations'
 # Use unicorn as the web server
 # gem 'unicorn'
 
