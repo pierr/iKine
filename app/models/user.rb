@@ -18,6 +18,7 @@
 require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
+  attr_writer :name
   #C'est pour pouvoir accéder aux variables.(accesseurs)
   attr_accessible :nom,
                   :prenom,
@@ -33,7 +34,7 @@ class User < ActiveRecord::Base
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   #Ici on s'occupe de la validation des formulaires.
   validates :nom, :presence =>true,
-                      :length   => { :maximum => 50 }
+                  :length   => { :maximum => 50 }
                       
   validates :prenom, :presence =>true,
                         :length   => { :maximum => 50 }
@@ -75,6 +76,16 @@ class User < ActiveRecord::Base
             tokens = query.split.collect {|c| "%#{c.downcase}%"}
       end
     end
+    
+    #@override une methode par défaut mais cette methode permet de définir le fichier.json
+    #pour un user qui sera appellé pour l'auto completion
+    # options => sont les options qu'on peut vouloir donner 
+    def as_json(options)
+     { 
+       :id => id,
+       :name => name
+     }
+    end
    private
 
      def encrypt_password
@@ -92,6 +103,9 @@ class User < ActiveRecord::Base
 
      def secure_hash(string)
        Digest::SHA2.hexdigest(string)
+     end
+     def name
+      name = "#{prenom} #{nom}"
      end
  end
  
