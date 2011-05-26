@@ -1,0 +1,57 @@
+Alors voici les retours de mes parents sur les maquettes: [J'ai séparé les deux mais on peut les grouper si vous préférez...]
+
+# Premier point
+Ils ont du mal à oublier leur logiciel actuel. Quand ils sont sur un écran (maquette), ils ne se représentent pas les enchainements entre écran et ne voient pas la globalité de l'application.
+J'ai essayé de leur parler de l'ergonomie, il aiment assez la présentation. Mais ils sont préoccupés par le fait de pouvoir ouvrir plusieurs fenêtres en même temps. Ils ont également peur de mettre du temps à trouver les fonctionnalitées basiques.
+Et il faut qu'il puisse être loggés à plusieurs en même temps pour avoir un onglet par praticien sur l'ordinateur central, car il se peut qu'ils commencent à remplir des infos, qu'un collègue arrive et remplisse autre chose, etc...
+
+# Réactions
+
+## Ma mère:
+
+	### Patients
+	
+		- Il faut ajouter un champ numéro de téléphone, c'est le plus implorant pour eux afin de pouvoir contacter chaque patient/client. Le mieux serait d'en avoir plusieurs.
+		
+		- Il manque un onglet pour les séances/ordonnances => historique des dernières ordonnances du patient afin de pouvoir y remonter vite.
+		
+	### Ordonnances
+		- Il manque la date de demande dans la maquette (je pense l'avoir mis dans l'écran en cours de réalisation)
+		- Les médecins il faut bien que ce soit un lien ers une table car il y a la notion de code associé à ce dernier.
+		- Pour une ordonnance on fait une demande de nombre d'actes à la sécurité sociale. (On fait aussi une demande de cotation de l'ordonnance)
+		- Il faut ajouter la possibilité de renouveler l'ordonnance
+		-Pour l'onglet bilan:
+			* Il faut un bilan initial (effectué à la première séance), un bilan intermédiaire et un bilan final
+			* Les bilans sont facturés et obéissent à une codification, il faudra trouver un modèle quelque part.
+			* Il faudrait deux catégoriser les "symptômes" => [Localisation de la douleur, type de symptôme]
+		-Pour l'onglet facturation:
+			* La facturation dépend de la demande d'entente préalable, la prise en charge se définie au moment où on crée l'ordonnance. Et selon les praticien et selon les patients la manière de payer peut être différents (1/3 payant, ....)
+			* Pour les taux de prise en charge, la carte vitale stock des taux de prise en charge en fonction du type de soins.
+			* Le praticien peut choisir ou non de se faire payé par la caisse.
+			* pour les domiciles, le tarif est différent selon la pathologie (la partie coût du déplacement), ceci est codifié il faut trouver où.
+			*Plus globalement la sécu met à jour les code et tarification des soins, actuellement ces maj ne s'on effectuée qu'au changement de version dans le logiciel sinon ils doivent les faire à la main. [Codes AMK/AMS, IFO/IF]
+			* Il faut avoir un mode d'ajout de séance rapidement à une ordonnance car,parfois il créent toutes les séances à la fin d'une ordonnance.
+			
+## Mon père:
+	
+	## Patients
+		- Dossier médical
+			* Il faut que le champ pathologie récente soit plus grand ou alors mettre une sorte de lien vers une description plus longue.
+			* Il manque également la notion de pathologie permanente [Diabète, ...]
+		- Onglet ordonnances
+			* Il faudrait afficher le nombre de séance sur une année glissante
+	
+	## Ordonnances
+		- Il faut comme titre la date et le nom du patient pas de notion de numero
+		- Les bilans sont codifiés
+		- Il faut pouvoir faire une feuille de soin électronique (c'est notre onglet facturation)
+		- Dans l'onglet facturation , il faut pouvoir voir si la séance a été effectué à domicile
+		- Il faut aussi pouvoir faire une facturation partielle de l'ordonnance (case à cocher)
+		
+	## Seance 
+		-Il faut avoir la notion de dimanche, jour férié => Il y a une majoration
+		- Pour le samedi il peut y avoir une majoration selon les cas (Urgent ou non)
+		- Une notion importante: en fonction du lieu d'habitation du praticien (montagne, campagne, ville) les facturations des domiciles sont différentes (pour campagne et montagne il y a la notion de kilomètre parcourus) => Il faudra ajouter ce paramètre au praticien et le prendre en compte dans le coup de la séance.
+		- Il faut également savoir pour les séances si => Elles ont été payés?, transmise à la sécu? ou facturé?
+			
+		

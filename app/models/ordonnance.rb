@@ -34,6 +34,8 @@ class Ordonnance < ActiveRecord::Base
   belongs_to :patient
   belongs_to :medecin
   has_many :seances
+  has_many :user_ship
+  has_many :users, :through => :usership 
   #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
   
   ordonnance_regex = /\A[\w+\-.]\z/i  #Une regexp pour les numeros d'ordonnances

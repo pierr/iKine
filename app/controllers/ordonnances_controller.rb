@@ -45,7 +45,6 @@ class OrdonnancesController < ApplicationController
     end
   end
   
-  
   private
   #trouve le nom de la colonne a trier
   def sort_column
