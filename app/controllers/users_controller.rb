@@ -67,10 +67,10 @@ class UsersController < ApplicationController
     user = User.find(params[:id]) 
     if user == current_user  && user.admin?
       flash[:error] = "Vous ne pouvez pas vous detruire vous etes un admin."
-      redirect_to users_path
+      redirect_to user_path(user)
     elsif user.admin?
       flash[:error] = "Vous ne pouvez pas vous detruire #{user.prenom} #{user.nom} qui est un admin."
-      redirect_to users_path
+      redirect_to user_path(user)
     else 
       name = " #{user.nom} #{user.prenom}"
       user.destroy

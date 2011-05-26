@@ -1,5 +1,6 @@
 class OrdonnancesController < ApplicationController
   before_filter :authenticate, :only => [:edit, :update,:index,:new] #On veut que l'utilisateur soit autentifié avant d'accéder à la page
+  before_filter :def_onglets #On aura les variables pour les onglets qui seront chargés par défaut
   helper_method :sort_column, :sort_direction
   
   #Appellé pour la Page de creation d'une ordonnance
@@ -12,8 +13,7 @@ class OrdonnancesController < ApplicationController
 
   #visualiser une ordonnance
   def show
-    def_onglets
-    @ordonnance = Ordonnance.find(params[:id])
+    ordonnance 
     @title = "Ordonnance"
   end
 
@@ -25,16 +25,24 @@ class OrdonnancesController < ApplicationController
 
   #Modifier une ordonnance
   def edit
+    ordonnance
     @title = "Modification de l'ordonnance"
   end
   
   #Supprimer une ordonance
-  def delete
-    @title = "Delete"
+  def destroy
+    ordonnance
+    numero = @ordonnance.numero
+    if @ordonnance.destroy
+      flash[:success] = "L'ordonnance numero #{numero} a ete detruite."
+      redirect_to ordonnances_path
+    else
+      flash[:error] = "L'ordonnance numero #{numero} n' a pas ete detruite."
+      redirect_to ordonnance_path(@ordonnance)
+    end
   end
   
   def create
-    def_onglets
     @ordonnance = Ordonnance.new(params[:ordonnance])
     if @ordonnance.save
       flash[:success] = "La creation de l'ordonnance numero #{@ordonnance.numero} est effectuee !"
@@ -44,6 +52,18 @@ class OrdonnancesController < ApplicationController
       render 'new'
     end
   end
+  
+  def update
+    ordonnance
+    if @ordonnance.update_attributes(params[:ordonnance])
+        flash[:success] = "Ordonnance mise a jour."
+        redirect_to @ordonnance
+    else
+      flash[:error] = "L'ordonnance n'a pas ete mise a jour."
+        @title = "Modifier user"
+        render 'edit'
+      end
+    end
   
   private
   #trouve le nom de la colonne a trier
@@ -58,5 +78,8 @@ class OrdonnancesController < ApplicationController
   def def_onglets
     @onglets = ["Details","Bilan","Facturation"]
     @onglet_selected = 1
+  end
+  def ordonnance
+    @ordonnance = Ordonnance.find(params[:id])
   end
 end
