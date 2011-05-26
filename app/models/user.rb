@@ -26,7 +26,9 @@ class User < ActiveRecord::Base
                   :phone,
                   :password,
                   :password_confirmation
- 
+  has_many :user_ordonnances
+  has_many :ordonnances ,:through => :user_ordonnances
+  
   #Experssion régulière pour les mails
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   #Ici on s'occupe de la validation des formulaires.

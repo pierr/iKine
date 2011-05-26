@@ -8,6 +8,10 @@
     		<%= f.label :numero %><br />
     		<%= f.text_field :numero %>
   		</div>
+		<div class="field">
+    		<%= f.label :user_tokens, "Praticiens" %><br />
+    		<%= f.text_field :user_tokens, "data-pre" => @ordonnance.users.map(&:attributes).to_json  %>
+  		</div>
  		<div class="field">
     		<%= f.label :pathologie %><br />
     		<%= f.text_field :pathologie %>

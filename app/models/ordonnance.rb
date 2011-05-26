@@ -30,12 +30,14 @@ class Ordonnance < ActiveRecord::Base
                   :nombre_seances,
                   :bilan,
                   :caisse,
-                  :mutuelle
+                  :mutuelle,
+                  :user_tokens
+  attr_reader :user_tokens
   belongs_to :patient
   belongs_to :medecin
   has_many :seances
-  has_many :user_ship
-  has_many :users, :through => :usership 
+  has_many :user_ordonnances
+  has_many :users, :through => :user_ordonnances 
   #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
   
   ordonnance_regex = /\A[\w+\-.]\z/i  #Une regexp pour les numeros d'ordonnances
@@ -57,4 +59,7 @@ class Ordonnance < ActiveRecord::Base
     end
   end
   
+  def user_tokens=(ids)
+    self.user_ids = ids.split(",")
+  end
 end

@@ -28,6 +28,11 @@ class UsersController < ApplicationController
       @title = "All users"
       @users = User.paginate(:page => params[:page])
       end
+      @users = User.where("nom like ?", "%#{params[:q]}%")
+      respond_to do |format|
+          format.html
+          format.json { render :json => @users.map(&:attributes) }
+      end
   end
   
   #Permet de creer un nouvel utilisateur.
