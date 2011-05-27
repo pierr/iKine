@@ -1,6 +1,5 @@
 <h1> <%=@title%> </h1>
-<%=onglets @onglets, @onglet_selected%>
-<%= form_for(@ordonnance) do |f| %>
+<%= form_for @ordonnance, :validate => true  do |f| %>
   <%= render 'fields', :f=>f%>
   <div class="actions">
     <%= f.submit "Créer", :class => "button" %>

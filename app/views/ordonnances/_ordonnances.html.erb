@@ -8,7 +8,7 @@
   </tr>
   <% for ordonnance in @ordonnances %>
     <tr>
-      <td><%= ordonnance.numero %></td>
+      <td><%= link_to ordonnance.numero, ordonnance_path(ordonnance) %></td>
       <td><%= ordonnance.pathologie %></td>
       <td><%= ordonnance.date %></td>
     </tr>

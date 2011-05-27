@@ -28,6 +28,14 @@ class UsersController < ApplicationController
       @title = "All users"
       @users = User.paginate(:page => params[:page])
       end
+      usersNom = User.where("nom like ?", "%#{params[:q]}%")
+      usersPrenom = User.where("prenom like ?", "%#{params[:q]}%")
+      @usersJson = usersNom | usersPrenom
+      respond_to do |format|
+          format.html
+          format.json { render :json => @usersJson.as_json #.map(&:attributes)
+      }
+      end
   end
   
   #Permet de creer un nouvel utilisateur.
@@ -67,10 +75,10 @@ class UsersController < ApplicationController
     user = User.find(params[:id]) 
     if user == current_user  && user.admin?
       flash[:error] = "Vous ne pouvez pas vous detruire vous etes un admin."
-      redirect_to users_path
+      redirect_to user_path(user)
     elsif user.admin?
       flash[:error] = "Vous ne pouvez pas vous detruire #{user.prenom} #{user.nom} qui est un admin."
-      redirect_to users_path
+      redirect_to user_path(user)
     else 
       name = " #{user.nom} #{user.prenom}"
       user.destroy
@@ -85,7 +93,7 @@ class UsersController < ApplicationController
     #refuse l'accès si on est pas loggué
 
     
-    #V�rifie que la pages concernant l'utilisateur auquel on veut accéder est celle de la personne loguée
+    #Vérifie que la pages concernant l'utilisateur auquel on veut accéder est celle de la personne loguée
     def correct_user
          @user = User.find(params[:id])
          isUser = current_user?(@user)

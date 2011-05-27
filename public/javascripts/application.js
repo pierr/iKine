@@ -46,3 +46,14 @@ $(function() {
     return false;
   });
 });
+
+/**
+*Cette fonction sert à avoir l'auto-complétion pour un formulaire multi-liaison
+*/
+$(function() {
+  $("#ordonnance_user_tokens").tokenInput("/users.json", {
+    crossDomain: false,
+    prePopulate: $("#ordonnance_user_tokens").data("pre"),
+    theme: "facebook"
+  });
+});

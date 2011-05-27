@@ -18,6 +18,7 @@
 require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
+  attr_writer :name
   #C'est pour pouvoir accéder aux variables.(accesseurs)
   attr_accessible :nom,
                   :prenom,
@@ -26,17 +27,20 @@ class User < ActiveRecord::Base
                   :phone,
                   :password,
                   :password_confirmation
- 
+  has_many :user_ordonnances
+  has_many :ordonnances ,:through => :user_ordonnances
+  
   #Experssion régulière pour les mails
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   #Ici on s'occupe de la validation des formulaires.
   validates :nom, :presence =>true,
-                      :length   => { :maximum => 50 }
+                  :length   => { :maximum => 50 }
                       
   validates :prenom, :presence =>true,
                         :length   => { :maximum => 50 }
-                        
-  validates :email, :format     => { :with => email_regex },
+                    
+                    #:format     => { :with => email_regex },
+  validates :email, :email_format => true,
                     :presence   =>true,
                     :uniqueness =>true
   # Crée automatiquement l'attribut 'password_confirmation'.
@@ -72,6 +76,16 @@ class User < ActiveRecord::Base
             tokens = query.split.collect {|c| "%#{c.downcase}%"}
       end
     end
+    
+    #@override une methode par défaut mais cette methode permet de définir le fichier.json
+    #pour un user qui sera appellé pour l'auto completion
+    # options => sont les options qu'on peut vouloir donner 
+    def as_json(options)
+     { 
+       :id => id,
+       :name => name
+     }
+    end
    private
 
      def encrypt_password
@@ -89,6 +103,9 @@ class User < ActiveRecord::Base
 
      def secure_hash(string)
        Digest::SHA2.hexdigest(string)
+     end
+     def name
+      name = "#{prenom} #{nom}"
      end
  end
  
