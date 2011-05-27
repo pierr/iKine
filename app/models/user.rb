@@ -40,7 +40,8 @@ class User < ActiveRecord::Base
                         :length   => { :maximum => 50 }
                     
                     #:format     => { :with => email_regex },
-  validates :email, :email_format => true,
+  validates :email, :format     => { :with => email_regex },
+                    #:email_format => true,
                     :presence   =>true,
                     :uniqueness =>true
   # Crée automatiquement l'attribut 'password_confirmation'.
