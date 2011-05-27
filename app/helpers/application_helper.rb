@@ -77,7 +77,69 @@ module ApplicationHelper
      return "</div> <!-- fin de l onglet #{num_onglet}-->".html_safe
    end
    
-   #######################################
+   ######################################
    ## FIN DESMETHODES POUR LES ONGLETS ##
    ######################################
+   
+   
+   
+   
+
+   
+   
+   def kine_text_fied_edit(f, nom , display = false, readonly = false)
+     head = "<div class=\"field\">"
+     label = getLabel(f, nom, display)
+     field = "#{f.text_field nom , :disabled => readonly}"
+     print("\n\n#{field}\n\n")
+     #field = "#{f.send(:text_field, nom)}"# TODO : Audric : Mettre en place un systeme d'invocation basé la dessus ...
+     tail = "</div>"
+     resultat = head + label + field + tail
+     return resultat.html_safe
+   end
+   
+   def kine_mail_fied_edit(f, nom , display = false, readonly = false)
+     head = "<div class=\"field\">"
+     label = getLabel(f, nom, display)
+     field = "#{f.email_field nom, :disabled => readonly}"
+     tail = "</div>"
+     resultat = head + label + field + tail
+     return resultat.html_safe
+   end
+
+
+   def kine_telephone_fied_edit(f, nom , display = false, readonly = false)
+     head = "<div class=\"field\">"
+     label = getLabel(f, nom, display)
+     field = "#{f.telephone_field nom, :disabled => readonly}"
+     tail = "</div>"
+     resultat = head + label + field + tail
+     return resultat.html_safe
+   end
+
+
+   def kine_collection_select_edit(f, champ_de_f , champ_id_de_f , collection , champ_id_collection , champ_collection_display , display = false, readonly = false)
+     head = "<div class=\"field\">"
+     label = getLabel(f, champ_de_f, display)
+     field = "#{f.collection_select(champ_id_de_f , collection , champ_id_collection , champ_collection_display,  {}, {:disabled => readonly})}"
+     tail = "</div>"
+     resultat = head + label + field + tail
+     return resultat.html_safe
+   end
+
+
+
+  def getLabel(f, nom, display) # Cette méthode ne commence pas par "kine_" car elle n'est pas sencée être utilisée ailleurs que dans ce fichier.
+      label =  if(display) then "<strong>#{display}</strong>"  else "#{f.label nom}" end
+      return label
+  end
+  
+#  def getFieldModeView(f , nom ) # Cette méthode ne commence pas par "kine_" car elle n'est pas sencée être utilisée ailleurs que dans ce fichier.
+#      return f.send(nom)
+#  end
+
+  def kine_display_view(label, display = false) # Cette méthode ne commence pas par "kine_" car elle n'est pas sencée être utilisée ailleurs que dans ce fichier.
+    return "<strong>#{label}</strong> #{display}".html_safe
+   end
+
 end

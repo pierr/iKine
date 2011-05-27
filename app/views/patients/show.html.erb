@@ -1,11 +1,13 @@
 <h1>Patient | <%=@mode%></h1>
 <p>Find me in app/views/patient/show.html.erb</p>
 
-<strong>Nom</strong> <%= @patient.nom %> <br/>
-<strong>Prénom</strong> <%= @patient.prenom %> <br/>
-<strong>Email</strong> <%= @patient.email %> <br/>
-<strong>Téléphone</strong> <%= @patient.telephone %> <br/>
-<strong>Civilité</strong> <%= @patient.civilite.nom %> <br/>
+
+
+<%= kine_display_view("Nom", @patient.nom)%><br/>
+<%= kine_display_view("Prénom", @patient.prenom)%><br/>
+<%= kine_display_view("Email", @patient.email)%><br/>
+<%= kine_display_view("Téléphone", @patient.telephone)%><br/>
+<%= kine_display_view("Civilité", @patient.civilite.nom)%><br/>
 
 <br/>
 <%= link_to "Modifier", edit_patient_path(@patient) , :class => "button round" %>
