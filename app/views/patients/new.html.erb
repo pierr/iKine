@@ -1,7 +1,7 @@
 <h1>Patient | <%=@mode%></h1>
 <p>Find me in app/views/patient/edit.html.erb</p>
 
-<%= form_for @patient do |f| %>
+<%= form_for @patient , :validate => true do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 
 	<div id="mes_onglets">
@@ -18,8 +18,8 @@
 	<div class="field">
 		<div id="mes_contenus">
 			<div id="co_1" class="mon_contenu">
-				<%= kine_text_fied_edit(f , :nom , false , true) %> <!-- ici je dis que je veux pas de label personalisé mais que je veux readonly = true -->
-				<%=fields_for @adresse do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
+				<%= kine_text_fied_edit(f , :nom , false , false) %> <!-- ici je dis que je veux pas de label personalisé mais que je veux readonly = true -->
+				<%=fields_for @adresse , :validate => true do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
 					<%= kine_text_fied_edit(t , :nom) %>
   				<%end%>
 			</div>
