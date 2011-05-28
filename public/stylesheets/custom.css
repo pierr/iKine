@@ -93,20 +93,7 @@ a.signup_button {
   padding: 20px;
 }
 
-/* un bouton normal ... probablement à changer vu que je suis mauvais en style */
-/* TODO : Audric : Regarder si ce bout est utile ou pas ... */
-a.button {
-  margin-left: auto;
-  margin-right: auto;
-  /*display: block;*/
-  text-align: center;
-  /*width: 10px;*/
-  color: #fff;
-  background: #FF2233;
-  /*font-size: 150%;*/
-  font-weight: bold;
-  padding: 10px;
-}
+
 /* Round corners */
 
 .round {

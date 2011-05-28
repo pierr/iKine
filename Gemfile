@@ -11,6 +11,7 @@ gem 'will_paginate', '3.0.pre2' #Pour avoir la paginataion sur les pages
 gem 'rails3-jquery-autocomplete' #Pour avoir une autocompletion sur certains champs
 gem 'jquery-rails' #pour avoir jquery dans rails sera par defaut dans rails 3.1
 gem 'client_side_validations' #Pour avoir la validation cote client
+gem 'css3buttons'
 #gem 'devise' #pour avoir la possibilité de multi login pour les users. >TODO<
 
 # Use unicorn as the web server
