@@ -4,13 +4,13 @@
 	<%= button_group do %>    
 		<%= pill_button_link_to "Home", root_path %>
       <% if signed_in? %>
-		<%= pill_button_link_to "Users", users_path %>
+		<%= pill_button_link_to "Praticiens", users_path %>
 		<%= pill_button_link_to "Profile", current_user %>
- 	  	<%= settings_pill_button_link_to "Settings", edit_user_path(current_user) %>
+ 	  	<%= settings_pill_button_link_to "Param", edit_user_path(current_user) %>
 		<%= log_pill_button_link_to "Ordonnances", ordonnances_path %>
 		<%= user_pill_button_link_to "Patients", patients_path %>
       <% end%>
-      <%= pill_button_link_to "Help", help_path %>
+      <%= pill_button_link_to "Aide", help_path %>
       <% if signed_in? %>
       	<%= negative_pill_button_link_to "Sign out", signout_path, :method => :delete %>
       <% else %>
