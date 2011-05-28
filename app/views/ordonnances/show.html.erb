@@ -1,9 +1,10 @@
 <h1>Ordonnances numero <%= "#{@ordonnance.numero}"%></h1>
 <%=onglets @onglets, @onglet_selected%>
-<%= link_to "Modifier", edit_ordonnance_path(@ordonnance) %>
-<%= link_to "Supprimer", @ordonnance, :method => :delete, 
-								   :confirm => "Etes cous certain?",
-                          	  	   :title => "Supprimer l'ordonnance #{@ordonnance.numero}" %>
+<%= link_to "Modifier", edit_ordonnance_path(@ordonnance), :class => "button" %>
+<%= link_to "Supprimer", @ordonnance, :method => :delete,
+ 									  :class => "button",
+								   	  :confirm => "Etes cous certain?",
+                          	  	      :title => "Supprimer l'ordonnance #{@ordonnance.numero}" %>
 <%=debut_contenu_onglets%> 
 	<%=debut_contenu_onglet 1, true%> 
 		<div class="field">
