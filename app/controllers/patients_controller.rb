@@ -1,9 +1,28 @@
 class PatientsController < ApplicationController
+ 
+  def index
+    @title = "mode all"
+    @patients = Patient.paginate :page => params[:page] , :per_page => 1
+  end
+  
+  def show
+    @title="mode show"
+    @patient = Patient.find(params[:id])
+    @adresse = @patient.adresse
+    
+    @villeList = @adresse.ville
+    @departementList = @villeList .departement
+    @civiliteList = @patient.civilite
+  end
+  
   def new
     @title="mode new"
     @patient = Patient.new
     @adresse = Adresse.new
-    #@adresse.nom = "nom prerempli"
+    
+    @villeList = Ville.all
+    @departementList = Departement.all
+    @civiliteList = Civilite.all
   end
 
   def create
@@ -20,6 +39,16 @@ class PatientsController < ApplicationController
     end
   end
 
+  def edit
+    @title="mode edit"
+    @patient = Patient.find(params[:id])
+    @adresse = @patient.adresse
+
+    @villeList = Ville.all
+    @departementList = Departement.all
+    @civiliteList = Civilite.all
+  end
+  
   def update
     @title="mode update"
     @patient = Patient.find(params[:id])
@@ -38,29 +67,11 @@ class PatientsController < ApplicationController
 
   def destroy
     @title="mode destroy"
-    @patient = Patient.find(params[:id]) 
+    @patient = Patient.find(params[:id])
     @adresse = @patient.adresse
     @adresse.delete
     @patient.delete 
-    
     redirect_to patients_path # FIXME : Audric : FIXED :)
-  end
-
-  def edit
-    @title="mode edit"
-    @patient = Patient.find(params[:id])
-    @adresse = @patient.adresse
-  end
-
-  def show
-    @title="mode show"
-    @patient = Patient.find(params[:id])
-    @adresse = @patient.adresse
-  end
-
-  def index
-    @title = "mode all"
-    @patients = Patient.paginate :page => params[:page] , :per_page => 1
-  end
+  end  
 
 end
