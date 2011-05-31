@@ -6,6 +6,7 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     Rake::Task['db:populate_users'].invoke
     Rake::Task['db:populate_ordonnances'].invoke
+    Rake::Task['db:populate_ville'].invoke
   end
 end
 namespace :db do
@@ -55,6 +56,14 @@ namespace :db do
                          :pathologie => pathologie, 
                          :date => date,
                          :nombre_seances => nombre_seances )
+    end
+  end
+end
+namespace :db do
+  desc "Rempli la base avec des villes"
+  task :populate_ville => :environment do  
+    99.times do |n|
+      Ville.create(:nom => Faker::Name.name)
     end
   end
 end
