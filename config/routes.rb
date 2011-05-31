@@ -28,6 +28,9 @@ KineApp::Application.routes.draw do
   # DELETE | /toto/:id      | destroy  | delete a specific toto
   #
   
+ resources :patients do
+  get :autocomplete_ville_nom, :on => :collection
+end
 
   resources :patients
   resources :users  

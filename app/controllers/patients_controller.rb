@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
- 
+  autocomplete :ville, :nom, :full => true
   def index
     @title = "mode all"
     @patients = Patient.paginate :page => params[:page] , :per_page => 1

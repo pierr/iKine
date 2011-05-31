@@ -18,6 +18,9 @@
 	<div class="field">
 		<div id="mes_contenus">
 			<div id="co_1" class="mon_contenu">
+
+<%=f.autocomplete_field :adresse, autocomplete_ville_nom_patients_path %>
+
 				<%= kine_collection_select_edit(f , :civilite , :civilite_id, @civiliteList, :id, :nom	) %>
 				<%= kine_text_fied_edit(f , :nom , false , false) %> <!-- ici je dis que je veux pas de label personalisé mais que je veux readonly = true -->
 				<%= kine_text_fied_edit(f , :prenom , "Prénom") %>
