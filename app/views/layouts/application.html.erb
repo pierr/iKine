@@ -9,6 +9,13 @@
   </head>
   <body>
     <div class="container">
+	<p>
+		<% if mobile_device? %>
+			<%= link_to "Site Complet", :mobile => 0 %>	
+		<% else %>
+		    <%= link_to "Site pour mobile", :mobile => 1 %>
+		<% end %>
+	</p>
       <%= render 'layouts/header' %>
       <section class="round">
 		<% flash.each do |key, value| %>
