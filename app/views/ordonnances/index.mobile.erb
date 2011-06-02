@@ -1,0 +1,6 @@
+<h1><%= @title%></h1>
+<%= render 'search'%>
+<div id = "ordonnances">
+	<%=render 'ordonnances'%>
+</div>
+<ul><li class="arrow"><%= link_to "Créer ordonnance", new_ordonnance_path %></li></ul>
