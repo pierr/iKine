@@ -1,0 +1,7 @@
+<%= form_for(:session, :url => sessions_path) do |f| %>
+	<ul class ="rounded">
+		<li><%= f.email_field :email , :title =>"email" %></li>
+  		<li><%= f.password_field :password , :title => "Mot de passe" %></li>
+	</ul>
+    <%= f.submit @title , :class => "whiteButton submit"%>
+<% end %>
