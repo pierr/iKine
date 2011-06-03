@@ -1,32 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-  <head>
+<!DOCTYPE html> 
+<html> 
+	<head>
     <title><%= h(yield(:title) || "Untitled") %></title>
-    <%= stylesheet_link_tag "../javascripts/jqtouch/jqtouch.css", "../javascripts/jqtouch/themes/apple/theme.css" %>
-    <%= javascript_include_tag "jqtouch/jquery-1.4.2.min.js", "jqtouch/jqtouch.js", "mobile" %>
+    <%= stylesheet_link_tag "/jquery.mobile-1.0a4.1/jquery.mobile-1.0a4.1.css"%>
+    <%= javascript_include_tag :defaults,"/jquery.mobile-1.0a4.1/jquery.mobile-1.0a4.1.js", "mobile" %>
     <%= yield(:head) %>
   </head>
   <body>
-    <div class="current">
-      <%- if show_title? -%>
-      <div class="toolbar">
-        <%= link_to "Back", nil, :class => "back" unless current_page? root_path %>
-        <h1><%=h yield(:title) %></h1>
-        <%= link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external" %>
-        <%= yield(:toolbar) %>
-      </div>
-      <%- end -%>
-      
-      <% unless flash.empty? %>
-        <div class="info">
-        <%- flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <%- end -%>
-        </div>
-      <% end %>
-    
-      <%= yield %>
-    </div>
-  </body>
-</html>
+	<div data-role="page">
+		<%= link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external" %>
+
+		<div data-role="header">
+		 <%= render 'layouts/header' %>
+		</div><!-- /header -->
+		 <% unless flash.empty? %>
+	        <div class="info">
+	        <%- flash.each do |name, msg| -%>
+	          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	        <%- end -%>
+	        </div>
+	      <% end %>
+
+	      <%= yield %>
+		
+
+		<div data-role="footer">
+			<h4>Page Footer</h4>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+
+	</body>
+</html>   
+
+
+  	

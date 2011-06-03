@@ -1,18 +1,3 @@
-<h1>Kine App</h1>
-<ul class = "rounded">
-  <li>Voici la page d'accueil de l'application.
-  Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
-</li>
-</ul>
-<!-- Si l'utilisateur n'est pas loggué on propose la création de compte ou l'authentification-->
-<% if !signed_in? %>
-	<!-- On propose l'inscription -->
-	<ul>
-		<li class="arrow">
-			<%= link_to "Nouvel Utilisateur", new_user_path %>
-		</li>
-	</ul>
-	<!-- On propose le login -->
-	<%= render '/sessions/session' %>
-<% end%>
-
+<div data-role="content">	
+	<p>Page content goes here.</p>		
+</div><!-- /content -->
