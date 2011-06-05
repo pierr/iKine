@@ -1,10 +1,11 @@
 <% title "Users" %>
 
-<ul>
+<ul data-role="listview">
   <% for user in @users %>
-    <li class="arrow">
-      <%= link_to user.nom, user %>
-      <small class="counter"><%= @users.size %></small>
+    <li>
+		<%= gravatar_for user %>
+      	<%= link_to "#{user.prenom} #{user.nom}", user %>
+		<span class="ui-li-count" ><%="Nb de patients a mettre"%></span><!-- Afin d'avoir un petit compteur à cote de la ligne-->	
     </li>
   <% end %>
 </ul>

@@ -1,3 +1,4 @@
+$.mobile.page.prototype.options.backBtnText = "Precedent";
 //$.jQTouch({});
 /*
 	@author Joel Greutman

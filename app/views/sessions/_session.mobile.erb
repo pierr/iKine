@@ -1,11 +1,13 @@
 <%= form_for(:session, :url => sessions_path) do |f| %>
-	<ul class ="form">
-		<li><%= f.label :email %></li>
-		<li><%= f.email_field :email , :title =>"email" %></li>
-  		<li><%= f.label :password %></li>
-		<li><%= f.password_field :password , :title => "Mot de passe" %></li>
-	</ul>
-	<ul class="whiteButton submit">
-    	<li><%= f.submit @title%></li>
-	</ul>
+	<div data-role="fieldcontain">
+		<%= f.label :email %>
+		<%= f.email_field :email , :title =>"email" %>
+	</div>
+	<div data-role="fieldcontain">
+  		<%= f.label :password %>
+		<%= f.password_field :password , :title => "Mot de passe" %>
+	</div>
+	
+	<%= f.submit @title, "data-role" => "button"%>
+	
 <% end %>

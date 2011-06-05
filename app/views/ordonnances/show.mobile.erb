@@ -1,18 +1,23 @@
-
-        <div data-role="tabs">
-            <ul>
-                <li><a href="#tab-1" class="">Tab 1</a></li>
-                <li><a href="#tab-2" class="">Tab 2</a></li>
-            </ul>
-        </div>
-		<div data-role ="content">
-        <div id="tab-1">
-            <ul>
-			<li>First thing</li>
-            <li>Second Thing</li>
-        	</ul>
-		</div>	
-        <div id="tab-2">
-            <h2>Here is the second tab</h2>
-        </div>
+<%= kine_onglets_m @onglets, @onglet_selected %>
+<div data-role='controlgroup' data-type='horizontal'>
+	<%= link_to "Modifier", edit_ordonnance_path(@ordonnance), "data-role" => "button" , "data-icon" => "gear"%>
+	<%= link_to "Supprimer", @ordonnance, :method => :delete,
+								   	  :confirm => "Etes vous certain?",
+                          	  	      :title => "Supprimer l'ordonnance #{@ordonnance.numero}" ,
+									  "data-role" => "button" , 
+									  "data-icon" =>"delete" %>
 </div>
+<%= kine_debut_contenu_onglets_m %>
+
+	<%= kine_debut_contenu_onglet_m 1 %>
+		<h2>Here is the first tab</h2>
+	<%= kine_fin_contenu_onglet_m 1 %>
+
+	<%= kine_debut_contenu_onglet_m 2 %>
+		<h2>Here is the second tab</h2>
+	<%= kine_fin_contenu_onglet_m 2 %>
+	
+	<%= kine_debut_contenu_onglet_m 3 %>
+		<h2>Here is the third tab</h2>
+	<%= kine_fin_contenu_onglet_m 3 %>
+<%= kine_fin_contenu_onglets_m %>

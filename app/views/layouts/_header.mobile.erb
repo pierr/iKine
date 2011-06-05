@@ -1,5 +1,6 @@
-<header data-role="header">
-<nav  data-role="navbar">
+<header data-role="header" data-id="headerPrincipal" data-position="fixed"  role="contentinfo"  data-add-back-btn="true">
+<h1>iKine</h1>
+<nav  data-role="navbar" data-id="navBarHaut">
 			<ul>
 				<li><%= link_to "Home", root_path , "data-icon" => "home"%></li>
 				<% if signed_in? %>
@@ -12,7 +13,7 @@
 			</ul>
   </nav>
 
-<nav  data-role="navbar">
+<nav  data-role="navbar" data-id="navBarEntite">
 	<% if signed_in? %>
 		<ul>
 			<li><%= link_to "Patients", patients_path %></li>
@@ -21,5 +22,4 @@
 		</ul>
 	<% end %>
 </nav>
-
 </header>

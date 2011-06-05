@@ -1,7 +1,4 @@
 <h1><%= @title%></h1>
- <%= render :partial => 'session' %>
-<ul>
-	<li class="arrow">
-		<%= link_to "Nouvel Utilisateur", new_user_path %>
-	</li>
-</ul>
+<%= render :partial => 'session' %>
+<%= link_to "Nouvel Utilisateur", new_user_path ,"data-role" => "button",  "data-icon" => "plus", "data-iconpos" =>"right"%>
+
