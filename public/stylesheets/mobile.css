@@ -1,0 +1,8 @@
+/*Ceci ets utile pour le jquery tabs mobile qui est dans maobil.js*/
+.ui-tabs-content {
+  display: none;
+  margin-top: -15px;
+}
+.ui-tabs-content-active {
+  display: block;
+}

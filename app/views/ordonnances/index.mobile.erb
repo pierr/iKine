@@ -2,4 +2,4 @@
 <div id = "ordonnances">
 	<%=render 'ordonnances'%>
 </div>
-<ul><li class="arrow"><%= link_to "Créer ordonnance", new_ordonnance_path %></li></ul>
+<%= link_to "Créer ordonnance", new_ordonnance_path , "data-role" => "button", "data-icon" => "plus", "data-iconpos" =>"right"%>
