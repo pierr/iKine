@@ -28,6 +28,10 @@ module ApplicationHelper
    ## METHODES POUR LES ONGLETS ##
    ###############################
    
+   ###############################
+   ### Pour les onglets desktops##
+   ###############################
+   
    #Methode qui permet de generer des onglets portant le nom de ceux presents dans le tableau qu'on passe en parametre
    #par defaut on prend le premier
    #  -onglets est un tableau de string qui contient le nom de chaque onglets
@@ -78,6 +82,52 @@ module ApplicationHelper
    def fin_contenu_onglet(num_onglet)
      return "</div> <!-- fin de l onglet #{num_onglet}-->".html_safe
    end
+   
+   
+   ##################################################################
+   ### Pour les onglets Mobiles ( mêmes mathodes avec _m à la fin)###
+   ##################################################################
+   def kine_onglets_m(onglets, selected = 1)
+      html_a_rendre = "
+        <div data-role='tabs'> <!--Debut des onglets -->
+     		  <ul>".html_safe
+       i = 1
+      onglets.each do |onglet|
+       if i == selected
+         html_a_rendre = html_a_rendre+"<li><a href='#tab-#{i}' class='ui-btn-active'>#{onglet}</a></li>".html_safe
+       else
+         html_a_rendre = html_a_rendre+"<li><a href='#tab-#{i}'>#{onglet}</a></li>".html_safe
+       end
+       html_a_rendre = html_a_rendre+" <!-- Onglet numero #{i} -->".html_safe
+       i=i+1
+      end
+      html_a_rendre = html_a_rendre+"<div class='clear'></div>
+      	  </ul>
+       </div> <!-- Fin des onglets -->
+      ".html_safe
+     return html_a_rendre
+    end
+
+    #Methode a appeler avant de commencer a faire les contenus des onglets
+    def kine_debut_contenu_onglets_m
+     return 	"<div data-role ='content'> <!-- Debut des contenus des onglets-->".html_safe
+    end
+
+    #Methode a appeler une fois qu'on a fini d'éditer les contenus des onglets
+    def kine_fin_contenu_onglets_m
+     return "</div> <!-- fin des contenus des onglet-->".html_safe
+    end
+
+    #methode qui permet de commencer le contenu d'un onglet 
+    #  -num_onglet est le numero de l'onglet qu'on veut définir 
+    def kine_debut_contenu_onglet_m num_onglet
+      "<div id='tab-#{num_onglet}' <!--<Debut de l onglet #{num_onglet}-->".html_safe
+    end
+
+    #Methode à appeler à la fin du remplissage du contenu d'un onglet 
+    def kine_fin_contenu_onglet_m num_onglet
+      return "</div> <!-- fin de l onglet #{num_onglet}-->".html_safe
+    end
    
    ######################################
    ## FIN DESMETHODES POUR LES ONGLETS ##
