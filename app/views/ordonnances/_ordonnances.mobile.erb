@@ -1,17 +1,10 @@
-<%= hidden_field_tag :direction, params[:direction] %>
-<%= hidden_field_tag :sort, params[:sort] %>
-<table class="pretty">
-  <tr>
-    <th><%= sortable "numero"%></th>
-    <th><%= sortable "pathologie"%></th>
-    <th><%= sortable "date" ,"Date d'emission"%></th>
-  </tr>
-  <% for ordonnance in @ordonnances %>
-    <tr>
-      <td><%= link_to ordonnance.numero, ordonnance_path(ordonnance) %></td>
-      <td><%= ordonnance.pathologie %></td>
-      <td><%= ordonnance.date %></td>
-    </tr>
+<div data-role="content">	
+  <ul data-role="listview" data-filter="true"	>  
+<% for ordonnance in @ordonnances %>
+    <li>
+      <%= link_to ordonnance.numero, ordonnance_path(ordonnance) %>
+       <%= ordonnance.pathologie %>
+       <%= ordonnance.date %>
+    </li>
   <% end %>
-</table>
-<%= will_paginate @ordonnances%>
+</ul>
