@@ -1,16 +1,32 @@
 <%= kine_onglets_m @onglets, @onglet_selected %>
-<div data-role='controlgroup' data-type='horizontal'>
-	<%= link_to "Modifier", edit_ordonnance_path(@ordonnance), "data-role" => "button" , "data-icon" => "gear"%>
-	<%= link_to "Supprimer", @ordonnance, :method => :delete,
-								   	  :confirm => "Etes vous certain?",
-                          	  	      :title => "Supprimer l'ordonnance #{@ordonnance.numero}" ,
-									  "data-role" => "button" , 
-									  "data-icon" =>"delete" %>
-</div>
+
 <%= kine_debut_contenu_onglets_m %>
 
-	<%= kine_debut_contenu_onglet_m 1 %>
-		<h2>Here is the first tab</h2>
+	<%= kine_debut_contenu_onglet_m 1 %>	
+	  <div data-role="fieldcontain">
+		<strong>Numero</strong> 
+	   	<%=  @ordonnance.numero %>
+		<br />
+	</div>
+	<div data-role="fieldcontain">
+		<strong>Pathologie</strong>
+    	<%=  @ordonnance.pathologie %>
+  		<br />
+	</div>
+	<div data-role="fieldcontain">
+		<strong>Date</strong>
+    	<%=  @ordonnance.date %>
+  		<br />
+	</div>
+	<div data-role="fieldcontain">
+		<strong>Caisse</strong> <%=  @ordonnance.caisse %>
+	  	<br />
+	</div>
+	<div data-role="fieldcontain">
+		<strong>Mutuelle</strong>
+    	<%=  @ordonnance.mutuelle %>
+		<br />
+		</div>
 	<%= kine_fin_contenu_onglet_m 1 %>
 
 	<%= kine_debut_contenu_onglet_m 2 %>
@@ -21,3 +37,11 @@
 		<h2>Here is the third tab</h2>
 	<%= kine_fin_contenu_onglet_m 3 %>
 <%= kine_fin_contenu_onglets_m %>
+<div data-role='controlgroup' data-type='horizontal'>
+	<%= link_to "Modifier", edit_ordonnance_path(@ordonnance), "data-role" => "button" , "data-icon" => "gear"%>
+	<%= link_to "Supprimer", @ordonnance, :method => :delete,
+								   	  :confirm => "Etes vous certain?",
+                          	  	      :title => "Supprimer l'ordonnance #{@ordonnance.numero}" ,
+									  "data-role" => "button" , 
+									  "data-icon" =>"delete" %>
+</div>

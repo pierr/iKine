@@ -1,7 +1,7 @@
 /*Ceci ets utile pour le jquery tabs mobile qui est dans maobil.js*/
 .ui-tabs-content {
   display: none;
-  margin-top: -15px;
+  margin-top: +15px;/*Avant c'était -15*/
 }
 .ui-tabs-content-active {
   display: block;

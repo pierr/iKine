@@ -3,7 +3,7 @@
 	<head>
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= render 'layouts/stylesheets' %>
-    <%= javascript_include_tag "jquery.js","/jquery.mobile-1.0a4.1/jquery.mobile-1.0a4.1.js", "mobile" %>
+    <%= javascript_include_tag "jquery.js","/jquery.mobile-1.0a4.1/jquery.mobile-1.0a4.1.js", "mobile" , "rails.validations", "rails.validations.custom"%>
     <%= yield(:head) %>
   </head>
   <body>
@@ -11,7 +11,7 @@
 		<%= link_to "Site complet", root_url(:mobile => 0), :class => "button", :rel => "external" %>
 		 <%= render 'layouts/header' %><!-- /header -->
 		 <% unless flash.empty? %>
-	        <div class="info">
+	        <div class="info" >
 	        <%- flash.each do |name, msg| -%>
 	          <%= content_tag :div, msg, :id => "flash_#{name}" %>
 	        <%- end -%>

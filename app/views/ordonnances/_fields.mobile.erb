@@ -1,58 +1,54 @@
-<%= render 'shared/error_messages', :object => f.object %>
+<%= kine_onglets_m @onglets, @onglet_selected%>
 
-<%=onglets @onglets, @onglet_selected%>
-
-<%=debut_contenu_onglets%> 
-	<%=debut_contenu_onglet 1, true%> 
-		<div class="field">
-    		<%= f.label :numero %><br />
+<%= kine_debut_contenu_onglets_m %> 
+	<%= kine_debut_contenu_onglet_m 1%> 
+		<div class="fieldcontain">
+    		<%= f.label :numero %>
     		<%= f.text_field :numero %>
   		</div>
-		<div class="field">
-    		<%= f.label :user_tokens, "Praticiens" %><br />
+		<div data-role="fieldcontain">
+    		<%= f.label :user_tokens, "Praticiens" %>
     		<%= f.text_field :user_tokens, "data-pre" => @ordonnance.users.to_json  %>
   		</div>
- 		<div class="field">
-    		<%= f.label :pathologie %><br />
+		<div data-role="fieldcontain">
+    		<%= f.label :pathologie %>
     		<%= f.text_field :pathologie %>
   		</div>
-  		<div class="field">
-			<%= f.label :date %><br />
+		<div data-role="fieldcontain">
+			<%= f.label :date %>
  			<%= f.date_select :date %>
   		</div>
-  		<div class="field">
-			<%= f.label :caisse %><br />
+		<div data-role="fieldcontain">
+			<%= f.label :caisse %>
 			<%= f.select :caisse, [['Secu', 1], ['Smerep', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un 	collection_select -->
   		</div>
-  		<div class="field">
-			<%= f.label :mutuelle %><br />
+		<div data-role="fieldcontain">
+			<%= f.label :mutuelle %>
 			<%= f.select :mutuelle, [['Smam', 1], ['mutuelle', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
   		</div>
-	<%= fin_contenu_onglet 1%>
+	<%= kine_fin_contenu_onglet_m 1%>
 	
-	<%= debut_contenu_onglet 2%>
-  		<div class="field">
-			<%= f.label :prise_en_charge %><br />
+	<%= kine_debut_contenu_onglet_m 2%>
+  		<div class="fieldcontain">
+			<%= f.label :prise_en_charge %>
  			<%= f.select :prise_en_charge, [['Prise en charge 1', 1], ['Prise en charge 2', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
   		</div>
-  		<div class="field">
-			<%= f.label :type_prise_en_charge , "Type de prise en charge"%><br />
+		<div data-role="fieldcontain">
+			<%= f.label :type_prise_en_charge , "Type de prise en charge"%>
  			<%= f.select :type_prise_en_charge, [['100%', 1], ['20%', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
   		</div>
-
-  		<div class="field">
-			<%= f.label :nombre_seances, "Nombre de séances" %><br />
+		<div data-role="fieldcontain">
+			<%= f.label :nombre_seances, "Nombre de séances" %>
  			<%= f.number_field :nombre_seances %>
   		</div>
-
-  		<div class="field">
-			<%= f.label :paye, "Seance Paye ?" %><br />
+		<div data-role="fieldcontain">
+			<%= f.label :paye, "Seance Paye ?" %>
  			<%= f.check_box :paye %>
   		</div>
-   		<div class="field">
-			<%= f.label :bilan %><br />
+		<div data-role="fieldcontain">
+			<%= f.label :bilan %>
  			<%= f.text_area :bilan %>
   		</div>
-		<%= fin_contenu_onglet 2%>
+		<%= kine_fin_contenu_onglet_m 2%>
 		
-<%= fin_contenu_onglets%>
+<%= kine_fin_contenu_onglets_m%>
