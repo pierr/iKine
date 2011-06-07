@@ -1,9 +1,10 @@
 <%= render 'shared/error_messages', :object => f.object %>
 
-<%=onglets @onglets, @onglet_selected%>
+<%=kine_onglets @onglets, @onglet_selected%>
 
-<%=debut_contenu_onglets%> 
-	<%=debut_contenu_onglet 1, true%> 
+<%=kine_debut_contenu_onglets%> 
+	<%=kine_debut_contenu_onglet 1, true%> 
+		
 		<div class="field">
     		<%= f.label :numero %><br />
     		<%= f.text_field :numero %>
@@ -28,9 +29,9 @@
 			<%= f.label :mutuelle %><br />
 			<%= f.select :mutuelle, [['Smam', 1], ['mutuelle', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
   		</div>
-	<%= fin_contenu_onglet 1%>
+	<%= kine_fin_contenu_onglet 1%>
 	
-	<%= debut_contenu_onglet 2%>
+	<%= kine_debut_contenu_onglet 2%>
   		<div class="field">
 			<%= f.label :prise_en_charge %><br />
  			<%= f.select :prise_en_charge, [['Prise en charge 1', 1], ['Prise en charge 2', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
@@ -53,6 +54,6 @@
 			<%= f.label :bilan %><br />
  			<%= f.text_area :bilan %>
   		</div>
-		<%= fin_contenu_onglet 2%>
+		<%= kine_fin_contenu_onglet 2%>
 		
-<%= fin_contenu_onglets%>
+<%= kine_fin_contenu_onglets%>
