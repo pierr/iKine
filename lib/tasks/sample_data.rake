@@ -1,16 +1,17 @@
 require 'faker'
 
 namespace :db do
-  desc "Rempli la base avec pleins de faux trucs en appelant les autres taches de ce fichier apres avoir vider la base"
+  desc "Remplit la base avec pleins de faux trucs en appelant les autres taches de ce fichier apres avoir vider la base"
   task :populate => :environment do  
     Rake::Task['db:reset'].invoke
     Rake::Task['db:populate_users'].invoke
     Rake::Task['db:populate_ordonnances'].invoke
     Rake::Task['db:populate_ville'].invoke
+    Rake::Task['db:populate_seances'].invoke
   end
 end
 namespace :db do
-  desc "Rempli la base avec de faux utilisateurs"
+  desc "Remplit la base avec de faux utilisateurs"
   task :populate_users => :environment do
     admin = User.create!(:nom => "Besson",
                  :prenom => "Pierre",
@@ -60,10 +61,21 @@ namespace :db do
   end
 end
 namespace :db do
-  desc "Rempli la base avec des villes"
+  desc "Remplit la base avec des villes"
   task :populate_ville => :environment do  
     99.times do |n|
       Ville.create(:nom => Faker::Name.name)
+    end
+  end
+end
+
+namespace :db do
+  desc "Remplit la base avec des seances"
+  task :populate_seances => :environment do
+    4.times do |n|
+      Seance.create(:date_debut => Date.today,
+                    :commentaire => "Lorem ipsum blablabla"
+      )
     end
   end
 end

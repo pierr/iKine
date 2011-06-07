@@ -12,6 +12,7 @@ class SeancesController < ApplicationController
   
   def index
     @title = "Rechercher une/des seance(s)"
+    @seances = Seance.all
   end
  
   def create

@@ -1,4 +1,7 @@
 <h1><%= @title%></h1>
+<div id = "seances">
+	<%=render 'seances'%>
+</div>
 <div class="actions">
-	<%= link_to "Créer une séance" , new_seance_path  , :class => "signup_button round" %>
+	<%= add_button_link_to "Créer une seance", new_seance_path %>
 </div>

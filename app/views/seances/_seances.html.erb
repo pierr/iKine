@@ -1,0 +1,16 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="pretty">
+  <tr>
+    <th><%=  "id"%></th>
+    <th><%=  "commentaires"%></th>
+    <th><%=  "Date debut"%></th>
+  </tr>
+  <% for seance in @seances %>
+    <tr>
+      <td><%= link_to seance.id, seance_path(seance) %></td>
+      <td><%= seance.commentaire %></td>
+      <td><%= seance.date_debut %></td>
+    </tr>
+  <% end %>
+</table>
