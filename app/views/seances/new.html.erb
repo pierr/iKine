@@ -1,10 +1,11 @@
-<h1>Seances#new</h1>
+<h1> <%=@title%> </h1>
+<p>Find me in app/views/seances/edit.html.erb</p>
+
 <%= form_for(@seance) do |f| %>
-  <div class="field">
-    <%= f.label :commentaire %><br />
-    <%= f.text_field :commentaire %>
-  </div>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <%= render 'fields', :f=>f%>
+
   <div class="actions">
-    <%= f.submit "S'inscrire" %>
+    <%= f.submit "Créer", :class => "button" %>
   </div>
 <% end %>

@@ -1,0 +1,16 @@
+<%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+   <%=fields_for @patient , {} do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
+   <%= kine_text_fied_edit(t , :nom) %>
+ 
+    <%= f.label :Date %>
+    <%= f.text_field :date_debut %></br>
+
+    <%= f.label :Duree %>
+    <%= f.text_field :duree %></br>
+
+    <%= f.label :Commentaires %>
+    <%= f.text_field :commentaire %>
+
+   <%end%>
+   </div>
