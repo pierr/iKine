@@ -8,6 +8,8 @@ namespace :db do
     Rake::Task['db:populate_ordonnances'].invoke
     Rake::Task['db:populate_ville'].invoke
     Rake::Task['db:populate_seances'].invoke
+    Rake::Task['db:populate_departement'].invoke
+    Rake::Task['db:populate_code_insee_postal'].invoke
   end
 end
 namespace :db do
@@ -60,14 +62,6 @@ namespace :db do
     end
   end
 end
-namespace :db do
-  desc "Remplit la base avec des villes"
-  task :populate_ville => :environment do  
-    99.times do |n|
-      Ville.create(:nom => Faker::Name.name)
-    end
-  end
-end
 
 namespace :db do
   desc "Remplit la base avec des seances"
@@ -76,6 +70,36 @@ namespace :db do
       Seance.create(:date_debut => Date.today,
                     :commentaire => "Lorem ipsum blablabla"
       )
+    end
+  end
+end
+
+namespace :db do
+  desc "Remplit la base avec des departements"
+  task :populate_departement => :environment do  
+    99.times do |n|
+      Departement.create(:numero => n.to_s, :nom => Faker::Name.name.split[0])
+    end
+  end
+end
+namespace :db do
+  desc "Remplit la base avec des Villes"
+  task :populate_ville => :environment do  
+    99.times do |n|
+      Ville.create(:nom => Faker::Name.name.split[0])
+    end
+  end
+end
+namespace :db do
+  desc "Remplit la base avec des Codes Insee, Code Postal"
+  task :populate_code_insee_postal => :environment do  
+    99.times do |n|
+      CodeInsee.create :numero => n.to_s, 
+                     :ville_id => Ville.find(1+SecureRandom.random_number(90)).id,
+                     :departement_id => Departement.find(1+SecureRandom.random_number(90)).id
+                     
+      CodePostal.create :numero => n.to_s,
+                        :code_insee_id => CodeInsee.last.id
     end
   end
 end

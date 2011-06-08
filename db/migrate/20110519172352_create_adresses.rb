@@ -1,16 +1,10 @@
 class CreateAdresses < ActiveRecord::Migration
   def self.up
     create_table :adresses do |t|
-      
-      
-      t.string :nom
-      
-      t.references :ville
-      
-      
-      
-      
-
+      t.string :numero
+      t.string :rue
+      t.string :complement_adresse
+      t.references :code_postal
       t.timestamps
     end
   end

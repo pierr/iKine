@@ -1,20 +1,13 @@
 # == Schema Information
-# Schema version: 20110521192843
+# Schema version: 20110608103621
 #
 # Table name: villes
 #
-#  id             :integer         not null, primary key
-#  nom            :string(255)
-#  code_postal    :string(255)
-#  departement_id :integer
-#  created_at     :datetime
-#  updated_at     :datetime
+#  id  :integer         not null, primary key
+#  nom :string(255)
 #
 
 class Ville < ActiveRecord::Base
-  
-  belongs_to :departement
-  
-  has_many :adresses
-  
+  has_many :code_insees
+  has_many :code_postals, :through => :code_insees 
 end
