@@ -4,23 +4,13 @@
 
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
-		
+		<%= kine_text_fied_edit :numero %>
 		<div class="field">
-    		<%= f.label :numero %><br />
-    		<%= f.text_field :numero %>
-  		</div>
-		<div class="field">
-    		<%= f.label :user_tokens, "Praticiens" %><br />
-    		<%= f.text_field :user_tokens, "data-pre" => @ordonnance.users.to_json  %>
-  		</div>
- 		<div class="field">
-    		<%= f.label :pathologie %><br />
-    		<%= f.text_field :pathologie %>
-  		</div>
-  		<div class="field">
-			<%= f.label :date %><br />
- 			<%= f.date_select :date %>
-  		</div>
+	    	<%= f.label :user_tokens, "Praticiens" %><br />
+	    	<%= f.text_field :user_tokens, "data-pre" => @ordonnance.users.to_json  %>
+	  	</div>
+		<%= kine_text_fied_edit :pathologie %>
+		<%= kine_date_fied_edit :date %>
   		<div class="field">
 			<%= f.label :caisse %><br />
 			<%= f.select :caisse, [['Secu', 1], ['Smerep', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un 	collection_select -->

@@ -1,16 +1,12 @@
 <header>
   <%= link_to logo, root_path %>
   <nav >
-	<%= button_group do %>    
+	<%= minor_button_group do %>    
 		<%= pill_button_link_to "Home", root_path %>
       <% if signed_in? %>
-		<%= pill_button_link_to "Praticiens", users_path %>
 		<%= pill_button_link_to "Profile", current_user %>
  	  	<%= settings_pill_button_link_to "Param", edit_user_path(current_user) %>
-		<%= log_pill_button_link_to "Ordonnances", ordonnances_path %>
-		<%= user_pill_button_link_to "Patients", patients_path %>
-        <%= pill_button_link_to "Seances", seances_path %>
-      <% end%>
+      <% end %>
       <%= pill_button_link_to "Aide", help_path %>
       <% if signed_in? %>
       	<%= negative_pill_button_link_to "Sign out", signout_path, :method => :delete %>
@@ -19,5 +15,15 @@
       <% end %>
 	<% end %>
   </nav>
+  <nav ><!--Ici on fait un accès aux pages qui ont un réel contenu et une utilité métier-->
+	<% if signed_in? %>
+		<%= button_group do%>
+			<%= log_button_link_to "Ordonnances", ordonnances_path %>
+			<%= user_button_link_to "Patients", patients_path %>
+    		<%= button_link_to "Seances", seances_path %>    
+			<%= button_link_to "Praticiens", users_path %>
+		<% end %>
+	<% end %>
+  </nav>	
 </header>
 
