@@ -8,6 +8,7 @@ class SeancesController < ApplicationController
   def show
     @title = "Seance"
     @seance = Seance.find(params[:id])
+    @patient = Patient.new
   end
   
   def index

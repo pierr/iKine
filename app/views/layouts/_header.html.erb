@@ -9,7 +9,7 @@
  	  	<%= settings_pill_button_link_to "Param", edit_user_path(current_user) %>
 		<%= log_pill_button_link_to "Ordonnances", ordonnances_path %>
 		<%= user_pill_button_link_to "Patients", patients_path %>
-        <%= pill_button_link_to "Seances", seances_path %>
+        <%= calendar_pill_button_link_to "Seances", seances_path %>
       <% end%>
       <%= pill_button_link_to "Aide", help_path %>
       <% if signed_in? %>
