@@ -4,7 +4,7 @@ class CreateAdresses < ActiveRecord::Migration
       t.string :numero
       t.string :rue
       t.string :complement_adresse
-      t.references :code_postal
+      t.references :code_inse
       t.timestamps
     end
   end

@@ -33,8 +33,8 @@ class Ordonnance < ActiveRecord::Base
                   :mutuelle,
                   :user_tokens
   attr_reader :user_tokens
-  belongs_to :patient
-  belongs_to :medecin
+  belongs_to :patient , :validate => true
+  belongs_to :medecin, :validate => true
   has_many :seances
   has_many :user_ordonnances
   has_many :users, :through => :user_ordonnances 
@@ -46,9 +46,9 @@ class Ordonnance < ActiveRecord::Base
             :presence   =>true,
             :uniqueness =>true
   
-  validates_presence_of :pathologie, :date, :nombre_seances
+  validates_presence_of  :date, :nombre_seances#FIXME PIERRE JE NE COMPRENDS PAS POURQUOI ca ne fonctionne pas avec a, :patient_id, :medecin_id
   
-  validates_associated :patient, :medecin, :seances #s'assurer que les objets liés existent bien
+  validates_associated :seances #s'assurer que les objets liés existent bien
  
  #Methode qui permet de rechercher des ordonnances
   def self.search(search)

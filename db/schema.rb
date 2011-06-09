@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20110608103621) do
     t.string   "numero"
     t.string   "rue"
     t.string   "complement_adresse"
-    t.integer  "code_postal_id"
+    t.integer  "code_inse_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20110608103621) do
     t.boolean  "paye"
     t.boolean  "a_domicile"
     t.integer  "ordonnance_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

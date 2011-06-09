@@ -178,20 +178,19 @@ module ApplicationHelper
      resultat = head + label + field + tail
      return resultat.html_safe
    end
-   	<div class="field">
-		<%= f.label :mutuelle %><br />
-		<%= f.select :mutuelle, [['Smam', 1], ['mutuelle', 2]] %> <!--TODO: Mapper avec uen table de prise en charge plutot avec un collection_select -->
-		</div>
-		def kine_select_edit(f, champ_de_f,  collection , display = false, readonly = false)
-      head = "<div class=\"field\">"
-      label = getLabel(f, champ_de_f, display)
-      field = "#{f.select champ_de_f,"
-      for
-      field+= ",  {}, {:disabled => readonly})}"
-      tail = "</div>"
-      resultat = head + label + field + tail
-      return resultat.html_safe
-    end
+
+#Don't wrk
+		#def kine_select_edit(f, champ_de_f,  collection , display = false, readonly = false)
+     # head = "<div class=\"field\">"
+      #label = getLabel(f, champ_de_f, display)
+      #field = "#{f.select champ_de_f,"
+      #for
+      #field+= ",  {}, {:disabled => readonly})}"
+      #tail = "</div>"
+      #resultat = head + label + field + tail
+      #return resultat.html_safe
+    #end
+
 
 
 

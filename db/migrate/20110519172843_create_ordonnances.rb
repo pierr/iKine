@@ -12,21 +12,11 @@ class CreateOrdonnances < ActiveRecord::Migration
       t.string :bilan
       t.string :caisse
       t.string :mutuelle
-      
-      
       t.references :patient
-      t.references :medecin
-      
-      
-      
-      
-      
-      
-      
-      
+      t.references :medecin 
       t.timestamps
     end
-    add_index :ordonnances, :patient_id #FIXME : audric => Pourquoi il y a un index sur les patient id => Un patient peut avoir plusieurs ordonnances non?
+   # add_index :ordonnances, :patient_id #FIXME : audric => Pourquoi il y a un index sur les patient id => Un patient peut avoir plusieurs ordonnances non?
     add_index :ordonnances, :numero   
   end
 

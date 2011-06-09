@@ -11,8 +11,8 @@
 
 class CodeInsee < ActiveRecord::Base
   has_many :code_postals
-  has_one :departement ,:validate => true
-  has_one :ville, :validate => true
+  belongs_to :departement ,:validate => true
+  belongs_to :ville, :validate => true
   validates_presence_of :ville_id, :departement_id  
   code_insee_regex =/^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/
   validate :numero , :presence => true ,

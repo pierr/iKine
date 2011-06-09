@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110521192843
+# Schema version: 20110608103621
 #
 # Table name: users
 #
@@ -75,6 +75,14 @@ class User < ActiveRecord::Base
     def self.search(query)
       if !query.to_s.strip.empty?
             tokens = query.split.collect {|c| "%#{c.downcase}%"}
+      end
+    end
+    
+    def self.search_all(search)
+      if search
+        where('nom LIKE ?', "%#{search}%")
+      else
+        scoped #Comme all mais ne fait pas la requete
       end
     end
     
