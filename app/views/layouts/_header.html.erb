@@ -7,7 +7,6 @@
 		<%= pill_button_link_to "Profile", current_user %>
  	  	<%= settings_pill_button_link_to "Param", edit_user_path(current_user) %>
       <%= pill_button_link_to "Aide", help_path %>
-      <% if signed_in? %>
       	<%= negative_pill_button_link_to "Sign out", signout_path, :method => :delete %>
       <% else %>
       	<%= positive_pill_button_link_to "Sign in", signin_path %>
@@ -26,4 +25,3 @@
   </nav>	
 </header>
 <br />
-
