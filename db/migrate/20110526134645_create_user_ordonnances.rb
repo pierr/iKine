@@ -1,8 +1,8 @@
 class CreateUserOrdonnances < ActiveRecord::Migration
   def self.up
     create_table :user_ordonnances do |t|
-      t.integer :user_id
-      t.integer :ordonnance_id
+      t.references :user
+      t.references :ordonnance
       t.timestamps
     end
   end

@@ -32,8 +32,11 @@ class Ordonnance < ActiveRecord::Base
                   :caisse,
                   :mutuelle,
                   :user_tokens,
-                  :patient_token
-  attr_reader :user_tokens, :patient_token
+                  :patient_token,
+                  :medecin_token
+  attr_reader :user_tokens,
+              :patient_token, 
+              :medecin_token
   belongs_to :patient , :validate => true
   belongs_to :medecin, :validate => true
   has_many :seances
@@ -66,4 +69,8 @@ class Ordonnance < ActiveRecord::Base
   def patient_token=(id)
     self.patient_id = id
   end
+  def medecin_token=(id)
+    self.medecin_id = id
+  end
+  
 end

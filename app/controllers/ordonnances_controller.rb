@@ -10,12 +10,15 @@ class OrdonnancesController < ApplicationController
     @title = "Ordonnances | Mode creation" 
     @ordonnance = Ordonnance.new
     patient
+    medecin
     
   end
 
   #visualiser une ordonnance
   def show
     ordonnance 
+    patient
+    medecin
     @title = "Ordonnance"
   end
 
@@ -28,6 +31,8 @@ class OrdonnancesController < ApplicationController
   #Modifier une ordonnance
   def edit
     ordonnance
+    patient
+    medecin
     @title = "Modification de l'ordonnance"
   end
   
@@ -94,6 +99,16 @@ class OrdonnancesController < ApplicationController
     else
       @patient = Patient.last
     end
-    @patientsList = Patient.limit(5)
+    @patient_pre = [@patient]
+  end
+  def medecin
+    if !@ordonnance.medecin.nil?
+      @medecin = @ordonnance.medecin
+    elsif !params[:medecin].nil?
+      @medecin = params[:medecin]
+    else
+      @medecin = Medecin.last
+    end
+    @medecin_pre = [@medecin]
   end
 end

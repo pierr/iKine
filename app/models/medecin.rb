@@ -19,4 +19,17 @@ class Medecin < ActiveRecord::Base
   #validates_presence :adresse_id, :civilite_id
   has_many :patients
   has_many :ordonnances
+  #@override une methode par défaut mais cette methode permet de définir le fichier.json
+  #pour un user qui sera appellé pour l'auto completion
+  # options => sont les options qu'on peut vouloir donner 
+  def as_json(options)
+   { 
+     :id => id,
+     :name => name
+   }
+  end
+  private 
+  def name
+  "#{prenom} #{nom}"
+  end
 end

@@ -48,25 +48,39 @@ $(function() {
 });
 
 /**
-*Cette fonction sert à avoir l'auto-complétion pour un formulaire multi-liaison user ordonnance
-*/
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire multi-liaison user ordonnance
+ */
 $(function() {
   $("#ordonnance_user_tokens").tokenInput("/users.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_user_tokens").data("pre"),
     theme: "facebook",
+	preventDuplicates: true
 	/*tokenLimit: 2 le nombre max qu'on autorise*/
   });
 });
 
 /**
-*Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison user patient
-*/
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison ordonnance patient
+ */
 $(function() {
   $("#ordonnance_patient_token").tokenInput("/patients.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_patient_token").data("pre"),
     theme: "facebook",
-	tokenLimit: 1/* le nombre max qu'on autorise*/
+	tokenLimit: 1,
+	preventDuplicates: true/* le nombre max qu'on autorise*/
+  });
+});
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison user patient
+ */
+$(function() {
+  $("#ordonnance_medecin_token").tokenInput("/medecins.json", {
+    crossDomain: false,
+    prePopulate: $("#ordonnance_medecin_token").data("pre"),
+    theme: "facebook",
+	tokenLimit: 1,
+	preventDuplicates: true/* le nombre max qu'on autorise*/
   });
 });

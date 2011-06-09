@@ -1,5 +1,13 @@
 KineApp::Application.routes.draw do
 
+  get "medecins/new"
+
+  get "medecins/show"
+
+  get "medecins/edit"
+
+  get "medecins/index"
+
   get "ordonnances/new"
 
   get "ordonnances/show"
@@ -37,6 +45,7 @@ end
   resources :seances
   resources :sessions, :only => [:new, :create, :destroy]
   resources :ordonnances
+   resources :medecins  
   #This has to be solve this is not correct
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

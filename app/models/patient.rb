@@ -19,7 +19,7 @@
 #
 
 class Patient < ActiveRecord::Base
-  
+  attr_writer :name
   belongs_to :civilite
   belongs_to :adresse
   belongs_to :medecin
@@ -40,7 +40,6 @@ class Patient < ActiveRecord::Base
      }
     end
     private
-    
     def name
       "#{prenom} #{nom}"
     end
