@@ -17,7 +17,7 @@ class CreatePatients < ActiveRecord::Migration
       t.references :civilite
       t.references :adresse
       t.references :medecin
-
+      t.references :carte_vitale
       
       
       t.timestamps

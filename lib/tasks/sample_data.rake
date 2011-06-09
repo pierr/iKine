@@ -68,7 +68,7 @@ namespace :db do
                          :patient => Patient.last,#find(1+SecureRandom.random_number(900)),
                          :medecin => Medecin.last#find(1+SecureRandom.random_number(90))
                          )
-      puts o.errors                   
+      #puts o.errors                   
     end
   end
 end
@@ -156,7 +156,7 @@ namespace :db do
   end
 end 
 namespace :db do
-  desc "Remplit la base patient"
+  desc "Remplit la base patient et de carte vitale"
   task :populate_patient => :environment do  
     999.times do |n|
       nomprenom  = Faker::Name.name.split
@@ -164,13 +164,14 @@ namespace :db do
       prenom = nomprenom[1]
       email = Faker::Internet.email
       telephone = Faker::PhoneNumber.phone_number
-     Patient.create :nom => nom,
+      CarteVitale.create :numero_secu => "111100000000X00100#{n}"
+      Patient.create :nom => nom,
                     :prenom => prenom,
                     :email => email,
                     :telephone => telephone,
                     :adresse => Adresse.find(1 + SecureRandom.random_number(900)),
-                    :date_naissance => Date.today
-                    
+                    :date_naissance => Date.today,
+                    :carte_vitale => CarteVitale.last             
     end
   end
 end

@@ -23,6 +23,7 @@ class Patient < ActiveRecord::Base
   belongs_to :civilite
   belongs_to :adresse
   belongs_to :medecin
+  belongs_to :carte_vitale
   
   has_many :ordonnances , :dependent => :destroy #empeche la destruction du patient si il y a encore une ordonnance qui lui est ié
   has_many :rdvs
