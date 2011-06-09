@@ -180,7 +180,7 @@ module ApplicationHelper
    end
 
 #Don't wrk
-		#def kine_select_edit(f, champ_de_f,  collection , display = false, readonly = false)
+		#def kine_ , ,: ,:select_edit(f, champ_de_f,  collection , display = false, readonly = false)
      # head = "<div class=\"field\">"
       #label = getLabel(f, champ_de_f, display)
       #field = "#{f.select champ_de_f,"

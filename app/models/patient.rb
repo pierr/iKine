@@ -30,5 +30,19 @@ class Patient < ActiveRecord::Base
   
   
   validates :nom, :presence =>true
+   #@override une methode par défaut mais cette methode permet de définir le fichier.json
+    #pour un user qui sera appellé pour l'auto completion
+    # options => sont les options qu'on peut vouloir donner 
+    def as_json(options)
+     { 
+       :id => id,
+       :name => name
+     }
+    end
+    private
+    
+    def name
+      "#{prenom} #{nom}"
+    end
   
 end

@@ -9,6 +9,8 @@ class OrdonnancesController < ApplicationController
     @onglet_selected = 1
     @title = "Ordonnances | Mode creation" 
     @ordonnance = Ordonnance.new
+    patient
+    
   end
 
   #visualiser une ordonnance
@@ -81,5 +83,17 @@ class OrdonnancesController < ApplicationController
   end
   def ordonnance
     @ordonnance = Ordonnance.find(params[:id])
+  end
+  
+  #Permet de charger le patient si il est definie sinon on charge le dernier cree par defaut
+  def patient
+    if !@ordonnance.patient.nil?
+      @patient = @ordonnance.patient
+    elsif !params[:patient].nil?
+      @patient = params[:patient]
+    else
+      @patient = Patient.last
+    end
+    @patientsList = Patient.limit(5)
   end
 end

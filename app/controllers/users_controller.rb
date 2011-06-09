@@ -28,12 +28,13 @@ class UsersController < ApplicationController
       @title = "All users"
       @users = User.paginate(:page => params[:page])
       end
-      usersNom = User.where("nom like ?", "%#{params[:q]}%")
-      usersPrenom = User.where("prenom like ?", "%#{params[:q]}%")
-      @usersJson = usersNom | usersPrenom
       respond_to do |format|
           format.html
-          format.json { render :json => @usersJson.as_json #.map(&:attributes)
+          format.json { 
+            usersNom = User.where("nom like ?", "%#{params[:q]}%")
+            usersPrenom = User.where("prenom like ?", "%#{params[:q]}%")
+            @usersJson = usersNom | usersPrenom
+            render :json => @usersJson.as_json #.map(&:attributes)
       }
       end
   end

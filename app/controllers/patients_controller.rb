@@ -3,6 +3,15 @@ class PatientsController < ApplicationController
   def index
     @title = "mode all"
     @patients = Patient.paginate :page => params[:page] , :per_page => 1
+        respond_to do |format|
+        format.html
+        format.json { 
+          patientsNom = Patient.where("nom like ?", "%#{params[:q]}%")
+          patientsPrenom = Patient.where("prenom like ?", "%#{params[:q]}%")
+          @patientsJson =patientsNom | patientsPrenom
+          render :json => @patientsJson.as_json #.map(&:attributes)
+    }
+    end
   end
   
   def show
