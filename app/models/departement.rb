@@ -1,17 +1,13 @@
 # == Schema Information
-# Schema version: 20110521192843
+# Schema version: 20110608103621
 #
 # Table name: departements
 #
-#  id         :integer         not null, primary key
-#  numero     :string(255)
-#  nom        :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id     :integer         not null, primary key
+#  numero :string(255)
+#  nom    :string(255)
 #
 
 class Departement < ActiveRecord::Base
-  
-  has_many :villes
-  
+  has_many :code_insee , :validate => true
 end

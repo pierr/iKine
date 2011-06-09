@@ -1,19 +1,8 @@
 class CreateDepartements < ActiveRecord::Migration
   def self.up
     create_table :departements do |t|
-
-
       t.string :numero
       t.string :nom
-
-
-
-
-
-
-
-
-      t.timestamps
     end
   end
 

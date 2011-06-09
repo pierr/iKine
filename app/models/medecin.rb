@@ -14,11 +14,9 @@
 #
 
 class Medecin < ActiveRecord::Base
-  
   belongs_to :adresse
   belongs_to :civilite
-  
+  #validates_presence :adresse_id, :civilite_id
   has_many :patients
   has_many :ordonnances
-  
 end

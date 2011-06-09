@@ -179,6 +179,19 @@ module ApplicationHelper
      return resultat.html_safe
    end
 
+#Don't wrk
+		#def kine_select_edit(f, champ_de_f,  collection , display = false, readonly = false)
+     # head = "<div class=\"field\">"
+      #label = getLabel(f, champ_de_f, display)
+      #field = "#{f.select champ_de_f,"
+      #for
+      #field+= ",  {}, {:disabled => readonly})}"
+      #tail = "</div>"
+      #resultat = head + label + field + tail
+      #return resultat.html_safe
+    #end
+
+
 
 
   def getLabel(f, nom, display) # Cette méthode ne commence pas par "kine_" car elle n'est pas sencée être utilisée ailleurs que dans ce fichier.

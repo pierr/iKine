@@ -10,11 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110526134645) do
+ActiveRecord::Schema.define(:version => 20110608103621) do
 
   create_table "adresses", :force => true do |t|
-    t.string   "nom"
-    t.integer  "ville_id"
+    t.string   "numero"
+    t.string   "rue"
+    t.string   "complement_adresse"
+    t.integer  "code_inse_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,11 +27,20 @@ ActiveRecord::Schema.define(:version => 20110526134645) do
     t.datetime "updated_at"
   end
 
+  create_table "code_insees", :force => true do |t|
+    t.string  "numero"
+    t.integer "ville_id"
+    t.integer "departement_id"
+  end
+
+  create_table "code_postals", :force => true do |t|
+    t.string  "numero"
+    t.integer "code_insee_id"
+  end
+
   create_table "departements", :force => true do |t|
-    t.string   "numero"
-    t.string   "nom"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "numero"
+    t.string "nom"
   end
 
   create_table "medecins", :force => true do |t|
@@ -98,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20110526134645) do
     t.boolean  "paye"
     t.boolean  "a_domicile"
     t.integer  "ordonnance_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -124,11 +136,7 @@ ActiveRecord::Schema.define(:version => 20110526134645) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "villes", :force => true do |t|
-    t.string   "nom"
-    t.string   "code_postal"
-    t.integer  "departement_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "nom"
   end
 
 end
