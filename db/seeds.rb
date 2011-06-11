@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+#Civilites
+Civilite.create([{:nom => "Mr"}, {:nom => 'Mme'},{:nom => 'Mlle'}])
+
+

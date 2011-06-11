@@ -5,12 +5,18 @@
     <th><%= sortable "numero"%></th>
     <th><%= sortable "pathologie"%></th>
     <th><%= sortable "date" ,"Date d'emission"%></th>
+	<th><%= sortable "medecin"%></th>
+	<th><%= sortable "patient"%></th>
+	<th><%= sortable "nombre_seances"%></th>
   </tr>
   <% for ordonnance in @ordonnances %>
     <tr>
       <td><%= link_to ordonnance.numero, ordonnance_path(ordonnance) %></td>
       <td><%= ordonnance.pathologie %></td>
       <td><%= ordonnance.date %></td>
+	  <td><%= ordonnance.med %></td>
+	  <td><%= ordonnance.pat %></td>
+	  <td><%= ordonnance.nombre_seances %></td>
     </tr>
   <% end %>
 </table>

@@ -62,6 +62,21 @@ class Ordonnance < ActiveRecord::Base
       scoped #Comme all mais ne fait pas la requete
     end
   end
+  def med
+    if medecin.nil?
+      return " "
+    else
+      return "#{medecin.prenom} #{medecin.nom}"
+    end
+  end
+  def pat
+    if patient.nil?
+      return " "
+    else
+      return "#{patient.prenom} #{patient.nom}"
+    end
+  end
+  
   
   def user_tokens=(ids)
     self.user_ids = ids.split(",")
