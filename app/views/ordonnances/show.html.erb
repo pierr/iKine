@@ -5,6 +5,7 @@
  									  :class => "button",
 								   	  :confirm => "Etes vous certain?",
                           	  	      :title => "Supprimer l'ordonnance #{@ordonnance.numero}" %>
+<%= add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %>
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
 		<div class="field">
