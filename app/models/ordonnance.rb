@@ -33,12 +33,14 @@ class Ordonnance < ActiveRecord::Base
                   :mutuelle,
                   :user_tokens,
                   :patient_token,
-                  :medecin_token
+                  :medecin_token,
+                  :medecin,
+                  :patient
   attr_reader :user_tokens,
               :patient_token, 
               :medecin_token
-  belongs_to :patient , :validate => true
-  belongs_to :medecin, :validate => true
+  belongs_to :patient, :validate => true
+  belongs_to :medecin , :validate => true
   has_many :seances
   has_many :user_ordonnances
   has_many :users, :through => :user_ordonnances 
@@ -64,14 +66,14 @@ class Ordonnance < ActiveRecord::Base
   end
   def med
     if medecin.nil?
-      return " "
+      return "pas de medecin"
     else
-      return "#{medecin.prenom} #{medecin.nom}"
+      return "Dr #{medecin.prenom} #{medecin.nom}"
     end
   end
   def pat
     if patient.nil?
-      return " "
+      return "pas de patient"
     else
       return "#{patient.prenom} #{patient.nom}"
     end

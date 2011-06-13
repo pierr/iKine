@@ -75,6 +75,8 @@ class OrdonnancesController < ApplicationController
   private
   #trouve le nom de la colonne a trier
   def sort_column
+    puts "ORDONNANCE COLONNE NAME" 
+    puts Ordonnance.column_names
     Ordonnance.column_names.include?(params[:sort]) ? params[:sort] : "numero"
   end
   
