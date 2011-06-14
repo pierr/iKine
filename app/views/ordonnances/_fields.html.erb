@@ -8,10 +8,10 @@
 
  		<div class="field">
 		  <%= f.label :date %>
-	        <%= f.date_select :date %>
+	        <%= f.text_field :date , :class => 'datepicker'%>
 	    </div>
 		<div class="field">
-	    	<%= f.label :patient_token, "Patient" %><br />
+	    	<%= f.label :patient_token, "Patient" %>
 	    	<%= f.text_field :patient_token, "data-pre" => @patient_pre.to_json  %>
 	  	</div>
 		<%= kine_text_fied_edit f, :numero %>
@@ -26,11 +26,11 @@
 		<!-- Champ avec autocompletion-->
 	
 		<div class="field">
-	    	<%= f.label :medecin_token, "Medecin" %><br />
+	    	<%= f.label :medecin_token, "Medecin" %>
 	    	<%= f.text_field :medecin_token, "data-pre" => @medecin_pre.to_json  %>
 	  	</div>
   		<div class="field">
-			<%= f.label :nombre_seances, "Nombre de séances" %><br />
+			<%= f.label :nombre_seances, "Nombre de séances" %>
  			<%= f.number_field :nombre_seances %>
   		</div>
 		<!-- TODO: BOUTON ACCORD PREALABLE SECU-->

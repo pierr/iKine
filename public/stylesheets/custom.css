@@ -258,3 +258,254 @@ ul.users {
 .pretty th .desc {
   background-image: url(/images/down_arrow.gif);
 }
+/**************************/
+/*****DATE PICKER **********/
+/*
+ * jQuery UI Datepicker 1.8.13
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+.ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; }
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
+.ui-datepicker .ui-datepicker-prev { left:2px; }
+.ui-datepicker .ui-datepicker-next { right:2px; }
+.ui-datepicker .ui-datepicker-prev-hover { left:1px; }
+.ui-datepicker .ui-datepicker-next-hover { right:1px; }
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { display: block; position: absolute; left: 50%; margin-left: -8px; top: 50%; margin-top: -8px;  }
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select { font-size:1em; margin:1px 0; }
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;}
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 49%;}
+.ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
+.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
+.ui-datepicker td { border: 0; padding: 1px; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi { width:auto; }
+.ui-datepicker-multi .ui-datepicker-group { float:left; }
+.ui-datepicker-multi .ui-datepicker-group table { width:95%; margin:0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width:50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.3%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width:25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear:left; }
+.ui-datepicker-row-break { clear:both; width:100%; }
+
+/* RTL support */
+.ui-datepicker-rtl { direction: rtl; }
+.ui-datepicker-rtl .ui-datepicker-prev { right: 2px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next { left: 2px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-prev:hover { right: 1px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next:hover { left: 1px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane { clear:right; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button { float: left; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}/*
+/**************************/
+/*************************/
+/***** TEST FORM CSS3****/
+/************************/
+/*test form */
+/*body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{ margin:0; padding:0;}
+table{ border-collapse:collapse; border-spacing:0;}
+fieldset,img{ border:0;}*/
+address,caption,cite,code,dfn,th,var{ font-style:normal; font-weight:normal;}
+/*ol,ul{ list-style:none;}
+caption,th{ text-align:left;}
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}*¨/
+q:before,q:after{ content:'';}
+abbr,acronym{ border:0;}
+/*
+html {
+    overflow:-moz-scrollbars-vertical;
+}
+body{
+    background:#eee;
+    color:#333;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    line-height:16px;
+    text-shadow:0 1px 0 #fff;
+}*/
+a{
+    color:#333;
+    text-decoration:underline;
+}
+form{
+    background:#f7f7f7;
+    background:-moz-linear-gradient(90deg, #ccc, #fff); /* Firefox */
+    background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc)); /* Webkit */
+    border:1px solid #aaa;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-box-shadow:0 0 15px #aaa;
+    -webkit-box-shadow:0 0 15px #aaa;
+    margin:60px auto 0;
+    padding:20px;
+    width:600px;
+}
+/*h1{
+    border-bottom:1px solid #ccc;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}*/
+form p{
+    margin-bottom:20px;
+}
+form p:last-child{ /* Sélecteur avancé pour sélectionner le dernier paragraphe du formulaire */
+    margin-bottom:0;
+}
+label{
+    cursor:pointer;
+    display:block;
+    float:left;
+    font-size:13px;
+    font-weight:bold;
+    line-height:28px;
+    margin-bottom:5px;
+    width:120px;
+}
+form p:hover label{
+    color:#0459b7;
+}
+form p:hover label:after{
+    content:" »";
+}
+input[type=text],
+input[type=password]{
+    background: rgba(255, 255, 255, 0.9);
+    background:-moz-linear-gradient(90deg, #fff, #eee); /* Firefox */
+    background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff)); /* Webkit */
+    border:1px solid #aaa;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-box-shadow:0 0 3px #aaa;
+    -webkit-box-shadow:0 0 3px #aaa;
+    padding:5px;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+    border-color:#093c75;
+    -moz-box-shadow:0 0 3px #0459b7;
+    -webkit-box-shadow:0 0 3px #0459b7;
+    outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
+}
+select{
+    cursor:pointer;
+    padding:3px;
+    -moz-box-shadow:0 0 3px #aaa;
+    -webkit-box-shadow:0 0 3px #aaa;
+}
+select:active,
+select:focus{
+    border:1px solid #093c75;
+    -moz-box-shadow:0 0 3px #0459b7;
+    -webkit-box-shadow:0 0 3px #0459b7;
+    outline:none;
+}
+input[type=submit],
+a.submit{
+    background:#ddd;
+    background:-moz-linear-gradient(90deg, #0459b7, #08adff); /* Firefox */
+    background:-webkit-gradient(linear, left top, left bottom, from(#08adff), to(#0459b7)); /* Webkit */
+    border:1px solid #093c75;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-box-shadow:0 1px 0 #fff;
+    -webkit-box-shadow:0 1px 0 #fff;
+    color:#fff;
+    cursor:pointer;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    font-weight:bold;
+    margin-left:120px;
+    padding:5px 10px;
+    text-decoration:none;
+    text-shadow:0 1px 1px #333;
+    text-transform:uppercase;
+}
+input[type=submit]:hover,
+a.submit:hover{
+    background:#eee;
+    background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
+    background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+    border-color:#093c75;
+    text-decoration:none;
+}
+input[type=submit]:active,
+input[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+    background:#ccc;
+    background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+    background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+    border-color:#093c75;
+    outline:none;
+}
+#options{
+    margin-bottom:20px;
+}
+#options p{
+    display:none;
+}
+#options .show{
+    display:block;
+}
+#options:target .show{
+    display:none;
+}
+#options .hide{
+    display:none;
+}
+#options:target .hide{
+    display:block;
+}
+#options:target p{
+    display:block;
+}
+#finish{
+    background:rgba(65, 166, 42, 0.2);
+    border:2px solid #41a62a;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    display:none;
+    padding:5px 10px;
+}
+#finish:target{
+    display:block;
+}
+#credits{
+    font-size:11px;
+    margin-top:20px;
+    text-align:center;
+}

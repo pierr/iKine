@@ -6,14 +6,17 @@
 */
 function changeOnglet(_this){
 	var getOnglets 	= document.getElementById('mes_onglets').getElementsByTagName('li');
+	var getLiens 	= document.getElementById('mes_onglets').getElementsByTagName('a');
 	for(var i = 0; i < getOnglets.length; i++){
 		if(getOnglets[i].id){
 			if(getOnglets[i].id == _this.id){
 				getOnglets[i].className = 'mon_onglet_selected';
+				getLiens[i].className = 'button primary';
 				document.getElementById('c' + _this.id).style.display 			= 'block';
 			}
 			else{
-				getOnglets[i].className = 'mon_onglet';
+				getOnglets[i].className = 'mon_onglet button';
+				getLiens[i].className = 'button';
 				document.getElementById('c' + getOnglets[i].id).style.display 	= 'none';
 			}
 		}
@@ -83,4 +86,13 @@ $(function() {
 	tokenLimit: 1,
 	preventDuplicates: true/* le nombre max qu'on autorise*/
   });
+});
+
+/*Date Picker*/
+//Il faut avoir un id date picker pour que ça fonctionne
+$(function() {
+	$( ".datepicker" ).datepicker({
+				
+			}
+		);
 });

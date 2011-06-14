@@ -43,18 +43,19 @@ module ApplicationHelper
    def kine_onglets(onglets, selected = 1)
      html_a_rendre = "
        <div id='mes_onglets'>
-    		  <ul class='liste_onglet' >".html_safe
+    		  <ul class='button-group' >".html_safe
       i = 1
      onglets.each do |onglet|
       if i == selected
-        html_a_rendre = html_a_rendre+"<li id='o_#{i}' class='mon_onglet_selected' onclick='changeOnglet(this);'>#{onglet}</li>".html_safe
+        html_a_rendre = html_a_rendre+"<li id='o_#{i}' class='mon_onglet_selected' onclick='changeOnglet(this);'><a href='#' class='button primary'>#{onglet}</a></li>".html_safe
       else
-        html_a_rendre = html_a_rendre+"<li id='o_#{i}' class='mon_onglet' onclick='changeOnglet(this);'>#{onglet}</li>".html_safe
+        html_a_rendre = html_a_rendre+"<li id='o_#{i}' class='mon_onglet' onclick='changeOnglet(this);'><a href='#' class='button'>#{onglet}</a></li>".html_safe
       end
       i=i+1
      end
-     html_a_rendre = html_a_rendre+"<div class='clear'></div>
+     html_a_rendre = html_a_rendre+"
      	  </ul>
+     	  <div class='clear'></div>
       </div>
      ".html_safe
     return html_a_rendre
