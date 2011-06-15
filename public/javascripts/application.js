@@ -57,7 +57,7 @@ $(function() {
   $("#ordonnance_user_tokens").tokenInput("/users.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_user_tokens").data("pre"),
-    theme: "facebook",
+    //theme: "mac",
 	preventDuplicates: true
 	/*tokenLimit: 2 le nombre max qu'on autorise*/
   });
@@ -70,7 +70,7 @@ $(function() {
   $("#ordonnance_patient_token").tokenInput("/patients.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_patient_token").data("pre"),
-    theme: "facebook",
+    //theme: "mac",
 	tokenLimit: 1,
 	preventDuplicates: true/* le nombre max qu'on autorise*/
   });
@@ -82,7 +82,7 @@ $(function() {
   $("#ordonnance_medecin_token").tokenInput("/medecins.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_medecin_token").data("pre"),
-    theme: "facebook",
+    //theme: "mac",
 	tokenLimit: 1,
 	preventDuplicates: true/* le nombre max qu'on autorise*/
   });
@@ -91,7 +91,7 @@ $(function() {
 /*Date Picker*/
 //Il faut avoir un id date picker pour que ça fonctionne
 $(function() {
-	$( ".datepicker" ).datepicker({
+	$( "#datepicker" ).datepicker({
 				
 			}
 		);
