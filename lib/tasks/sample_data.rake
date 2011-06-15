@@ -18,15 +18,15 @@ namespace :db do
   end
 end
 #Parametres 
-n_user = 999
+n_user = 100
 n_ville = 100
 n_code_insee = 100
 n_departement = 10
-n_adresse = 1000
+n_adresse = 100
 n_medecin = 100
 n_ordonnance = 100
-n_seance = 500
-n_patient = 200
+n_seance = 100
+n_patient = 100
 
 namespace :db do
   desc "Remplit la base avec de faux utilisateurs"
@@ -194,7 +194,8 @@ namespace :db do
                     :telephone => telephone,
                     :adresse => Adresse.find(1 + SecureRandom.random_number(n_adresse-1)),
                     :date_naissance => Date.today,
-                    :carte_vitale => CarteVitale.last             
+                    :carte_vitale => CarteVitale.last,
+                    :civilite_id => 1+SecureRandom.random_number(2)
     end
   end
 end
