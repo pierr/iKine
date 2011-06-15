@@ -43,7 +43,7 @@ class Ordonnance < ActiveRecord::Base
   belongs_to :medecin , :validate => true
   has_many :seances
   has_many :user_ordonnances
-  has_many :users, :through => :user_ordonnances 
+  has_many :users, :through => :user_ordonnances , :validate => false#Si on ne met pas ça ca ne fonctionne pas car il cherche à valider les users avec les password
   #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
   
   ordonnance_regex = /\A[\w+\-.]\z/i  #Une regexp pour les numeros d'ordonnances
@@ -82,6 +82,15 @@ class Ordonnance < ActiveRecord::Base
   
   def user_tokens=(ids)
     self.user_ids = ids.split(",")
+    puts "USER IDS"
+    puts user_ids
+    puts self.valid?
+    puts self.errors
+    for user in self.users
+      puts user.id
+      puts user.valid?
+      puts user.errors
+    end
   end
   def patient_token=(id)
     self.patient_id = id

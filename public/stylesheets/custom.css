@@ -258,6 +258,9 @@ ul.users {
 .pretty th .desc {
   background-image: url(/images/down_arrow.gif);
 }
+
+div.centrage {text-align: center;}
+
 /**************************/
 /*****DATE PICKER **********/
 /*
@@ -387,8 +390,8 @@ form p:last-child{ /* Sélecteur avancé pour sélectionner le dernier paragraph
 }
 label{
     cursor:pointer;
-    display:block;
-    float:left;
+   /* display:block;
+    float:left;*/
     font-size:13px;
     font-weight:bold;
     line-height:28px;
