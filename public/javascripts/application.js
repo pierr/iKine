@@ -84,3 +84,13 @@ $(function() {
 	preventDuplicates: true/* le nombre max qu'on autorise*/
   });
 });
+
+$(function() {
+  $("#patient_patient_token").tokenInput("/patients.json", {
+    crossDomain: false,
+    prePopulate: $("#patient_patient_token").data("pre"),
+    theme: "facebook",
+	tokenLimit: 1,
+	preventDuplicates: true/* le nombre max qu'on autorise*/
+  });
+});

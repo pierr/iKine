@@ -29,6 +29,8 @@ class Patient < ActiveRecord::Base
   has_many :rdvs
   
   
+  attr_accessible :patient_token
+  attr_reader :patient_token
   validates :nom, :presence =>true
    #@override une methode par défaut mais cette methode permet de définir le fichier.json
     #pour un user qui sera appellé pour l'auto completion
@@ -43,5 +45,8 @@ class Patient < ActiveRecord::Base
     def name
       "#{prenom} #{nom}"
     end
+  def patient_token=(id)
+    self.patient_id = id
+  end
   
 end

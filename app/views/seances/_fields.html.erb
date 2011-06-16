@@ -1,10 +1,10 @@
 <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
    <%=fields_for @patient , {} do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
-   <%= kine_text_fied_edit(t , :nom) %>
+   	<%= t.label :patient_token, "Patient" %><br />
+   	<%= t.text_field :patient_token, "data-pre" => @patient_pre.to_json  %>
     <%end%>
-    <%= search_pill_button_link_to "Rechercher un patient", patients_path %>
-</br></br>
+
 	<%= f.label :date %><br />
  	<%= f.date_select :date_debut %>
 
