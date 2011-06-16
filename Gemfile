@@ -37,8 +37,8 @@ gem 'css3buttons'
 #   gem 'webrat'
 # end
 
-group :development do
+#group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'annotate-models', '1.0.4' #Pour annoter les models il faut taper annotate
   gem 'faker', '0.3.1' #C'est utilisé pour créer de fausses données dans la table
-end
+#end
