@@ -33,15 +33,17 @@ class Ordonnance < ActiveRecord::Base
                   :mutuelle,
                   :user_tokens,
                   :patient_token,
-                  :medecin_token
+                  :medecin_token,
+                  :medecin,
+                  :patient
   attr_reader :user_tokens,
               :patient_token, 
               :medecin_token
-  belongs_to :patient , :validate => true
-  belongs_to :medecin, :validate => true
+  belongs_to :patient, :validate => true
+  belongs_to :medecin , :validate => true
   has_many :seances
   has_many :user_ordonnances
-  has_many :users, :through => :user_ordonnances 
+  has_many :users, :through => :user_ordonnances , :validate => false#Si on ne met pas ça ca ne fonctionne pas car il cherche à valider les users avec les password
   #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
   
   ordonnance_regex = /\A[\w+\-.]\z/i  #Une regexp pour les numeros d'ordonnances
@@ -62,9 +64,33 @@ class Ordonnance < ActiveRecord::Base
       scoped #Comme all mais ne fait pas la requete
     end
   end
+  def med
+    if medecin.nil?
+      return "pas de medecin"
+    else
+      return "Dr #{medecin.prenom} #{medecin.nom}"
+    end
+  end
+  def pat
+    if patient.nil?
+      return "pas de patient"
+    else
+      return "#{patient.prenom} #{patient.nom}"
+    end
+  end
+  
   
   def user_tokens=(ids)
     self.user_ids = ids.split(",")
+    puts "USER IDS"
+    puts user_ids
+    puts self.valid?
+    puts self.errors
+    for user in self.users
+      puts user.id
+      puts user.valid?
+      puts user.errors
+    end
   end
   def patient_token=(id)
     self.patient_id = id

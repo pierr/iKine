@@ -1,4 +1,4 @@
-ul.liste_onglet li{
+/*ul.liste_onglet li{
 	list-style: none;
 	display: inline;
 }
@@ -7,9 +7,9 @@ ul.liste_onglet {
 	text-align: center;
 	margin: 0 0 0 0;
 }
-
-.mon_onglet{
-	/*float: left;*/
+*/
+/*.mon_onglet{
+	//float: left;
 	padding: 2px 10px;
 	margin-right: 5px;
 	color: #333;
@@ -22,7 +22,7 @@ ul.liste_onglet {
 	background: #b8efa1;
 }				
 .mon_onglet_selected{
-	/*float: left;*/
+	//float: left;
 	padding: 2px 10px;
 	margin-right: 5px;
 	color: #333;
@@ -33,16 +33,17 @@ ul.liste_onglet {
 	border-bottom: 1px solid #b8efa1;	
 	cursor: pointer;	
 	margin-bottom: -1px;
-}					
-.clear{
+}	
+*/				
+/*.clear{
 	clear: both;
-}
-.mon_contenu{
+}*/
+/*.mon_contenu{
 	color: #666;
 	background: #b8efa1;
 	border: 1px solid #68ce3e;
 	padding: 10px;				
-}
+}*/
 #mes_contenus, #mes_onglets{
 /*width: 400px;*/ /* largeur des onglets et menus... a priori y'a pas de raison de réduire ça*/
 }

@@ -6,14 +6,17 @@
 */
 function changeOnglet(_this){
 	var getOnglets 	= document.getElementById('mes_onglets').getElementsByTagName('li');
+	var getLiens 	= document.getElementById('mes_onglets').getElementsByTagName('a');
 	for(var i = 0; i < getOnglets.length; i++){
 		if(getOnglets[i].id){
 			if(getOnglets[i].id == _this.id){
 				getOnglets[i].className = 'mon_onglet_selected';
+				getLiens[i].className = 'button primary';
 				document.getElementById('c' + _this.id).style.display 			= 'block';
 			}
 			else{
-				getOnglets[i].className = 'mon_onglet';
+				getOnglets[i].className = 'mon_onglet button';
+				getLiens[i].className = 'button';
 				document.getElementById('c' + getOnglets[i].id).style.display 	= 'none';
 			}
 		}
@@ -54,7 +57,7 @@ $(function() {
   $("#ordonnance_user_tokens").tokenInput("/users.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_user_tokens").data("pre"),
-    theme: "facebook",
+    //theme: "mac",
 	preventDuplicates: true
 	/*tokenLimit: 2 le nombre max qu'on autorise*/
   });
@@ -67,7 +70,7 @@ $(function() {
   $("#ordonnance_patient_token").tokenInput("/patients.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_patient_token").data("pre"),
-    theme: "facebook",
+    //theme: "mac",
 	tokenLimit: 1,
 	preventDuplicates: true/* le nombre max qu'on autorise*/
   });
@@ -79,18 +82,17 @@ $(function() {
   $("#ordonnance_medecin_token").tokenInput("/medecins.json", {
     crossDomain: false,
     prePopulate: $("#ordonnance_medecin_token").data("pre"),
-    theme: "facebook",
+    //theme: "mac",
 	tokenLimit: 1,
 	preventDuplicates: true/* le nombre max qu'on autorise*/
   });
 });
 
+/*Date Picker*/
+//Il faut avoir un id date picker pour que ça fonctionne
 $(function() {
-  $("#patient_patient_token").tokenInput("/patients.json", {
-    crossDomain: false,
-    prePopulate: $("#patient_patient_token").data("pre"),
-    theme: "facebook",
-	tokenLimit: 1,
-	preventDuplicates: true/* le nombre max qu'on autorise*/
-  });
+	$( "#datepicker" ).datepicker({
+				
+			}
+		);
 });

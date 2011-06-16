@@ -52,6 +52,9 @@ class OrdonnancesController < ApplicationController
   def create
     @ordonnance = Ordonnance.new(params[:ordonnance])
     if @ordonnance.save
+      if !@ordonnance.date.nil?
+        
+      end
       flash[:success] = "La creation de l'ordonnance numero #{@ordonnance.numero} est effectuee !"
       redirect_to ordonnance_path(@ordonnance)
     else
@@ -75,6 +78,8 @@ class OrdonnancesController < ApplicationController
   private
   #trouve le nom de la colonne a trier
   def sort_column
+    puts "ORDONNANCE COLONNE NAME" 
+    puts Ordonnance.column_names
     Ordonnance.column_names.include?(params[:sort]) ? params[:sort] : "numero"
   end
   
@@ -96,19 +101,19 @@ class OrdonnancesController < ApplicationController
       @patient = @ordonnance.patient
     elsif !params[:patient].nil?
       @patient = params[:patient]
-    else
-      @patient = Patient.last
     end
-    @patient_pre = [@patient]
+    if !@patient.nil?
+      @patient_pre = [@patient]
+    end
   end
   def medecin
     if !@ordonnance.medecin.nil?
       @medecin = @ordonnance.medecin
     elsif !params[:medecin].nil?
       @medecin = params[:medecin]
-    else
-      @medecin = Medecin.last
     end
-    @medecin_pre = [@medecin]
+    if !@medecin.nil?
+      @medecin_pre = [@medecin]
+    end
   end
 end

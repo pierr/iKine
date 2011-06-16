@@ -1,10 +1,11 @@
 <h1>Ordonnances numero <%= "#{@ordonnance.numero}"%></h1>
-<%=kine_onglets @onglets, @onglet_selected%>
 <%= link_to "Modifier", edit_ordonnance_path(@ordonnance), :class => "button" %>
 <%= link_to "Supprimer", @ordonnance, :method => :delete,
  									  :class => "button",
 								   	  :confirm => "Etes vous certain?",
                           	  	      :title => "Supprimer l'ordonnance #{@ordonnance.numero}" %>
+<%= add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %>
+<%=kine_onglets @onglets, @onglet_selected%>
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
 		<div class="field">

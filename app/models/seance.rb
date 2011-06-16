@@ -18,7 +18,7 @@
 class Seance < ActiveRecord::Base
   belongs_to :ordonnance, :validate => true
   # Le patient est dans l'odonnance belongs_to :patient, :validate => true
-  belongs_to :user, :validate => true
+  belongs_to :user
   belongs_to :ordonnance, :validate => true
   belongs_to :patient, :validate => true
   validates_presence_of :user_id, :patient_id, :ordonnance_id

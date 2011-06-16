@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
   autocomplete :ville, :nom, :full => true
   def index
     @title = "mode all"
-    @patients = Patient.paginate :page => params[:page] , :per_page => 1
+    @patients = Patient.paginate :page => params[:page] , :per_page => 10
         respond_to do |format|
         format.html
         format.json { 
@@ -10,8 +10,8 @@ class PatientsController < ApplicationController
           patientsPrenom = Patient.where("prenom like ?", "%#{params[:q]}%")
           @patientsJson =patientsNom | patientsPrenom
           render :json => @patientsJson.as_json #.map(&:attributes)
-    }
-    end
+          }
+       end
   end
   
   def show

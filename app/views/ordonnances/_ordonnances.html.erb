@@ -2,15 +2,21 @@
 <%= hidden_field_tag :sort, params[:sort] %>
 <table class="pretty">
   <tr>
-    <th><%= sortable "numero"%></th>
-    <th><%= sortable "pathologie"%></th>
-    <th><%= sortable "date" ,"Date d'emission"%></th>
+	<th><%= sortable "numero"%></th>
+	<th><%= sortable "patient_id", "Patient"%></th>
+	<th><%= sortable "date" ,"Date d'emission"%></th>
+   	<th><%= sortable "pathologie"%></th>
+ 	<th><%= sortable "nombre_seances"%></th>  
+	<th><%= sortable "medecin_id", "Medecin"%></th>
   </tr>
   <% for ordonnance in @ordonnances %>
     <tr>
       <td><%= link_to ordonnance.numero, ordonnance_path(ordonnance) %></td>
-      <td><%= ordonnance.pathologie %></td>
+	  <td><%= ordonnance.pat %></td>
       <td><%= ordonnance.date %></td>
+      <td><%= ordonnance.pathologie %></td>
+	  <td><%= ordonnance.nombre_seances %></td>  
+	  <td><%= ordonnance.med %></td>
     </tr>
   <% end %>
 </table>
