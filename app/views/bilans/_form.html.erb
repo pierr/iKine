@@ -1,0 +1,41 @@
+<%= form_for(@bilan) do |f| %>
+  <% if @bilan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bilan.errors.count, "error") %> prohibited this bilan from being saved:</h2>
+
+      <ul>
+      <% @bilan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :initial %><br />
+    <%= f.text_field :initial %>
+  </div>
+  <div class="field">
+    <%= f.label :date_initial %><br />
+    <%= f.date_select :date_initial %>
+  </div>
+  <div class="field">
+    <%= f.label :intermediaire %><br />
+    <%= f.text_field :intermediaire %>
+  </div>
+  <div class="field">
+    <%= f.label :date_intermediaire %><br />
+    <%= f.date_select :date_intermediaire %>
+  </div>
+  <div class="field">
+    <%= f.label :final %><br />
+    <%= f.text_field :final %>
+  </div>
+  <div class="field">
+    <%= f.label :date_final %><br />
+    <%= f.date_select :date_final %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

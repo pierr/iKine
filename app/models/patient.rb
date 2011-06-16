@@ -1,21 +1,22 @@
 # == Schema Information
-# Schema version: 20110521192843
+# Schema version: 20110616110935
 #
 # Table name: patients
 #
-#  id             :integer         not null, primary key
-#  nom            :string(255)
-#  prenom         :string(255)
-#  email          :string(255)
-#  telephone      :string(255)
-#  date_naissance :datetime
-#  pathologie     :string(255)
-#  numero_secu    :integer
-#  civilite_id    :integer
-#  adresse_id     :integer
-#  medecin_id     :integer
-#  created_at     :datetime
-#  updated_at     :datetime
+#  id              :integer         not null, primary key
+#  nom             :string(255)
+#  prenom          :string(255)
+#  email           :string(255)
+#  telephone       :string(255)
+#  date_naissance  :datetime
+#  pathologie      :string(255)
+#  numero_secu     :integer
+#  civilite_id     :integer
+#  adresse_id      :integer
+#  medecin_id      :integer
+#  carte_vitale_id :integer
+#  created_at      :datetime
+#  updated_at      :datetime
 #
 
 class Patient < ActiveRecord::Base

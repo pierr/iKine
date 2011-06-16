@@ -1,4 +1,5 @@
 <%= form_tag  ordonnances_path, :action=>'search' ,:method => "get", :id=>"ordonnances_search" do %>
   <%= search_field_tag(:search, params[:search]) %>
   <%= search_button_submit_tag "Rechercher" %> <!-- #submit_tag("Rechercher") -->
+  <%= add_button_link_to "Créer ordonnance", new_ordonnance_path %>
 <% end %>

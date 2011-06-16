@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Initial:</b>
+  <%= @bilan.initial %>
+</p>
+
+<p>
+  <b>Date initial:</b>
+  <%= @bilan.date_initial %>
+</p>
+
+<p>
+  <b>Intermediaire:</b>
+  <%= @bilan.intermediaire %>
+</p>
+
+<p>
+  <b>Date intermediaire:</b>
+  <%= @bilan.date_intermediaire %>
+</p>
+
+<p>
+  <b>Final:</b>
+  <%= @bilan.final %>
+</p>
+
+<p>
+  <b>Date final:</b>
+  <%= @bilan.date_final %>
+</p>
+
+
+<%= link_to 'Edit', edit_bilan_path(@bilan) %> |
+<%= link_to 'Back', bilans_path %>

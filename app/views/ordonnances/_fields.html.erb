@@ -39,10 +39,14 @@
 	
 	<%= kine_debut_contenu_onglet 2%>
 	<!-- On doit avoir le bilan dans cet onglet (bilan initial, bilan final)-->
-	<div class="field">
-		<%= f.label :bilan %><br />
-		<%= f.text_area :bilan %>
-	</div>
+	<% if @ordonnance.bilan.nil?%>
+		<%= add_button_link_to "Effectuer un bilan", new_bilan_path %>
+	<%else%> <!--TODO Pierre Je ne suis pas sur que ça fonctionne il faut peut être creer une variable bilan -->
+		<%= fields_for @ordonnance.bilan do |b| %>
+			<%= b.label :initial, "Bilan initial" %>
+			<%= b.textarea :initial %>
+		<% end %>
+	<% end %>
 	<%= kine_fin_contenu_onglet 2%>
 	<%= kine_debut_contenu_onglet 3%>
 	<div class="field">
