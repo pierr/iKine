@@ -1,5 +1,5 @@
 require 'faker'
-require 'SecureRandom'
+# require 'SecureRandom'
 
 namespace :db do
   desc "Remplit la base avec pleins de faux trucs en appelant les autres taches de ce fichier apres avoir vider la base"
@@ -188,7 +188,7 @@ namespace :db do
       email = Faker::Internet.email
       telephone = Faker::PhoneNumber.phone_number
       CarteVitale.create :numero_secu => "111100000000X00100#{n}"
-      Patient.create :nom => nom,
+      pat =  Patient.create :nom => nom,
                     :prenom => prenom,
                     :email => email,
                     :telephone => telephone,
@@ -196,6 +196,7 @@ namespace :db do
                     :date_naissance => Date.today,
                     :carte_vitale => CarteVitale.last,
                     :civilite_id => 1+SecureRandom.random_number(2)
+      puts pat.errors unless pat.errors.size < 1
     end
   end
 end

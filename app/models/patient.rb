@@ -29,7 +29,7 @@ class Patient < ActiveRecord::Base
   has_many :rdvs
   
   
-  attr_accessible :patient_token
+  attr_accessible :patient_token, :prenom, :nom, :email, :telephone, :date_naissance, :pathologie, :numero_secu
   attr_reader :patient_token
   validates :nom, :presence =>true
    #@override une methode par défaut mais cette methode permet de définir le fichier.json
