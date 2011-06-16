@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110608103621
+# Schema version: 20110616110935
 #
 # Table name: seances
 #
@@ -11,6 +11,7 @@
 #  a_domicile    :boolean
 #  ordonnance_id :integer
 #  user_id       :integer
+#  patient_id    :integer
 #  created_at    :datetime
 #  updated_at    :datetime
 #

@@ -28,7 +28,7 @@ class Ordonnance < ActiveRecord::Base
                   :type_prise_en_charge,
                   :paye,
                   :nombre_seances,
-                  :bilan,
+                  #:bilan,
                   :caisse,
                   :mutuelle,
                   :user_tokens,
@@ -42,6 +42,7 @@ class Ordonnance < ActiveRecord::Base
   belongs_to :patient, :validate => true
   belongs_to :medecin , :validate => true
   has_many :seances
+  has_one :bilan
   has_many :user_ordonnances
   has_many :users, :through => :user_ordonnances , :validate => false#Si on ne met pas ça ca ne fonctionne pas car il cherche à valider les users avec les password
   #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut

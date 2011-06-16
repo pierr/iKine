@@ -1,0 +1,33 @@
+<h1>Listing bilans</h1>
+
+<table>
+  <tr>
+    <th>Initial</th>
+    <th>Date initial</th>
+    <th>Intermediaire</th>
+    <th>Date intermediaire</th>
+    <th>Final</th>
+    <th>Date final</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bilans.each do |bilan| %>
+  <tr>
+    <td><%= bilan.initial %></td>
+    <td><%= bilan.date_initial %></td>
+    <td><%= bilan.intermediaire %></td>
+    <td><%= bilan.date_intermediaire %></td>
+    <td><%= bilan.final %></td>
+    <td><%= bilan.date_final %></td>
+    <td><%= link_to 'Show', bilan %></td>
+    <td><%= link_to 'Edit', edit_bilan_path(bilan) %></td>
+    <td><%= link_to 'Destroy', bilan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bilan', new_bilan_path %>

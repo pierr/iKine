@@ -10,13 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110609075241) do
+ActiveRecord::Schema.define(:version => 20110616110935) do
 
   create_table "adresses", :force => true do |t|
     t.string   "numero"
     t.string   "rue"
     t.string   "complement_adresse"
     t.integer  "code_inse_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bilans", :force => true do |t|
+    t.string   "initial"
+    t.date     "date_initial"
+    t.string   "intermediaire"
+    t.date     "date_intermediaire"
+    t.string   "final"
+    t.date     "date_final"
+    t.integer  "ordonnance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

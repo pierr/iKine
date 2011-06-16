@@ -2,13 +2,13 @@ module ApplicationHelper
   # Return a title on a per-page basis.
    def title(page_title = "iKine", show_title = true)
      base_title = "iKine"
+     @content_for_title = page_title.to_s
+     @show_title = show_title
      if @title.nil?
        base_title
      else
        "#{base_title} | #{@title}"
      end
-     @content_for_title = page_title.to_s
-    @show_title = show_title
    end
    
    #methode pour charger le logo
