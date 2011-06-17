@@ -91,7 +91,7 @@ $(function() {
 /*Date Picker*/
 //Il faut avoir un id date picker pour que ça fonctionne
 $(function() {
-	$( "#datepicker" ).datepicker({
+	$( ".datepicker" ).datepicker({
 				
 			}
 		);

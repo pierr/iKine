@@ -1,7 +1,8 @@
+# encoding: UTF-8
 module ApplicationHelper
   # Return a title on a per-page basis.
-   def title(page_title = "iKine", show_title = true)
-     base_title = "iKine"
+   def title(page_title = "iKiné", show_title = true)
+     base_title = "iKiné"
      @content_for_title = page_title.to_s
      @show_title = show_title
      if @title.nil?

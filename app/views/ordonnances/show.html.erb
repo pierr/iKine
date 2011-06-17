@@ -31,7 +31,9 @@
 	<%= kine_fin_contenu_onglet 1%>
 	
 	<%= kine_debut_contenu_onglet 2%>
-  		<div class="field">
+  		
+	<%= add_button_link_to "Effectuer un bilan",{ :controller => "bilans", :action => "new", :ordonnance => @ordonnance }  %>
+		<div class="field">
 			<strong>Prise en charge</strong><br />
     		<%=  @ordonnance.prise_en_charge %>
   		</div>

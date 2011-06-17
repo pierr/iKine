@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class BilansController < ApplicationController
   include OrdonnancesHelper
   # GET /bilans
@@ -28,10 +29,14 @@ class BilansController < ApplicationController
     #On essaye de récupérer une ordonnance qui vient de la page précadente
     ordonnance
     #Si elle n'existe pas 
+    #debugger
     if @ordonnance.nil? 
-      redirect_to new_ordonnance_path , :notice => 'Avant de creer un bilan il faut creer une ordonannce' 
+      redirect_to new_ordonnance_path , :notice => 'Avant de créer un bilan il faut créer une ordonannce' 
     else
     @bilan = Bilan.new
+    @bilan.ordonnance = @ordonnance
+    puts 'test bilan'
+    puts @bilan.ordonnance.numero
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @bilan }
