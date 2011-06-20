@@ -43,7 +43,25 @@ namespace :db do
                  :email => "collyne.besson@gmail.com",
                  :password => "kineapp",
                  :password_confirmation => "kineapp")
-    admin2.toggle!(:admin)            
+    admin2.toggle!(:admin) 
+    admin3 =  User.create!(:nom => "Debladis",
+                 :prenom => "Audric",
+                 :email => "audric.debladis@gmail.com",
+                 :password => "kineapp",
+                 :password_confirmation => "kineapp")
+    admin3.toggle!(:admin)
+    admin4 =  User.create!(:nom => "Parizel",
+                 :prenom => "Emeline",
+                 :email => "emeline.parizel@gmail.com",
+                 :password => "kineapp",
+                 :password_confirmation => "kineapp")
+    admin4.toggle!(:admin)
+    admin5 =  User.create!(:nom => "Yoni",
+                 :prenom => "Soleiman",
+                 :email => "yoni.soleiman@gmail.com",
+                 :password => "kineapp",
+                 :password_confirmation => "kineapp")
+    admin5.toggle!(:admin)           
     n_user.times do |n|
       
       nomprenom  = Faker::Name.name.split
