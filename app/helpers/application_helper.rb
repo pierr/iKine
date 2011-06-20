@@ -13,8 +13,13 @@ module ApplicationHelper
    end
    
    #methode pour charger le logo
-   def logo
-       image_tag("iKine.png", :alt => "iKine", :class => "round",  :height=> "70") #Permet de charger le logo
+   def logo options = {}
+      fichier = options[:fichier].nil? ? "iKine.png" : options[:fichier]
+      alt = options[:alt].nil?  ? "" : options[:alt]
+      classe = options[:classe].nil? ? "" : options[:classe]
+      height = options[:height].nil? ? "" : options[:height]
+      #fichier="iKine.png", height ="90", alt=""  
+      image_tag( fichier, :alt => alt, :class => "round",  :height=> height) #Permet de charger le logo
    end
    
    #methode qui permet de générer un lien qui fait un tri sur la colonne column avec pour champ titl
