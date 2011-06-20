@@ -1,10 +1,9 @@
 <!-- Si l'utilisateur n'est pas loggué on propose la création de compte ou l'authentification-->
 <% if !signed_in? %>
-	<!-- On propose l'inscription -->
-	<%= link_to "S'inscrire!", signup_path, :class => "signup_button round" %>
-	
 	<!-- On propose le login -->
 	<%= render '/sessions/session' %>
+	<!-- On propose l'inscription -->
+	<%= add_button_link_to "S'inscrire!", signup_path %>	
 <% else %>
 <div class="container">
 		<div class="span-5 border">
@@ -19,6 +18,7 @@
 		<div class="span-5 last">
 			<%= link_to( (logo :fichier=>"clock.ico") ,  seances_path) %>
 		</div>
-	</div>
+</div>
+	
 <% end%>
 
