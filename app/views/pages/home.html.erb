@@ -1,15 +1,24 @@
-<h1><%= title%></h1>
-
-<p>
-  Voici la page d'accueil de l'application.<br />
-  Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
-</p>
 <!-- Si l'utilisateur n'est pas loggué on propose la création de compte ou l'authentification-->
 <% if !signed_in? %>
 	<!-- On propose l'inscription -->
 	<%= link_to "S'inscrire!", signup_path, :class => "signup_button round" %>
-
+	
 	<!-- On propose le login -->
 	<%= render '/sessions/session' %>
+<% else %>
+<div class="container">
+		<div class="span-5 border">
+			<%= link_to( (logo :fichier=>"tools.ico") ,  current_user) %>
+		</div>
+		<div class="span-5 append-4">
+			<%= link_to( (logo :fichier=>"cal-blank.ico") ,  seances_path) %>
+		</div>
+		<div class="span-5 border">
+			<%= link_to( (logo :fichier=>"notes.ico") ,  seances_path) %>
+		</div>
+		<div class="span-5 last">
+			<%= link_to( (logo :fichier=>"clock.ico") ,  seances_path) %>
+		</div>
+	</div>
 <% end%>
 
