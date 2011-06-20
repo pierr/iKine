@@ -5,20 +5,6 @@
 	<!-- On propose l'inscription -->
 	<%= add_button_link_to "S'inscrire!", signup_path %>	
 <% else %>
-<div class="container">
-		<div class="span-5 border">
-			<%= link_to( (logo :fichier=>"tools.ico") ,  current_user) %>
-		</div>
-		<div class="span-5 append-4">
-			<%= link_to( (logo :fichier=>"cal-blank.ico") ,  seances_path) %>
-		</div>
-		<div class="span-5 border">
-			<%= link_to( (logo :fichier=>"notes.ico") ,  seances_path) %>
-		</div>
-		<div class="span-5 last">
-			<%= link_to( (logo :fichier=>"clock.ico") ,  seances_path) %>
-		</div>
-</div>
-	
+		<%= render 'launcher' %> <!--Ce fichier contient les icones de la page d'accueil qui permet d'accéder rapidement au contenu de l'application -->
 <% end%>
 

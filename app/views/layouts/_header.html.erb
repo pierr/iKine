@@ -1,6 +1,7 @@
 <header>
-  <%= link_to logo, root_path %>
-  <nav >
+  <%= link_to( (logo :height=>"70"), root_path )%>
+  
+<nav >
 	<%= minor_button_group do %>    
 		<%= pill_button_link_to "Home", root_path %>
       <% if signed_in? %>
