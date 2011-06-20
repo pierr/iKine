@@ -17,10 +17,22 @@
 #
 
 class Seance < ActiveRecord::Base
+  attr_accessible :numero,
+                  :date_debut,
+                  :duree,
+                  :commentaire,
+                  :paye,
+                  :a_domicile,
+                  :patient_token,
+                  :patient
+  attr_reader :patient_token
   belongs_to :ordonnance, :validate => true
   # Le patient est dans l'odonnance belongs_to :patient, :validate => true
   belongs_to :user
   belongs_to :ordonnance, :validate => true
   belongs_to :patient, :validate => true
   validates_presence_of :user_id, :patient_id, :ordonnance_id
+  def patient_token=(id)
+    self.patient_id = id
+  end
 end

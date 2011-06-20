@@ -1,10 +1,8 @@
 <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-   <%=fields_for @patient , {} do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
-   	<%= t.label :patient_token, "Patient" %><br />
-   	<%= t.text_field :patient_token, "data-pre" => @patient_pre.to_json  %>
-    <%end%>
-
+   		<%= f.label :patient_token, "Patient" %><br />
+   		<%= f.text_field :patient_token %>
+  
 	<%= f.label :date %><br />
  	<%= f.date_select :date_debut %>
 
@@ -15,10 +13,7 @@
 
     </br></br>
 
-   <%= f.label :ordonnance %><br /><p>Saisissez le numero ou recherchez l'ordonnance correspondante</p>
-   <%= f.text_field :ordonnance %>
-   <%= search_pill_button_link_to "", ordonnances_path %>
-
+ 
 
     </br></br>
    </div>

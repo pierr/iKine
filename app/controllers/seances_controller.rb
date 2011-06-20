@@ -26,6 +26,7 @@ class SeancesController < ApplicationController
       render 'new'
     end
   end
+  
 
  
 end

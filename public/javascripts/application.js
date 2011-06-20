@@ -88,6 +88,19 @@ $(function() {
   });
 });
 
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison patient seance
+ */
+$(function() {
+  $("#seance_patient_token").tokenInput("/patients.json", {
+    crossDomain: false,
+    prePopulate: $("#seance_patient_token").data("pre"),
+    //theme: "mac",
+	tokenLimit: 1,
+	preventDuplicates: true/* le nombre max qu'on autorise*/
+  });
+});
+
 /*Date Picker*/
 //Il faut avoir un id date picker pour que ça fonctionne
 $(function() {
