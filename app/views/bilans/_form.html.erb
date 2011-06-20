@@ -24,7 +24,13 @@
 	# end
 	%>
 	-->
-  <div class="field">
+<div class="field">
+	<%= f.fields_for :ordonnance do |o| %><br />
+	<%= o.label :numero ,"Numero de l'ordonnance"%>
+	<%= o.text_field :numero %>
+	<% end%>
+</div>  
+<div class="field">
     <%= f.label :initial %><br />
     <%= f.text_field :initial %>
   </div>

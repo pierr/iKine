@@ -16,5 +16,5 @@
 
 class Bilan < ActiveRecord::Base
   belongs_to :ordonnance , :validate => true
-  attr_accessible :initial, :date_initial, :intermediaire , :date_intermediaire, :final, :date_final
+  attr_accessible :initial, :date_initial, :intermediaire , :date_intermediaire, :final, :date_final, :ordonnance 
 end
