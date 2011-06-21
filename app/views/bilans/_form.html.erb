@@ -25,33 +25,37 @@
 	%>
 	-->
 <div class="field">
-	<%= f.fields_for :ordonnance do |o| %><br />
+	<%= f.fields_for :ordonnance do |o| %>
 	<%= o.label :numero ,"Numero de l'ordonnance"%>
 	<%= o.text_field :numero %>
 	<% end%>
 </div>  
 <div class="field">
-    <%= f.label :initial %><br />
+    <%= f.label :initial %>
     <%= f.text_field :initial %>
   </div>
+<div class="field">
+    <%= f.label :ordonnance_id %>
+    <%= f.text_field :ordonnance_id %>
+  </div>
   <div class="field">
-    <%= f.label :date_initial %><br />
+    <%= f.label :date_initial %>
     <%= f.text_field :date_initial ,:class => 'datepicker' %>
   </div>
   <div class="field">
-    <%= f.label :intermediaire %><br />
+    <%= f.label :intermediaire %>
     <%= f.text_field :intermediaire %>
   </div>
   <div class="field">
-    <%= f.label :date_intermediaire %><br />
+    <%= f.label :date_intermediaire %>
     <%= f.text_field :date_intermediaire, :class => 'datepicker' %>
   </div>
   <div class="field">
-    <%= f.label :final %><br />
+    <%= f.label :final %>
     <%= f.text_field :final %>
   </div>
   <div class="field">
-    <%= f.label :date_final %><br />
+    <%= f.label :date_final %>
     <%= f.text_field :date_final, :class => 'datepicker' %>
   </div>
   <div class="actions">

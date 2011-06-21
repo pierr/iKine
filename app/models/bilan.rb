@@ -15,6 +15,7 @@
 #
 
 class Bilan < ActiveRecord::Base
-  belongs_to :ordonnance , :validate => true
-  attr_accessible :initial, :date_initial, :intermediaire , :date_intermediaire, :final, :date_final
+  belongs_to :ordonnance , :validate => true, :autosave => true
+  attr_accessible :initial, :date_initial, :intermediaire , :date_intermediaire, :final, :date_final, :ordonnance, :ordonnance_id
+  accepts_nested_attributes_for :ordonnance, :allow_destroy => true
 end

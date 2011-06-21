@@ -34,11 +34,10 @@ class BilansController < ApplicationController
       redirect_to new_ordonnance_path , :notice => 'Avant de créer un bilan il faut créer une ordonannce' 
     else
     @bilan = Bilan.new
+    @bilan.ordonnance = @ordonnance
     puts "---------------"
     puts @ordonnance.numero
-    @bilan.ordonnance = @ordonnance
     puts 'test bilan'
-    puts @bilan.ordonnance.numero
     puts @bilan.ordonnance_id
     respond_to do |format|
       format.html # new.html.erb
@@ -57,7 +56,6 @@ class BilansController < ApplicationController
   def create
     @bilan = Bilan.new(params[:bilan])
     puts 'test bilan SAVE'
-    puts @bilan.ordonnance.numero
     puts @bilan.ordonnance_id
     respond_to do |format|
       if @bilan.save
