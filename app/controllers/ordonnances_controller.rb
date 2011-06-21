@@ -20,6 +20,7 @@ class OrdonnancesController < ApplicationController
     ordonnance 
     patient
     medecin
+    @bilan = @ordonnance.bilan
     @title = "Ordonnance"
   end
 

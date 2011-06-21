@@ -40,7 +40,7 @@
 	<%= kine_debut_contenu_onglet 2%>
 	<!-- On doit avoir le bilan dans cet onglet (bilan initial, bilan final)-->
 	<% if @ordonnance.bilan.nil?%>
-		<%= add_button_link_to "Effectuer un bilan", new_bilan_path %>
+		<%= add_button_link_to "Effectuer un bilan", { :controller => "bilans", :action => "new", :ordonnance => @ordonnance } %>
 	<%else%> <!--TODO Pierre Je ne suis pas sur que ça fonctionne il faut peut être creer une variable bilan -->
 		<%= f.fields_for :bilan do |b| %>
 			<div class="field">
