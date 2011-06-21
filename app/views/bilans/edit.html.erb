@@ -1,6 +1,5 @@
 <h1>Editing bilan</h1>
-
+<%= button_link_to 'Voir l\'ordonnance du bilan', ordonnance_path(@bilan.ordonnance) %> <br />
 <%= render 'form' %>
-
-<%= link_to 'Show', @bilan %> |
-<%= link_to 'Back', bilans_path %>
+<%= button_link_to 'Voir le bilan', @bilan %> |
+<%= button_link_to 'Voir les bilans', bilans_path %>

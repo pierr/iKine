@@ -88,10 +88,72 @@ $(function() {
   });
 });
 
-
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison patient seance
+ */
+$(function() {
+  $("#seance_patient_token").tokenInput("/patients.json", {
+    crossDomain: false,
+    prePopulate: $("#seance_patient_token").data("pre"),
+    //theme: "mac",
+	tokenLimit: 1,
+	preventDuplicates: true/* le nombre max qu'on autorise*/
+  });
+});
 
 /**
- *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison addresse ville
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison user seance
+ */
+$(function() {
+  $("#seance_user_token").tokenInput("/users.json", {
+    crossDomain: false,
+    prePopulate: $("#seance_user_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
+
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison ordonnance seance
+ */
+$(function() {
+  $("#seance_ordonnance_token").tokenInput("/ordonnances.json", {
+    crossDomain: false,
+    prePopulate: $("#seance_ordonnance_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
+
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison ordonnance rdv
+ */
+$(function() {
+  $("#rdv_ordonnance_token").tokenInput("/ordonnances.json", {
+    crossDomain: false,
+    prePopulate: $("rdv_ordonnance_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison ordonnance bilan
+ */
+$(function() {
+  $("#bilan_ordonnance_token").tokenInput("/ordonnances.json", {
+    crossDomain: false,
+    prePopulate: $("#bilan_ordonnance_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
+
+/**
+ *Cette fonction sert √† avoir l'auto-compl√©tion pour un formulaire simple-liaison addresse ville
  */
 $(function() {
   $("#ville_ville_token").tokenInput("/villes.json", {
@@ -103,14 +165,10 @@ $(function() {
   });
 });
 
-
-
-
-
 /*Date Picker*/
 //Il faut avoir un id date picker pour que ça fonctionne
 $(function() {
-	$( "#datepicker" ).datepicker({
+	$( ".datepicker" ).datepicker({
 				
 			}
 		);

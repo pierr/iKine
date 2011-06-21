@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= button_link_to 'Voir l\'ordonnance du bilan', ordonnance_path(@bilan.ordonnance) %> <br />
 <p>
   <b>Initial:</b>
   <%= @bilan.initial %>
@@ -31,5 +31,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_bilan_path(@bilan) %> |
-<%= link_to 'Back', bilans_path %>
+<%= button_link_to 'Modifier', edit_bilan_path(@bilan) %> |
+<%= button_link_to 'Voir tous les bilans', bilans_path %>

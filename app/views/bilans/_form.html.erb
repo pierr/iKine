@@ -10,30 +10,49 @@
       </ul>
     </div>
   <% end %>
+	<!--
+	<%=
+	# fields_for :ordonnance do |o|
+	%>
+		<%=
+		# o.label :numero 
+		%>
+		<%=
+		# o.text_field :numero 
+		%>
+	<% 
+	# end
+	%>
+	-->
 
-  <div class="field">
-    <%= f.label :initial %><br />
+<div class="field">
+	<%= f.label :ordonnance_token, "Ordonnance" %><br />
+ 	<%= f.text_field :ordonnance_token, "data-pre" => @ordonnance_pre.to_json %>
+ </div>
+<div class="field">
+    <%= f.label :initial %>
     <%= f.text_field :initial %>
   </div>
+
   <div class="field">
-    <%= f.label :date_initial %><br />
-    <%= f.date_select :date_initial %>
+    <%= f.label :date_initial %>
+    <%= f.text_field :date_initial ,:class => 'datepicker' %>
   </div>
   <div class="field">
-    <%= f.label :intermediaire %><br />
+    <%= f.label :intermediaire %>
     <%= f.text_field :intermediaire %>
   </div>
   <div class="field">
-    <%= f.label :date_intermediaire %><br />
-    <%= f.date_select :date_intermediaire %>
+    <%= f.label :date_intermediaire %>
+    <%= f.text_field :date_intermediaire, :class => 'datepicker' %>
   </div>
   <div class="field">
-    <%= f.label :final %><br />
+    <%= f.label :final %>
     <%= f.text_field :final %>
   </div>
   <div class="field">
-    <%= f.label :date_final %><br />
-    <%= f.date_select :date_final %>
+    <%= f.label :date_final %>
+    <%= f.text_field :date_final, :class => 'datepicker' %>
   </div>
   <div class="actions">
     <%= f.submit %>
