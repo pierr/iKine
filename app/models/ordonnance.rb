@@ -58,6 +58,14 @@ class Ordonnance < ActiveRecord::Base
   validates_presence_of  :date, :nombre_seances#FIXME PIERRE JE NE COMPRENDS PAS POURQUOI ca ne fonctionne pas avec a, :patient_id, :medecin_id
   
   validates_associated :seances #s'assurer que les objets liés existent bien
+  
+ def as_json(options)
+ { 
+       :id => id,
+       :name => name
+ }
+ end
+ 
  
  #Methode qui permet de rechercher des ordonnances
   def self.search(search)
@@ -100,6 +108,11 @@ class Ordonnance < ActiveRecord::Base
   end
   def medecin_token=(id)
     self.medecin_id = id
+  end
+  
+  private
+  def name
+      "#{numero} #{date}"
   end
   
 end
