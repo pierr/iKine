@@ -88,6 +88,25 @@ $(function() {
   });
 });
 
+
+
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison addresse ville
+ */
+$(function() {
+  $("#ville_ville_token").tokenInput("/villes.json", {
+    crossDomain: false,
+    prePopulate: $("#ville_ville_token").data("pre"),
+    //theme: "mac",
+	tokenLimit: 1,
+	preventDuplicates: true/* le nombre max qu'on autorise*/
+  });
+});
+
+
+
+
+
 /*Date Picker*/
 //Il faut avoir un id date picker pour que ça fonctionne
 $(function() {
