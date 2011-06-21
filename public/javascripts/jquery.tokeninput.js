@@ -11,9 +11,9 @@
 (function ($) {
 // Default settings
 var DEFAULT_SETTINGS = {
-    hintText: "Type in a search term",
-    noResultsText: "No results",
-    searchingText: "Searching...",
+    hintText: "Entrez votre recherche",
+    noResultsText: "Aucun résultat",
+    searchingText: "Recherche en cours...",
     deleteText: "&times;",
     searchDelay: 300,
     minChars: 1,
@@ -23,7 +23,7 @@ var DEFAULT_SETTINGS = {
     contentType: "json",
     queryParam: "q",
     tokenDelimiter: ",",
-    preventDuplicates: false,
+    preventDuplicates: true,
     prePopulate: null,
     animateDropdown: true,
     onResult: null,
