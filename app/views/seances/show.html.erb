@@ -6,13 +6,21 @@
 								   	  :confirm => "Etes vous certain?",
                           	  	      :title => "Supprimer la seance #{@seance.id}" %>
 
+		</br>
+		<div class="field">
+    		<strong>Praticien</strong><br />
+    		<%=  @seance.user.prenom %>
+    		<%=  @seance.user.nom %>
+  		</div>
+
 		<div class="field">
     		<strong>Numero</strong><br />
     		<%=  @seance.id %>
   		</div>
  		<div class="field">
 			<strong>Patient</strong><br />
-    		<%=  @patient.nom %>
+			<%=  @seance.patient.prenom %>
+    		<%=  @seance.patient.nom %>
   		</div>
   		<div class="field">
 			<strong>Date debut</strong><br />
@@ -22,3 +30,10 @@
 			<strong>Commentaires</strong><br />
     		<%=  @seance.commentaire %>
 	  	</div>
+  		<div class="field">
+			<strong>Ordonnance</strong><br />
+    		<%=  @seance.ordonnance.numero %>
+			<%=  @seance.ordonnance.date %>
+	  	</div>
+
+<%= link_to "Retour", seances_path, :class => "button" %>

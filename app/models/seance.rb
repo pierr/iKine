@@ -40,6 +40,7 @@ class Seance < ActiveRecord::Base
   belongs_to :ordonnance, :validate => true
   belongs_to :patient, :validate => true
   validates_presence_of :user_id, :patient_id, :ordonnance_id
+  validates_presence_of :user_token, :patient_token, :ordonnance_token, :duree
   accepts_nested_attributes_for :ordonnance
   
   def patient_token=(id)
