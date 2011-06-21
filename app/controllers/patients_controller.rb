@@ -18,19 +18,18 @@ class PatientsController < ApplicationController
     @title="mode show"
     @patient = Patient.find(params[:id])
     @adresse = @patient.adresse
-    
-    @villeList = @adresse.ville
-    @departementList = @villeList .departement
-    @civiliteList = @patient.civilite
+    @code_insee= @adresse.code_insee
+    @ville = @code_insee.ville
+    @departement = @code_insee .departement
+    @civilite = @patient.civilite
   end
   
   def new
     @title="mode new"
     @patient = Patient.new
     @adresse = Adresse.new
+    @ville = Ville.new
     
-    @villeList = Ville.all
-    @departementList = Departement.all
     @civiliteList = Civilite.all
   end
 
@@ -38,6 +37,11 @@ class PatientsController < ApplicationController
     @title="mode create"
     @patient = Patient.new(params[:patient])
     @adresse = Adresse.new(params[:adresse])
+    
+      ville_id = params[:ville][:ville_token]
+    @adresse.code_insee_id= Ville.find(ville_id).code_insee.id
+   
+    
     if(@patient.valid? && @adresse.valid?)
        @adresse.save
        @patient.adresse=@adresse # pour setter correctement l'adresse id de patient
@@ -52,18 +56,29 @@ class PatientsController < ApplicationController
     @title="mode edit"
     @patient = Patient.find(params[:id])
     @adresse = @patient.adresse
+    
+    @ville = @adresse.code_insee.ville
 
-    @villeList = Ville.all
-    @departementList = Departement.all
     @civiliteList = Civilite.all
   end
   
   def update
+    
+    
+    
+    
+    
     @title="mode update"
     @patient = Patient.find(params[:id])
     @adresse = @patient.adresse
     @patient.attributes=(params[:patient])
     @adresse.attributes=(params[:adresse])
+    
+    
+    ville_id = params[:ville][:ville_token]
+    @adresse.code_insee_id= Ville.find(ville_id).code_insee.id
+    
+    
     if(@patient.valid? && @adresse.valid?)
        @adresse.save
        @patient.adresse=@adresse # pour setter correctement l'adresse id de patient mais je pense que c'est pas utile en mode edit... ça dépendra de si l'adresse était existante blablabla

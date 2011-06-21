@@ -30,24 +30,23 @@ class Patient < ActiveRecord::Base
   has_many :rdvs
   
   
-  attr_accessible :patient_token, :prenom, :nom, :email, :telephone, :date_naissance, :pathologie, :numero_secu
-  attr_reader :patient_token
+#  attr_accessible :patient_token, :prenom, :nom, :email, :telephone, :date_naissance, :pathologie, :numero_secu
+#  attr_reader :patient_token
   validates :nom, :presence =>true
    #@override une methode par défaut mais cette methode permet de définir le fichier.json
     #pour un user qui sera appellé pour l'auto completion
     # options => sont les options qu'on peut vouloir donner 
-    def as_json(options)
+    def as_json(options= {})
      { 
        :id => id,
        :name => name
      }
     end
-    private
     def name
       "#{prenom} #{nom}"
     end
   def patient_token=(id)
-    self.patient_id = id
+    self.id = id
   end
   
 end

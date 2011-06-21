@@ -1,23 +1,19 @@
 <h1>Patient | <%=@mode%></h1>
 <p>Find me in app/views/patient/edit.html.erb</p>
-
 <%= form_for @patient , :validate => true do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 
-	<div id="mes_onglets">
-		<ul class="liste_onglet" >
-			<li id="o_1" class="mon_onglet_selected" onclick="changeOnglet(this);">Onglet 1</li>
-			<li id="o_2" class="mon_onglet" onclick="changeOnglet(this);">Onglet 2</li>
-			<li id="o_3" class="mon_onglet" onclick="changeOnglet(this);">Onglet 3</li>
-			<li id="o_4" class="mon_onglet" onclick="changeOnglet(this);">Onglet 4</li>
-			<li class="mon_onglet"><a href="http://www.google.fr" target="_blank">Lien vers google</a></li>
-			<div class="clear"></div>
-		</ul>
-	</div>
+<% @onglets = ["Onglet 1","Onglet 2", "Onglet 3"]%>
+<% @onglet_selected = 1 %>
+<%=kine_onglets @onglets, @onglet_selected%>
+<%=kine_debut_contenu_onglets%> 
+	<%=kine_debut_contenu_onglet 1, true%> 
 
-	<div class="field">
-		<div id="mes_contenus">
-			<div id="co_1" class="mon_contenu">
+
+
+
+<!%=f.autocomplete_field :adresse, autocomplete_ville_nom_patients_path %>
+
 				<%= kine_collection_select_edit(f , :civilite , :civilite_id, @civiliteList, :id, :nom	) %>
 				<%= kine_text_fied_edit(f , :nom , false , false) %> <!-- ici je dis que je veux pas de label personalisé mais que je veux readonly = true -->
 				<%= kine_text_fied_edit(f , :prenom , "Prénom") %>
@@ -25,23 +21,24 @@
 				<%= kine_telephone_fied_edit(f , :telephone , "Téléphone") %>
 				
 				<%=fields_for @adresse , :validate => true do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
-					<%= kine_text_fied_edit(t , :nom ,"Adresse") %>
-					<%= kine_collection_select_edit(t , :ville , :ville_id, @villeList, :id, :nom	) %>
+					<%= kine_text_fied_edit(t , :numero) %>
+					<%= kine_text_fied_edit(t , :rue) %>
+					<%= kine_text_fied_edit(t , :complement_adresse) %>
+					<!--%= kine_collection_select_edit(t , :ville , :ville_id, @villeList, :id, :nom	) %-->
+  				<%end%>
+
+				<%=fields_for @ville , :validate => true do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
+					<%= kine_text_fied_edit(t , :ville_token , "Ville") %><!% autocomplete  %>
   				<%end%>
 				
-				
-			</div>
-			<div id="co_2" class="mon_contenu" style="display: none;">
-			
-			</div>
-			<div id="co_3" class="mon_contenu" style="display: none;">
-			
-			</div>
-			<div id="co_4" class="mon_contenu" style="display: none;">
-			
-			</div>
-		</div>
-	</div>
+	<%= kine_fin_contenu_onglet 1%>
+	<%= kine_debut_contenu_onglet 2%>
+	<%= kine_fin_contenu_onglet 2%>
+	<%= kine_debut_contenu_onglet 3%>
+	<%= kine_fin_contenu_onglet 3%>
+		
+<%= kine_fin_contenu_onglets%>
+
 	<div class="actions">
 		<%= f.submit "Enregistrer" %>
 		<%= link_to "Annuler" , @patient  , :class => "button round" %>

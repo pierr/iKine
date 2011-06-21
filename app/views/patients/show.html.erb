@@ -9,6 +9,12 @@
 <%= kine_display_view("Téléphone", @patient.telephone)%><br/>
 <%= kine_display_view("Civilité", @patient.civilite.nom)%><br/>
 
+<%= kine_display_view("Numero", @adresse.numero)%><br/>
+<%= kine_display_view("Rue", @adresse.rue)%><br/>
+<%= kine_display_view("Complément adresse", @adresse.complement_adresse)%><br/>
+<%= kine_display_view("Ville", @ville.nom)%><br/>
+<%= kine_display_view("Département", @departement.nom)%><br/>
+
 <br/>
 <%= link_to "Modifier", edit_patient_path(@patient) , :class => "button round" %>
 <%= link_to "Supprimer", @patient, :method => :delete  , 
