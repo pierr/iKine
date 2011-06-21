@@ -8,6 +8,31 @@
 #
 
 class Ville < ActiveRecord::Base
-  has_many :code_insees
-  has_many :code_postals, :through => :code_insees 
+  has_one :code_insee
+  has_many :code_postals, :through => :code_insee
+  
+  
+  def as_json(options)
+  { 
+   :id => id,
+   :name => name
+  }
+  end
+
+private
+  
+  def name
+    "#{nom}"
+  end
+  
+
+  def ville_token=(id)
+    self.id = id
+  end
+  
+  def ville_token
+    return self.id
+  end  
+  
+  
 end
