@@ -49,6 +49,7 @@ class BilansController < ApplicationController
   # GET /bilans/1/edit
   def edit
     @bilan = Bilan.find(params[:id])
+    #@ordonnance = Bilan.ordonnance
   end
 
   # POST /bilans

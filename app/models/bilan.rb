@@ -17,6 +17,20 @@
 
 class Bilan < ActiveRecord::Base
   belongs_to :ordonnance , :validate => true, :autosave => true
-  attr_accessible :initial, :date_initial, :intermediaire , :date_intermediaire, :final, :date_final, :ordonnance, :ordonnance_id
-  accepts_nested_attributes_for :ordonnance, :allow_destroy => true
+  attr_accessible :initial, 
+                  :date_initial, 
+                  :intermediaire , 
+                  :date_intermediaire, 
+                  :final, 
+                  :date_final, 
+                  :ordonnance, 
+                  :ordonnance_id, 
+                  :ordonnance_token
+  attr_reader :ordonnance_token
+  
+  accepts_nested_attributes_for :ordonnance, :allow_destroy => true #FIXME est ce utile? à dérerminer
+  
+  def ordonnance_token=(id)
+    self.ordonnance_id = id
+  end
 end

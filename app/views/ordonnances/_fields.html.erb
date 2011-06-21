@@ -36,19 +36,39 @@
 		<!-- TODO: BOUTON ACCORD PREALABLE SECU-->
 	<%= kine_fin_contenu_onglet 1%>
 
-	
+	<% if !@ordonnance.id.nil?%>
 	<%= kine_debut_contenu_onglet 2%>
 	<!-- On doit avoir le bilan dans cet onglet (bilan initial, bilan final)-->
 	<% if @ordonnance.bilan.nil?%>
 		<%= add_button_link_to "Effectuer un bilan", new_bilan_path %>
 	<%else%> <!--TODO Pierre Je ne suis pas sur que ça fonctionne il faut peut être creer une variable bilan -->
 		<%= f.fields_for :bilan do |b| %>
-			<%= b.label :initial, "Bilan initial" %>
-			<%= b.text_field :initial %>
-			<br />
-			<%= b.label :final, "Bilan final" %>
-			<%= b.text_field :final %>
+			<div class="field">
+			    <%= b.label :initial %>
+			    <%= b.text_field :initial %>
+			  </div>
+
+			  <div class="field">
+			    <%= b.label :date_initial %>
+			    <%= b.text_field :date_initial ,:class => 'datepicker' %>
+			  </div>
+			  <div class="field">
+			    <%= b.label :intermediaire %>
+			    <%= b.text_field :intermediaire %>
+			  </div>
+			  <div class="field">
+			    <%= b.label :date_intermediaire %>
+			    <%= b.text_field :date_intermediaire, :class => 'datepicker' %>
+			  </div>
+			  <div class="field">
+			    <%= b.label :final %>
+			    <%= b.text_field :final %>
+			  </div>
+			  <div class="field">
+			    <%= b.label :date_final %>
+			    <%= b.text_field :date_final, :class => 'datepicker' %>
 			<% unless b.object.new_record? %>
+			<br />
 			      <% # Don't forget to name both of these '_destroy' in Rails 3 %>
 			      <%= b.check_box '_destroy' %>
 			      <%= b.label '_destroy', 'Supprimer' %>
@@ -81,5 +101,5 @@
   		</div>
 
 	<%= kine_fin_contenu_onglet 3%>
-		
+	<% end %>	
 <%= kine_fin_contenu_onglets%>

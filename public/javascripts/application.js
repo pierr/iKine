@@ -139,8 +139,18 @@ $(function() {
 	tokenLimit: 1 /*le nombre max qu'on autorise*/
   });
 });
-
-
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison ordonnance bilan
+ */
+$(function() {
+  $("#bilan_ordonnance_token").tokenInput("/ordonnances.json", {
+    crossDomain: false,
+    prePopulate: $("#bilan_ordonnance_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
 /*Date Picker*/
 //Il faut avoir un id date picker pour que ça fonctionne
 $(function() {

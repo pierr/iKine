@@ -4,6 +4,7 @@ module OrdonnancesHelper
   def ordonnance
     if !params[:ordonnance].nil?
       @ordonnance = Ordonnance.find(params[:ordonnance])
+      @ordonnance_pre =[@ordonnance]
       ##DEBUG
       #puts "ORDONNANCE RECUP"
       #puts @ordonnance.numero

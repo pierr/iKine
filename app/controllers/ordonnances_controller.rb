@@ -5,11 +5,11 @@ class OrdonnancesController < ApplicationController
   
   #Appellé pour la Page de creation d'une ordonnance
   def new
-    @onglets = ["Details","Bilan","Facturation"]
+    @onglets = ["Details"]
     @onglet_selected = 1
     @title = "Ordonnances | Mode creation" 
     @ordonnance = Ordonnance.new
-    @ordonnance.bilan = Bilan.new
+    #@ordonnance.bilan = Bilan.new
     patient
     medecin
     
