@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20110616110935) do
     t.string   "numero"
     t.string   "rue"
     t.string   "complement_adresse"
-    t.integer  "code_inse_id"
+    t.integer  "code_insee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -155,7 +155,9 @@ ActiveRecord::Schema.define(:version => 20110616110935) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "villes", :force => true do |t|
-    t.string "nom"
+    t.string   "nom"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
