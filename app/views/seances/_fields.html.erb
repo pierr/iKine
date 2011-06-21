@@ -1,7 +1,10 @@
-<%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-   		<%= f.label :patient_token, "Patient" %><br />
-   		<%= f.text_field :patient_token %>
+
+	<%= f.label :user_token, "Praticien" %><br />
+ 	<%= f.text_field :user_token, "data-pre" => @seance.user.to_json %></br>
+
+   	<%= f.label :patient_token, "Patient" %><br />
+   	<%= f.text_field :patient_token %>
   
 	<%= f.label :date %><br />
  	<%= f.date_select :date_debut %>
@@ -9,9 +12,14 @@
 	<%= kine_text_fied_edit(f , :duree) %>
 
 	<%= f.label :commentaire %><br />
- 	<%= f.text_area :commentaire %>
+ 	<%= f.text_area :commentaire %></br>
 
-    </br></br>
+	<%= f.label :ordonnance_token, "Ordonnance" %><br />
+ 	<%= f.text_field :ordonnance_token, "data-pre" => @seance.ordonnance.to_json %></br>
+
+	<div class="actions">
+		<%= search_button_link_to "", ordonnances_path %>
+	</div>
 
  
 

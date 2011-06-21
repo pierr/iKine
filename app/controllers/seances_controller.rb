@@ -2,7 +2,7 @@ class SeancesController < ApplicationController
   def new
     @title ="Seances | Mode creation"
     @seance = Seance.new
-    @patient = Patient.new
+    @seance.ordonnance = Ordonnance.last
   end
 
   def show
@@ -18,6 +18,8 @@ class SeancesController < ApplicationController
  
   def create
     @seance = Seance.new(params[:seance])
+    puts "________________________"
+    puts @seance.ordonnance_id
     if @seance.save
       flash[:success] = "La creation de la seance numero #{@seance.id} est effectuee !"
       redirect_to seance_path(@seance)

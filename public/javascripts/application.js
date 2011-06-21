@@ -101,6 +101,33 @@ $(function() {
   });
 });
 
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison user seance
+ */
+$(function() {
+  $("#seance_user_token").tokenInput("/users.json", {
+    crossDomain: false,
+    prePopulate: $("#seance_user_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
+
+/**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison ordonnance seance
+ */
+$(function() {
+  $("#seance_ordonnance_token").tokenInput("/ordonnances.json", {
+    crossDomain: false,
+    prePopulate: $("#seance_ordonnance_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
+
+
 /*Date Picker*/
 //Il faut avoir un id date picker pour que ça fonctionne
 $(function() {
