@@ -10,6 +10,7 @@
 #  date_intermediaire :date
 #  final              :string(255)
 #  date_final         :date
+#  ordonnance_id      :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #

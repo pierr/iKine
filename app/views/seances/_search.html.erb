@@ -1,0 +1,5 @@
+<%= form_tag  seances_path, :action=>'search' ,:method => "get", :id=>"seances_search" do %>
+  <%= search_field_tag(:search, params[:search]) %>
+  <%= search_button_submit_tag "Rechercher" %> <!-- #submit_tag("Rechercher") -->
+  <%= add_button_link_to "Créer seance", new_seance_path %>
+<% end %>

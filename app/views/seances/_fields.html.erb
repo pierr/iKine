@@ -7,7 +7,7 @@
    	<%= f.text_field :patient_token %>
   
 	<%= f.label :date %><br />
- 	<%= f.date_select :date_debut %>
+	<%= f.text_field :date_debut , :class => 'datepicker'%>
 
 	<%= kine_text_fied_edit(f , :duree) %>
 
@@ -16,12 +16,4 @@
 
 	<%= f.label :ordonnance_token, "Ordonnance" %><br />
  	<%= f.text_field :ordonnance_token, "data-pre" => @seance.ordonnance.to_json %></br>
-
-	<div class="actions">
-		<%= search_button_link_to "", ordonnances_path %>
-	</div>
-
- 
-
-    </br></br>
    </div>
