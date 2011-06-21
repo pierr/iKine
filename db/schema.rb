@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20110616122624) do
     t.string   "contact"
     t.date     "date"
     t.integer  "patient_id"
+    t.integer  "ordonnance_id"
     t.integer  "adresse_id"
     t.datetime "created_at"
     t.datetime "updated_at"

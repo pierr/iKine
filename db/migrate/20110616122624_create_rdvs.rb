@@ -5,6 +5,7 @@ class CreateRdvs < ActiveRecord::Migration
       t.string :contact
       t.date :date
       t.references :patient
+      t.references :ordonnance
       t.references :adresse
       t.timestamps
     end
