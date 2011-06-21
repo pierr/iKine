@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class SeancesController < ApplicationController
   def new
     @title ="Seances | Mode creation"
@@ -12,7 +13,7 @@ class SeancesController < ApplicationController
   end
   
   def index
-    @title = "Rechercher une/des seance(s)"
+    @title = "Toutes les séances"
     @seances = Seance.all
   end
  

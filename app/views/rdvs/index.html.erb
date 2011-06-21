@@ -1,0 +1,27 @@
+<h1>Tous les rendez-vous</h1>
+
+<table>
+  <tr>
+    <th>Lieu</th>
+    <th>Contact</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rdvs.each do |rdv| %>
+  <tr>
+    <td><%= rdv.lieu %></td>
+    <td><%= rdv.contact %></td>
+    <td><%= rdv.date %></td>
+    <td><%= link_to 'Show', rdv %></td>
+    <td><%= link_to 'Edit', edit_rdv_path(rdv) %></td>
+    <td><%= link_to 'Destroy', rdv, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rdv', new_rdv_path %>

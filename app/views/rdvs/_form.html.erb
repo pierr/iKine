@@ -1,0 +1,29 @@
+<%= form_for(@rdv) do |f| %>
+  <% if @rdv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rdv.errors.count, "error") %> prohibited this rdv from being saved:</h2>
+
+      <ul>
+      <% @rdv.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lieu %><br />
+    <%= f.text_field :lieu %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
