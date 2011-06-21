@@ -13,14 +13,17 @@ class SeancesController < ApplicationController
   end
   
   def index
+<<<<<<< HEAD
     @title = "Toutes les séances"
     @seances = Seance.all
+=======
+    @title = "Rechercher une/des seance(s)"
+    @seances = Seance.all.paginate(:per_page => 5, :page => params[:page])
+>>>>>>> emeline
   end
  
   def create
     @seance = Seance.new(params[:seance])
-    puts "________________________"
-    puts @seance.ordonnance_id
     if @seance.save
       flash[:success] = "La creation de la seance numero #{@seance.id} est effectuee !"
       redirect_to seance_path(@seance)
