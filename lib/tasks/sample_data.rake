@@ -18,15 +18,15 @@ namespace :db do
   end
 end
 #Parametres 
-n_user = 100
-n_ville = 100
-n_code_insee = 100
+n_user = 10
+n_ville = 10
+n_code_insee = 10
 n_departement = 10
-n_adresse = 100
-n_medecin = 100
-n_ordonnance = 100
-n_seance = 100
-n_patient = 100
+n_adresse = 10
+n_medecin = 10
+n_ordonnance = 10
+n_seance = 10
+n_patient = 10
 
 namespace :db do
   desc "Remplit la base avec de faux utilisateurs"
