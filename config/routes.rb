@@ -1,5 +1,7 @@
 KineApp::Application.routes.draw do
 
+  resources :rdvs
+
   get "medecins/new"
 
   get "medecins/show"

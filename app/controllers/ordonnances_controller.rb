@@ -24,7 +24,7 @@ class OrdonnancesController < ApplicationController
 
   #Afficher une liste d'ordonnance
   def index
-    @title = "Rechercher une/des ordonnance(s)"
+    @title = "Toutes les ordonnances"
     @ordonnances = Ordonnance.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
   end
 

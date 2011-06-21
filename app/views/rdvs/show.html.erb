@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lieu:</b>
+  <%= @rdv.lieu %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @rdv.contact %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @rdv.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_rdv_path(@rdv) %> |
+<%= link_to 'Back', rdvs_path %>
