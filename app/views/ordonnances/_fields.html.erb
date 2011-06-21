@@ -39,12 +39,16 @@
 	
 	<%= kine_debut_contenu_onglet 2%>
 	<!-- On doit avoir le bilan dans cet onglet (bilan initial, bilan final)-->
-	<% if @ordonnance.bilan.nil?%>
-		<%= add_button_link_to "Effectuer un bilan", new_bilan_path %>
-	<%else%> <!--TODO Pierre Je ne suis pas sur que ça fonctionne il faut peut être creer une variable bilan -->
+	 <!--TODO Pierre Je ne suis pas sur que ça fonctionne il faut peut être creer une variable bilan -->
 		<%= f.fields_for :bilan do |b| %>
 			<%= b.label :initial, "Bilan initial" %>
-			<%= b.text_field :initial %>
+			<%= b.text_field :initial %><br />
+			<%= b.label :final, "Bilan final" %>
+			<%= b.text_field :final %>
+			<% unless b.object.new_record? %>
+			      <% # Don't forget to name both of these '_destroy' in Rails 3 %>
+			      <%= b.check_box '_destroy' %>
+			      <%= b.label '_destroy', 'Supprimer' %>
 		<% end %>
 	<% end %>
 	<%= kine_fin_contenu_onglet 2%>

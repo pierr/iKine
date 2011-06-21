@@ -9,6 +9,7 @@ class OrdonnancesController < ApplicationController
     @onglet_selected = 1
     @title = "Ordonnances | Mode creation" 
     @ordonnance = Ordonnance.new
+    @ordonnance.bilan = Bilan.new
     patient
     medecin
     

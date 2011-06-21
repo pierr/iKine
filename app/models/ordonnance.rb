@@ -35,14 +35,16 @@ class Ordonnance < ActiveRecord::Base
                   :patient_token,
                   :medecin_token,
                   :medecin,
-                  :patient
+                  :patient,
+                  :bilan_attributes
   attr_reader :user_tokens,
               :patient_token, 
               :medecin_token
   belongs_to :patient, :validate => true
   belongs_to :medecin , :validate => true
   has_many :seances
-  has_one :bilan
+  has_one :bilan , :autosave => true
+  accepts_nested_attributes_for :bilan, :allow_destroy => true
   has_many :user_ordonnances
   has_many :users, :through => :user_ordonnances , :validate => false#Si on ne met pas ça ca ne fonctionne pas car il cherche à valider les users avec les password
   #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
