@@ -13,13 +13,8 @@ class SeancesController < ApplicationController
   end
   
   def index
-<<<<<<< HEAD
-    @title = "Toutes les séances"
-    @seances = Seance.all
-=======
     @title = "Rechercher une/des seance(s)"
     @seances = Seance.all.paginate(:per_page => 5, :page => params[:page])
->>>>>>> emeline
   end
  
   def create
