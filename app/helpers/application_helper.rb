@@ -25,13 +25,9 @@ module ApplicationHelper
    #methode qui permet de générer un lien qui fait un tri sur la colonne column avec pour champ titl
    def sortable(column, title = nil)
       title ||= column.titleize
-      puts "TITRE COLONNE"
-      puts title
-      puts column.titleize
-      #puts params.merge(:sort =>column ,:direction => direction , :page=>nil).to_s
       direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc" 
       css_class = column == sort_column ? "current #{sort_direction}" : nil
-      link_to title, params.merge(:sort =>column ,:direction => direction , :page=>nil), {:class => css_class}
+      return link_to title, params.merge(:sort =>column ,:direction => direction , :page=>nil), {:class => css_class}
    end
    
    ###############################
