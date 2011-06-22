@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110521192843
+# Schema version: 20110616110935
 #
 # Table name: rdvs
 #
@@ -18,8 +18,19 @@
 #
 
 class Rdv < ActiveRecord::Base
-  
-  belongs_to :patient
-  belongs_to :adresse
-  
+    attr_accessible :date,
+                    :lieu,
+                    :contact,
+                    :ordonnance_token
+    
+    attr_reader :ordonnance_token
+                    
+                    
+     belongs_to :patient
+     belongs_to :ordonnance
+     belongs_to :adresse
+     
+  def ordonnance_token=(id)
+    self.ordonnance_id = id
+  end
 end

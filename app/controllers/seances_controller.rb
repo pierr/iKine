@@ -1,8 +1,9 @@
+# encoding: UTF-8
 class SeancesController < ApplicationController
   def new
     @title ="Seances | Mode creation"
     @seance = Seance.new
-    @patient = Patient.new
+    @seance.ordonnance = Ordonnance.last
   end
 
   def show
@@ -13,7 +14,7 @@ class SeancesController < ApplicationController
   
   def index
     @title = "Rechercher une/des seance(s)"
-    @seances = Seance.all
+    @seances = Seance.all.paginate(:per_page => 5, :page => params[:page])
   end
  
   def create
@@ -26,6 +27,7 @@ class SeancesController < ApplicationController
       render 'new'
     end
   end
+  
 
  
 end
