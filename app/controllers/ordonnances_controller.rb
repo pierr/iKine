@@ -104,7 +104,7 @@ class OrdonnancesController < ApplicationController
     @ordonnance = Ordonnance.find(params[:id])
   end
   
-  #Permet de charger le patient si il est definie sinon on charge le dernier cree par defaut
+  #Permet de charger le patient s'il est defini sinon on charge le dernier cree par defaut
   def patient
     if !@ordonnance.patient.nil?
       @patient = @ordonnance.patient

@@ -144,7 +144,8 @@ $(function() {
  */
 $(function() {
   $("#rdv_patient_token").tokenInput("/patients.json", {
-    crossDomain: false,
+    queryParam: "p",
+	crossDomain: false,
     prePopulate: $("rdv_patient_token").data("pre"),
     //theme: "mac",
 	preventDuplicates: true,
