@@ -1,0 +1,10 @@
+<h1> <%=@title%> </h1>
+<%= form_for @seance, :validate => true do |f| %>
+  <%= render 'fields', :f=>f%>
+  <div class="actions">
+    <%= link_to "Annuler" , seances_path  , :class => "button" %>
+    <%= f.submit "Enregistrer", :class => "button" %>
+  </div>
+
+<% end %>
+
