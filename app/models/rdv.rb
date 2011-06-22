@@ -21,15 +21,20 @@ class Rdv < ActiveRecord::Base
     attr_accessible :date,
                     :lieu,
                     :contact,
-                    :ordonnance_token
+                    :ordonnance_token,
+                    :patient_token
     
     attr_reader :ordonnance_token
+    attr_reader :patient_token
                     
                     
      belongs_to :patient
      belongs_to :ordonnance
      belongs_to :adresse
      
+  def patient_token=(id)
+    self.aptient_id = id
+  end   
   def ordonnance_token=(id)
     self.ordonnance_id = id
   end
