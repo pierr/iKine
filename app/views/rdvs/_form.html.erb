@@ -13,6 +13,10 @@
 
 
 <div class="field">
+	<%= f.label :patient_token, "Patient" %><br />
+ 	<%= f.text_field :patient_token, "data-pre" => @rdv.patient.to_json %></br>
+ </div>
+<div class="field">
 	<%= f.label :ordonnance_token, "Ordonnance" %><br />
  	<%= f.text_field :ordonnance_token, "data-pre" => @rdv.ordonnance.to_json %></br>
  </div>
