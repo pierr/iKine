@@ -4,6 +4,7 @@ class SeancesController < ApplicationController
     @title ="Seances | Mode creation"
     @seance = Seance.new
     @seance.ordonnance = Ordonnance.last
+    user_pre
   end
 
   def show
@@ -28,6 +29,50 @@ class SeancesController < ApplicationController
     end
   end
   
-
- 
+  def destroy
+    @seance = Seance.find(params[:id])
+    numero = @seance.id
+    if @seance.destroy
+      flash[:success] = "La seance numero #{numero} a ete detruite."
+      redirect_to seances_path
+    else
+      flash[:error] = "La seance numero #{numero} n' a pas ete detruite."
+      redirect_to seance_path(@seance)
+    end
+  end
+  
+  def edit
+    @seance = Seance.find(params[:id])
+    numero = @seance.id
+    patient_pre
+    @title = "Modification de la seance numero #{numero}"
+    user_pre
+    ordonnance_pre
+  end
+  
+  def update
+    @seance = Seance.find(params[:id])
+    numero = @seance.id
+    if @seance.update_attributes(params[:seance])
+        flash[:success] = "seance mise a jour."
+        redirect_to @seance
+    else
+      flash[:error] = "La seance n'a pas ete mise a jour."
+        @title = "Modification de la seance numero #{numero}"
+        render 'edit'
+      end
+    end
+  
+  def patient_pre
+    @patient_pre = [@seance.patient]
+  end
+  
+  def user_pre
+    @user_pre = @seance.user.nil? ? [current_user] : [@seance.user] 
+  end 
+  
+  def ordonnance_pre
+    @ordonnance_pre = [@seance.ordonnance]
+  end
+   
 end

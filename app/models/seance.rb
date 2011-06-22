@@ -39,7 +39,7 @@ class Seance < ActiveRecord::Base
   belongs_to :user
   belongs_to :ordonnance, :validate => true
   belongs_to :patient, :validate => true
-  validates_presence_of :user_id, :patient_id, :ordonnance_id, :duree
+  validates_presence_of :user_id, :patient_id, :ordonnance_id
   accepts_nested_attributes_for :ordonnance
   
   def patient_token=(id)
@@ -53,6 +53,7 @@ class Seance < ActiveRecord::Base
     def ordonnance_token=(id)
     self.ordonnance_id = id
   end
+    
 end
 
 

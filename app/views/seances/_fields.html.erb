@@ -1,10 +1,10 @@
 <div class="field">
 
 	<%= f.label :user_token, "Praticien" %><br />
-	<%= f.text_field :user_token, "data-pre" => @seance.user.to_json %></br>
+	<%= f.text_field :user_token, "data-pre" => @user_pre.to_json %></br>
 
  	<%= f.label :patient_token, "Patient" %><br />
- 	<%= f.text_field :patient_token %>
+ 	<%= f.text_field :patient_token, "data-pre" => @patient_pre.to_json %>
 
 	<%= f.label :date %><br />
 	<%= f.text_field :date_debut , :class => 'datepicker'%>
@@ -15,5 +15,14 @@
 	<%= f.text_area :commentaire %></br>
 
 	<%= f.label :ordonnance_token, "Ordonnance" %><br />
-	<%= f.text_field :ordonnance_token, "data-pre" => @seance.ordonnance.to_json %></br>
+	<%= f.text_field :ordonnance_token, "data-pre" => @ordonnance_pre.to_json %></br>
+</div>
+
+<div class="field">
+	<%= f.label :a_domicile, "Effectuee a domicile" %>
+ 	<%= f.check_box :a_domicile %>
+</div>
+<div class="field">
+	<%= f.label :paye, "Seance payee" %>
+ 	<%= f.check_box :paye %>
  </div>
