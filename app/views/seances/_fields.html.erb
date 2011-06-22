@@ -1,24 +1,19 @@
-<%= render 'shared/error_messages', :object => f.object %>
-  <div class="field">
-   <%=fields_for @patient , {} do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
-   	<%= t.label :patient_token, "Patient" %><br />
-   	<%= t.text_field :patient_token, "data-pre" => @patient_pre.to_json  %>
-    <%end%>
+<div class="field">
+
+	<%= f.label :user_token, "Praticien" %><br />
+	<%= f.text_field :user_token, "data-pre" => @seance.user.to_json %></br>
+
+ 	<%= f.label :patient_token, "Patient" %><br />
+ 	<%= f.text_field :patient_token %>
 
 	<%= f.label :date %><br />
- 	<%= f.date_select :date_debut %>
+	<%= f.text_field :date_debut , :class => 'datepicker'%>
 
 	<%= kine_text_fied_edit(f , :duree) %>
 
 	<%= f.label :commentaire %><br />
- 	<%= f.text_area :commentaire %>
+	<%= f.text_area :commentaire %></br>
 
-    </br></br>
-
-   <%= f.label :ordonnance %><br /><p>Saisissez le numero ou recherchez l'ordonnance correspondante</p>
-   <%= f.text_field :ordonnance %>
-   <%= search_pill_button_link_to "", ordonnances_path %>
-
-
-    </br></br>
-   </div>
+	<%= f.label :ordonnance_token, "Ordonnance" %><br />
+	<%= f.text_field :ordonnance_token, "data-pre" => @seance.ordonnance.to_json %></br>
+ </div>

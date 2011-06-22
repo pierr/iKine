@@ -1,6 +1,7 @@
 <header>
-  <%= link_to logo, root_path %>
-  <nav >
+  <%= link_to( (logo :height=>"70"), root_path )%>
+  
+<nav >
 	<%= minor_button_group do %>    
 		<%= pill_button_link_to "Home", root_path %>
       <% if signed_in? %>
@@ -18,8 +19,9 @@
 		<%= button_group do%>
 			<%= log_button_link_to "Ordonnances", ordonnances_path %>
 			<%= user_button_link_to "Patients", patients_path %>
-    		<%= calendar_button_link_to "Seances", seances_path %>    
+    		<%= calendar_button_link_to "Séances", seances_path %>    
 			<%= button_link_to "Praticiens", users_path %>
+			<%= button_link_to "Rdv", rdvs_path %>
 		<% end %>
 	<% end %>
   </nav>	

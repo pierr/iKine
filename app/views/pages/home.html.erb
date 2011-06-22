@@ -1,15 +1,10 @@
-<h1>Kine App</h1>
-
-<p>
-  Voici la page d'accueil de l'application.<br />
-  Ici vous trouverez un accès à tous les modules ainsi qu'à tous les processus de login/password.
-</p>
 <!-- Si l'utilisateur n'est pas loggué on propose la création de compte ou l'authentification-->
 <% if !signed_in? %>
-	<!-- On propose l'inscription -->
-	<%= link_to "S'inscrire!", signup_path, :class => "signup_button round" %>
-
 	<!-- On propose le login -->
 	<%= render '/sessions/session' %>
+	<!-- On propose l'inscription -->
+	<%= add_button_link_to "S'inscrire!", signup_path %>	
+<% else %>
+		<%= render 'launcher' %> <!--Ce fichier contient les icones de la page d'accueil qui permet d'accéder rapidement au contenu de l'application -->
 <% end%>
 

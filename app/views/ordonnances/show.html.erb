@@ -21,6 +21,27 @@
     		<%=  @ordonnance.date %>
   		</div>
   		<div class="field">
+			<strong>Nombre de scéances</strong><br />
+    		<%=  @ordonnance.nombre_seances %>
+  		</div>
+
+	<%= kine_fin_contenu_onglet 1%>
+	
+	<%= kine_debut_contenu_onglet 2%>
+  		<% if @bilan.nil?%>
+			<%= add_button_link_to "Effectuer un bilan", { :controller => "bilans", :action => "new", :ordonnance => @ordonnance } %>
+		<% else %>
+		 	<strong>Bilan initial</strong>  <%= @bilan.initial %><br />
+			<strong>Date bilan initial</strong>  <%= @bilan.date_initial %> <br />
+			<strong>Bilan intermédiaire</strong>  <%= @bilan.intermediaire %><br />
+			<strong>Date bilan intermédiaire </strong>  <%= @bilan.date_intermediaire %> <br />
+			<strong>Bilan final</strong>  <%= @bilan.final %><br />
+			<strong>Date bilan final </strong>  <%= @bilan.date_final %> <br />
+		
+		<%end %>
+	<%= kine_fin_contenu_onglet 2%>
+	<%= kine_debut_contenu_onglet 3%>	
+  		<div class="field">
 			<strong>Caisse</strong><br />
     		<%=  @ordonnance.caisse %>
 	  	</div>
@@ -28,31 +49,28 @@
 			<strong>Mutuelle</strong><br />
     		<%=  @ordonnance.mutuelle %>
   		</div>
-	<%= kine_fin_contenu_onglet 1%>
-	
-	<%= kine_debut_contenu_onglet 2%>
-  		<div class="field">
-			<strong>Prise en charge</strong><br />
+		<div class="field">
+			<strong>Prise en charge</strong> 
     		<%=  @ordonnance.prise_en_charge %>
   		</div>
   		<div class="field">
 			<strong>Type de prise en charge</strong><br />
     		<%=  @ordonnance.type_prise_en_charge %>
   		</div>
-
-  		<div class="field">
-			<strong>Nombre de scéances</strong><br />
-    		<%=  @ordonnance.nombre_seances %>
-  		</div>
-
   		<div class="field">
 			<strong>Payé</strong><br />
     		<%=  @ordonnance.paye %>
   		</div>
-   		<div class="field">
-			<strong>Bilan</strong><br />
-    		<%=  @ordonnance.bilan %>
-		</div>
-		<%= kine_fin_contenu_onglet 2%>
+
+  		<div class="field">
+			<strong>Caisse</strong><br />
+    		<%=  @ordonnance.caisse %>
+	  	</div>
+  		<div class="field">
+			<strong>Mutuelle</strong><br />
+    		<%=  @ordonnance.mutuelle %>
+  		</div>
+
+		<%= kine_fin_contenu_onglet 3%>
 		
 <%= kine_fin_contenu_onglets%>

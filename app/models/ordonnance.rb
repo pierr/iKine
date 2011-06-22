@@ -35,14 +35,16 @@ class Ordonnance < ActiveRecord::Base
                   :patient_token,
                   :medecin_token,
                   :medecin,
-                  :patient
+                  :patient,
+                  :bilan_attributes
   attr_reader :user_tokens,
               :patient_token, 
               :medecin_token
   belongs_to :patient, :validate => true
   belongs_to :medecin , :validate => true
   has_many :seances
-  has_one :bilan
+  has_one :bilan , :autosave => true
+  accepts_nested_attributes_for :bilan, :allow_destroy => true
   has_many :user_ordonnances
   has_many :users, :through => :user_ordonnances , :validate => false#Si on ne met pas ça ca ne fonctionne pas car il cherche à valider les users avec les password
   #default_scope :order => 'ordonnances.created_at DESC' #pour avoir automatiquement un tri par défaut
@@ -56,6 +58,14 @@ class Ordonnance < ActiveRecord::Base
   validates_presence_of  :date, :nombre_seances#FIXME PIERRE JE NE COMPRENDS PAS POURQUOI ca ne fonctionne pas avec a, :patient_id, :medecin_id
   
   validates_associated :seances #s'assurer que les objets liés existent bien
+  
+ def as_json(options)
+ { 
+       :id => id,
+       :name => name
+ }
+ end
+ 
  
  #Methode qui permet de rechercher des ordonnances
   def self.search(search)
@@ -98,6 +108,11 @@ class Ordonnance < ActiveRecord::Base
   end
   def medecin_token=(id)
     self.medecin_id = id
+  end
+  
+  private
+  def name
+      "#{numero} #{date}"
   end
   
 end

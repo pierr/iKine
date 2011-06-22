@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616110935) do
+ActiveRecord::Schema.define(:version => 20110616122624) do
 
   create_table "adresses", :force => true do |t|
     t.string   "numero"
@@ -107,14 +107,11 @@ ActiveRecord::Schema.define(:version => 20110616110935) do
   end
 
   create_table "rdvs", :force => true do |t|
-    t.datetime "date"
-    t.integer  "duree"
-    t.boolean  "a_domicile"
-    t.boolean  "nouveau_patient"
-    t.string   "telephone"
-    t.string   "email"
-    t.string   "commentaire"
+    t.string   "lieu"
+    t.string   "contact"
+    t.date     "date"
     t.integer  "patient_id"
+    t.integer  "ordonnance_id"
     t.integer  "adresse_id"
     t.datetime "created_at"
     t.datetime "updated_at"
