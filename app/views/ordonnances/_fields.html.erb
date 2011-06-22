@@ -1,5 +1,10 @@
 <%= render 'shared/error_messages', :object => f.object %>
 
+<%=
+	button_to_function "Details" do |page|
+  	page[:details].visual_effect :toggle_slide
+	end
+%>
 <%=kine_onglets @onglets, @onglet_selected%>
 
 <%=kine_debut_contenu_onglets%> 
