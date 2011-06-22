@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+
+<div class="field">
+	<%= f.label :ordonnance_token, "Ordonnance" %><br />
+ 	<%= f.text_field :ordonnance_token, "data-pre" => @rdv.ordonnance.to_json %></br>
+ </div>
   <div class="field">
     <%= f.label :lieu %><br />
     <%= f.text_field :lieu %>
@@ -23,10 +28,7 @@
     <%= f.label :date %><br />
     <%= f.date_select :date %>
   </div>
-  <div class="field">
-	<%= f.label :ordonnance_token, "Ordonnance" %><br />
- 	<%= f.text_field :ordonnance_token, "data-pre" => @rdv.ordonnance.to_json %></br>
- </div>
+  
 <div class="actions">
     <%= f.submit %>
   </div>
