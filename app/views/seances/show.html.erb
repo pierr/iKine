@@ -8,14 +8,13 @@
 
 		</br>
 		<div class="field">
+    		<strong>Numero</strong><br />
+    		<%=  @seance.id %>
+  		</div>
+		<div class="field">
     		<strong>Praticien</strong><br />
     		<%=  @seance.user.prenom %>
     		<%=  @seance.user.nom %>
-  		</div>
-
-		<div class="field">
-    		<strong>Numero</strong><br />
-    		<%=  @seance.id %>
   		</div>
  		<div class="field">
 			<strong>Patient</strong><br />
@@ -34,6 +33,10 @@
 			<strong>Ordonnance</strong><br />
     		<%=  @seance.ordonnance.numero %>
 			<%=  @seance.ordonnance.date %>
+	  	</div>
+  		<div class="field">
+			<strong>Effectuee a domicile</strong><br />
+    		<%=  @seance.a_domicile %>
 	  	</div>
 
 <%= link_to "Retour", seances_path, :class => "button" %>

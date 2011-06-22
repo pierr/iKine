@@ -2,13 +2,17 @@
 <%= hidden_field_tag :sort, params[:sort] %>
 <table class="pretty">
   <tr>
-    <th><%=  "id"%></th>
-    <th><%=  "commentaires"%></th>
+    <th><%=  ""%></th>
+    <th><%=  "Patient"%></th>
+    <th><%=  "Praticien"%></th>
+    <th><%=  "Commentaires"%></th>
     <th><%=  "Date debut"%></th>
   </tr>
   <% for seance in @seances %>
     <tr>
-      <td><%= link_to seance.id, seance_path(seance) %></td>
+      <td><%= link_to "voir la seance", seance_path(seance) %></td>
+      <td><%= seance.patient.nom %></td>
+      <td><%= seance.user.nom %></td>
       <td><%= seance.commentaire %></td>
       <td><%= seance.date_debut %></td>
     </tr>
