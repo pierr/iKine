@@ -50,6 +50,19 @@ class SeancesController < ApplicationController
     ordonnance_pre
   end
   
+  def update
+    @seance = Seance.find(params[:id])
+    numero = @seance.id
+    if @seance.update_attributes(params[:seance])
+        flash[:success] = "seance mise a jour."
+        redirect_to @seance
+    else
+      flash[:error] = "La seance n'a pas ete mise a jour."
+        @title = "Modification de la seance numero #{numero}"
+        render 'edit'
+      end
+    end
+  
   def patient_pre
     @patient_pre = [@seance.patient]
   end
