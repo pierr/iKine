@@ -28,7 +28,7 @@
   				<%end%>
 
 				<%=fields_for @ville , :validate => true do |t|%><!-- TODO : Audric : Voici un exemple de formulaire à plusieurs objets-->
-					<%= kine_text_fied_edit(t , :ville_token , "Ville") %><!% autocomplete  %>
+					<%= kine_autocomplete_fied_edit(t , :ville_token , @ville , "Ville") %><!% autocomplete  %>
   				<%end%>
 				
 	<%= kine_fin_contenu_onglet 1%>
