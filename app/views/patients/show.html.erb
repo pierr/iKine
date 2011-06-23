@@ -1,19 +1,57 @@
 <h1>Patient | <%=@mode%></h1>
 <p>Find me in app/views/patient/show.html.erb</p>
 
+<% @onglets = ["Onglet 1","Onglet 2", "Onglet 3"]%>
+<% @onglet_selected = 1 %>
+<%=kine_onglets @onglets, @onglet_selected%>
+<%=kine_debut_contenu_onglets%> 
+	<%=kine_debut_contenu_onglet 1, true%> 
+
+		<%= kine_display_view("Nom", @patient.nom)%><br/>
+		<%= kine_display_view("Prénom", @patient.prenom)%><br/>
+		<%= kine_display_view("Email", @patient.email)%><br/>
+		<%= kine_display_view("Téléphone", @patient.telephone)%><br/>
+		<%= kine_display_view("Civilité", @patient.civilite.nom)%><br/>
+		
+		<%= kine_display_view("Numero", @adresse.numero)%><br/>
+		<%= kine_display_view("Rue", @adresse.rue)%><br/>
+		<%= kine_display_view("Complément adresse", @adresse.complement_adresse)%><br/>
+		<%= kine_display_view("Ville", @ville.nom)%><br/>
+		<%= kine_display_view("Département", @departement.nom)%><br/>
 
 
-<%= kine_display_view("Nom", @patient.nom)%><br/>
-<%= kine_display_view("Prénom", @patient.prenom)%><br/>
-<%= kine_display_view("Email", @patient.email)%><br/>
-<%= kine_display_view("Téléphone", @patient.telephone)%><br/>
-<%= kine_display_view("Civilité", @patient.civilite.nom)%><br/>
+	<%= kine_fin_contenu_onglet 1%>
+	<%= kine_debut_contenu_onglet 2%>
 
-<%= kine_display_view("Numero", @adresse.numero)%><br/>
-<%= kine_display_view("Rue", @adresse.rue)%><br/>
-<%= kine_display_view("Complément adresse", @adresse.complement_adresse)%><br/>
-<%= kine_display_view("Ville", @ville.nom)%><br/>
-<%= kine_display_view("Département", @departement.nom)%><br/>
+			<table class="pretty">
+			  <tr>
+				<th>Numero</th>
+				<th>Date d'emission</th>
+			   	<th>Pathologie</th>
+			 	<th>Nombre de seances</th>  
+				<th>Médecin</th>
+			  </tr>
+			  <% @ordonnances.each do |f| %>
+			    <tr>
+			      <td><%= link_to f.numero, ordonnance_path(f) %></td>
+			      <td><%= f.date %></td>
+			      <td><%= f.pathologie %></td>
+				  <td><%= f.nombre_seances %></td>  
+				  <td><%= f.med %></td>
+			    </tr>
+			  <% end %>
+			</table>
+	
+
+
+
+
+	<%= kine_fin_contenu_onglet 2%>
+	<%= kine_debut_contenu_onglet 3%>
+	<%= kine_fin_contenu_onglet 3%>
+		
+<%= kine_fin_contenu_onglets%>
+
 
 <br/>
 <%= link_to "Modifier", edit_patient_path(@patient) , :class => "button round" %>

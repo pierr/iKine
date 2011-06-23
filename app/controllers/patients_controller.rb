@@ -22,6 +22,11 @@ class PatientsController < ApplicationController
     @ville = @code_insee.ville
     @departement = @code_insee .departement
     @civilite = @patient.civilite
+    
+    @ordonnances = @patient.ordonnances
+    
+    
+    
   end
   
   def new
