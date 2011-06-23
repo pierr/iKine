@@ -4,7 +4,7 @@
 <div class="actions button-container centrage">
 		<%=kine_onglets @onglets, @onglet_selected%>
 	<div class="button-group right">
-	<%= add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %>
+	<%= positive_add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %>
 	</div>		
 </div>
 
@@ -105,8 +105,8 @@
 				<%= button_link_to "Toutes les Ordonnances", ordonnances_path%>
 			</div>
 			<div class= "button-group right">
-				<%= button_link_to "Modifier", edit_ordonnance_path(@ordonnance) %>
-				<%= button_link_to "Supprimer", @ordonnance, :method => :delete,
+				<%= edit_button_link_to "Modifier", edit_ordonnance_path(@ordonnance) %>
+				<%= negative_trash_button_link_to "Supprimer", @ordonnance, :method => :delete,
 										   	  			 	 :confirm => "Etes vous certain?",
 		                          	  	      				 :title => "Supprimer l'ordonnance #{@ordonnance.numero}",
 			%>
