@@ -1,11 +1,13 @@
 <h1>Ordonnances numero <%= "#{@ordonnance.numero}"%></h1>
-<%= link_to "Modifier", edit_ordonnance_path(@ordonnance), :class => "button" %>
-<%= link_to "Supprimer", @ordonnance, :method => :delete,
- 									  :class => "button",
-								   	  :confirm => "Etes vous certain?",
-                          	  	      :title => "Supprimer l'ordonnance #{@ordonnance.numero}" %>
-<%= add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %>
-<%=kine_onglets @onglets, @onglet_selected%>
+
+
+<div class="actions button-container centrage">
+		<%=kine_onglets @onglets, @onglet_selected%>
+	<div class="button-group right">
+	<%= add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %>
+	</div>		
+</div>
+
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
 		<div class="field">
@@ -97,5 +99,18 @@
 		</table>
 		<% end 	%>
 		<%= kine_fin_contenu_onglet 3%>
+		<div class="actions button-container">
+			
+			<div class= "button-group">
+				<%= button_link_to "Toutes les Ordonnances", ordonnances_path%>
+			</div>
+			<div class= "button-group right">
+				<%= button_link_to "Modifier", edit_ordonnance_path(@ordonnance) %>
+				<%= button_link_to "Supprimer", @ordonnance, :method => :delete,
+										   	  			 	 :confirm => "Etes vous certain?",
+		                          	  	      				 :title => "Supprimer l'ordonnance #{@ordonnance.numero}",
+			%>
+			</div>
+		</div>
 		
-<%= kine_fin_contenu_onglets%>
+		<%= kine_fin_contenu_onglets%>

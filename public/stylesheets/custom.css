@@ -260,6 +260,9 @@ ul.users {
 }
 
 div.centrage {text-align: center;}
+div.left {text-align: left;}
+div.right {text-align: right;}
+
 
 /**************************/
 /*****DATE PICKER **********/
