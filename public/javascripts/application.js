@@ -51,6 +51,33 @@ $(function() {
 });
 
 /**
+*Fonction pour faire des liens ajax sur les tablaux tri etc et la barre de recherche
+*/
+$(function() {
+	/*Cette fonction sert à récupérer les clicks sur des liens de la page ici
+	* sur les titres des colonnes pour le tri et sur les éléments pour la pagination
+	*/
+  $("#seances th a, #seances .pagination a").live("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+  /*Celui ci sert à chopper les recherches quand on click sur rechercher*/
+  $("#seances_search").submit(function() {
+    $.get(this.action, $(this).serialize(), null, "script");
+    return false;
+  });
+
+	/** Cette fonction permet de faire comme sur google de la instant recherche à voir si on la remplace 
+	* par un plugin. 
+	* @see http://plugins.jquery.com/plugin-tags/live-search
+	*/
+  $("#seances_search input").keyup(function() {
+    $.get($("#seances_search").attr("action"), $("#seances_search").serialize(), null, "script");
+    return false;
+  });
+});
+
+/**
  *Cette fonction sert à avoir l'auto-complétion pour un formulaire multi-liaison user ordonnance
  */
 $(function() {

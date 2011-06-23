@@ -1,5 +1,8 @@
 # encoding: UTF-8
+
 class SeancesController < ApplicationController
+    helper_method :sort_column, :sort_direction
+  
   def new
     @title ="Seances | Mode creation"
     @seance = Seance.new
@@ -15,8 +18,18 @@ class SeancesController < ApplicationController
   
   def index
     @title = "Rechercher une/des seance(s)"
-    @seances = Seance.all.paginate(:per_page => 5, :page => params[:page])
-  end
+    @seances = Seance.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    print @seances
+    respond_to do |format|
+        format.html
+        format.js
+        format.json { 
+          @seanceJson = Seance.where("patient.nom like ?", "%#{params[:q]}%")
+          render :json => @seanceJson.as_json #.map(&:attributes)
+          }
+       end
+  end  
+  
  
   def create
     @seance = Seance.new(params[:seance])
@@ -73,6 +86,17 @@ class SeancesController < ApplicationController
   
   def ordonnance_pre
     @ordonnance_pre = [@seance.ordonnance]
+  end
+  
+  def sort_column
+    #puts "ORDONNANCE COLONNE NAME" 
+    #puts Ordonnance.column_names
+    Seance.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+  
+  #trouve la direction de tri
+  def sort_direction
+     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
    
 end

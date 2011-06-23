@@ -53,6 +53,23 @@ class Seance < ActiveRecord::Base
     def ordonnance_token=(id)
     self.ordonnance_id = id
   end
+  
+  
+  def self.search(search)
+    if search
+      where('patient_id LIKE ?', "%#{search}%")
+    else
+      scoped #Comme all mais ne fait pas la requete
+    end
+  end
+  
+    def pat
+    if patient.nil?
+      return "pas de patient"
+    else
+      return "#{patient.prenom} #{patient.nom}"
+    end
+  end
     
 end
 
