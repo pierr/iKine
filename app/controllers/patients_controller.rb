@@ -34,6 +34,11 @@ class PatientsController < ApplicationController
     @patient = Patient.new
     @adresse = Adresse.new
     @ville = Ville.new
+      if (!params[:rdv].nil?)
+        @retour_rdv=true
+      else
+        @retour_rdv=false
+      end
     
     @civiliteList = Civilite.all
   end
