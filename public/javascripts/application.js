@@ -144,8 +144,7 @@ $(function() {
  */
 $(function() {
   $("#rdv_patient_token").tokenInput("/patients.json", {
-    queryParam: "p",
-	crossDomain: false,
+   	crossDomain: false,
     prePopulate: $("rdv_patient_token").data("pre"),
     //theme: "mac",
 	preventDuplicates: true,
@@ -186,3 +185,30 @@ $(function() {
 			}
 		);
 });
+
+/*Fonction qui permet de géocoder une adresse, c'est à dire trouver sa lattitude et sa longitude.
+* pour celà il faut que l'api google map soit chargée:
+* http://maps.google.com/maps/api/js?sensor=false et http://www.google.com/jsapi
+* @param _adress : string qui contient l'adresse concaténée
+* @param name : ce qu'on veur mettre dans la bullet associée au marker.
+* @param _geo_adresses : tableau qui contient toutes les adresses géocodée.
+*/
+function codeAddress(_address,name, _geo_adresses) {
+	var geocoder = new google.maps.Geocoder();
+  	var address = _address+",FR";//document.getElementById("address").value;
+
+  	if (geocoder) {
+    	geocoder.geocode( { 'address': address}, function(results, status) {
+      	if (status == google.maps.GeocoderStatus.OK) {
+			var lat = results[0].geometry.location.lat();
+			var lng = results[0].geometry.location.lng();
+			res = [ lat , lng, name];
+			_geo_adresses.push(res);
+				//alert(expos.join());
+ 	    	 }
+		else {
+        	alert("L'adrresse de votre patient n'a pas pu être localisé pour la raison suivante" + status);
+      		}
+  		});
+ 	}
+}
