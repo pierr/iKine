@@ -58,10 +58,15 @@ class SeancesController < ApplicationController
   def edit
     @seance = Seance.find(params[:id])
     numero = @seance.id
-    patient_pre
+    #patient_pre
     @title = "Modification de la seance numero #{numero}"
     user_pre
-    ordonnance_pre
+    #ordonnance_pre
+
+    @ordonnance = @seance.ordonnance
+    @patient = @ordonnance.patient
+    
+
   end
   
   def update
@@ -78,10 +83,10 @@ class SeancesController < ApplicationController
     end
   
   def patient_pre
-    if !@seance.patient.nil?
-      @patient_pre = [@seance.patient]
-    elsif !params[:patient].nil?
-      @patient_pre = Patient.find(params[:patient])
+    if @seance.patient
+      @patient = @seance.patient
+    elsif params[:patient]
+      @patient = Patient.find(params[:patient])
     end
   end
   
@@ -90,13 +95,10 @@ class SeancesController < ApplicationController
   end 
   
   def ordonnance_pre
-    if !@seance.ordonnance.nil?
-       @ordonnance_pre = [@seance.ordonnance]
-    elsif !params[:ordonnance].nil?
-       @ordonnance_pre = Ordonnance.find(params[:ordonnance])
-    end
-    if !@ordonnance_pre.nil?
-      @ordonnance_pre = [@ordonnance_pre]
+    if @seance.ordonnance
+       @ordonnance = @seance.ordonnance
+    elsif params[:ordonnance]
+       @ordonnance = Ordonnance.find(params[:ordonnance])
     end
   end
 

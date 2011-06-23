@@ -3,8 +3,7 @@
 	<%= f.label :user_token, "Praticien" %><br />
 	<%= f.text_field :user_token, "data-pre" => @user_pre.to_json %></br>
 
- 	<%= f.label :patient_token, "Patient" %><br />
- 	<%= f.text_field :patient_token, "data-pre" => @patient_pre.to_json %>
+	<%= kine_autocomplete_fied_edit(f, :patient_token, @patient, "Patient" )%>
 
 	<%= f.label :date %><br />
 	<%= f.text_field :date_debut , :class => 'datepicker'%>
@@ -14,8 +13,8 @@
 	<%= f.label :commentaire %><br />
 	<%= f.text_area :commentaire %></br>
 
-	<%= f.label :ordonnance_token, "Ordonnance" %><br />
-	<%= f.text_field :ordonnance_token, "data-pre" => @ordonnance_pre.to_json %></br>
+	<%= kine_autocomplete_fied_edit(f, :ordonnance_token, @ordonnance, "Ordonnance" )%>
+
 </div>
 
 <div class="field">
