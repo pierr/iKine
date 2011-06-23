@@ -144,7 +144,11 @@ module ApplicationHelper
    def kine_autocomplete_fied_edit(f, nom , pre = false, display = false, readonly = false)
      head = "<div class=\"field\">"
      label = getLabel(f, nom, display)
-     field = "#{f.text_field nom , :disabled => readonly, "data-pre" => [pre].to_json }"
+     if pre
+        field = "#{f.text_field nom , :disabled => readonly, "data-pre" => [pre].to_json }"
+     else
+        field = "#{f.text_field nom , :disabled => readonly }"
+     end
      print("\n\n#{field}\n\n")
      #field = "#{f.send(:text_field, nom)}"# TODO : Audric : Mettre en place un systeme d'invocation basé la dessus ...
      tail = "</div>"
