@@ -61,6 +61,27 @@ class PatientsController < ApplicationController
        render 'new'
     end
   end
+  
+  #même fonction que create mais avec un retour vers un nouveau rendez-vous
+  def retour_to_rdv
+     @title="mode create"
+     @patient = Patient.new(params[:patient])
+     @adresse = Adresse.new(params[:adresse])
+
+       ville_id = params[:ville][:ville_token]
+     @adresse.code_insee_id= Ville.find(ville_id).code_insee.id
+
+
+     if(@patient.valid? && @adresse.valid?)
+        @adresse.save
+        @patient.adresse=@adresse # pour setter correctement l'adresse id de patient
+        @patient.save
+        redirect_to(:controller=>"rdv", :action => "new", :patient_id => @patient) # aucune erreur => on affiche la page en mode view
+     else # sinon, alors on a des erreurs et on réaffiche la page en mode new
+        render 'new'
+     end
+   end
+  
 
   def edit
     @title="mode edit"
