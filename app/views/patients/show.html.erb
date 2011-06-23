@@ -46,8 +46,7 @@
 			      <td><%= f.pathologie %></td>
 				  <td><%= f.nombre_seances %></td>  
 				  <td><%= f.med %></td>
-<td><%= add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %></td>
-
+		<td><%= add_button_link_to "Seance", new_seance_path(:patient => @patient , :ordonnance => f) %></td>
 			    </tr>
 			  <% end %>
 			</table>
