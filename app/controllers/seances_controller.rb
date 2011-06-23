@@ -97,8 +97,10 @@ class SeancesController < ApplicationController
   def ordonnance_pre
     if @seance.ordonnance
        @ordonnance = @seance.ordonnance
+       @patient = @ordonnance.patient
     elsif params[:ordonnance]
        @ordonnance = Ordonnance.find(params[:ordonnance])
+       @patient = @ordonnance.patient
     end
   end
 
