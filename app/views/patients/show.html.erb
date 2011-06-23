@@ -7,7 +7,7 @@
 <div class="actions button-container centrage">
 	<%=kine_onglets @onglets, @onglet_selected%>
 	<div class="button-group">
-		<%= add_button_link_to "Créer ordonnance", new_ordonnance_path %>
+		<%= add_button_link_to "Créer ordonnance", new_ordonnance_path(:patient => @patient) %>
 	</div>
 </div>
 
