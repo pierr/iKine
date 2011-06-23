@@ -6,8 +6,9 @@ class SeancesController < ApplicationController
   def new
     @title ="Seances | Mode creation"
     @seance = Seance.new
-    @seance.ordonnance = Ordonnance.last
     user_pre
+    patient_pre
+    ordonnance_pre
   end
 
   def show
@@ -77,7 +78,11 @@ class SeancesController < ApplicationController
     end
   
   def patient_pre
-    @patient_pre = [@seance.patient]
+    if !@seance.patient.nil?
+      @patient_pre = [@seance.patient]
+    elsif !params[:patient].nil?
+      @patient_pre = Patient.find(params[:patient])
+    end
   end
   
   def user_pre
@@ -85,9 +90,16 @@ class SeancesController < ApplicationController
   end 
   
   def ordonnance_pre
-    @ordonnance_pre = [@seance.ordonnance]
+    if !@seance.ordonnance.nil?
+       @ordonnance_pre = [@seance.ordonnance]
+    elsif !params[:ordonnance].nil?
+       @ordonnance_pre = Ordonnance.find(params[:ordonnance])
+    end
+    if !@ordonnance_pre.nil?
+      @ordonnance_pre = [@ordonnance_pre]
+    end
   end
-  
+
   def sort_column
     #puts "ORDONNANCE COLONNE NAME" 
     #puts Ordonnance.column_names
