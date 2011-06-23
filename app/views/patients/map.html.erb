@@ -4,7 +4,7 @@
 /*On g&eacute;ocode toutes les address et on les mets dans un tableau
 expos chaque valeur de expo sera un tableau qui contient lat, long,
 information sur l'expo*/
-	var geo_adresses = new Array(); // C'est dans ce tableau qu'on récupère les adresses qu'on veut géocoder.
+	var geo_adresses = new Array(); // C'est dans ce tableau qu'on récupère les adresses qu'on veut féocode
 	codeAddress('51 rue des ruelles 91300 MASSY','<%=link_to("#{@patient.nom} #{@patient.prenom}", @patient)%> , <%="#{@adresse.concat}" %>', geo_adresses);//Cette fonction est dans application.js
 	google.load("visualization", "1", {packages:["map","table"]});
 			google.setOnLoadCallback(drawMap);
@@ -24,8 +24,7 @@ information sur l'expo*/
       		map.draw(dataView, {showTip: true});
 	}
 </script>
-<div id="user_map" class ='round'>
 	<h3>Voici la carte qui mène à votre patient <%= "#{@patient.nom} #{@patient.prenom}"%></h3>
-	<div id="map"></div>
-</div>
+	<div id="map" height="50%" width="40%"></div>
+
 L'adresse de votre patient <%= "#{@patient.nom} #{@patient.prenom}, #{@adresse.concat}"%>

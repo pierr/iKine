@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class PatientsController < ApplicationController
   autocomplete :ville, :nom, :full => true
   def index
@@ -24,7 +25,8 @@ class PatientsController < ApplicationController
     @civilite = @patient.civilite
     
     @ordonnances = @patient.ordonnances
-    
+    @onglets = ["Coordonnées","Dossier médical", "Carte"]
+    @onglets_selected = 1
     
     
   end
