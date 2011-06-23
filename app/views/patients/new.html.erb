@@ -38,8 +38,15 @@
 	<%= kine_fin_contenu_onglet 3%>
 		
 <%= kine_fin_contenu_onglets%>
-	<div class="actions">
+	<%if(@retour_rdv)%>
+		<div class="actions">
+		<%= button_link_to "Créer" , :method => :retour_to_rdv  , :class => "button round"  %>
+		<%= link_to "Annuler" , new_rdv_path  , :class => "button round"  %>
+		</div>
+	<%else%>
+		<div class="actions">
 		<%= f.submit "Créer" %>
 		<%= link_to "Annuler" , patients_path  , :class => "button round" %>
-	</div>
+		</div>
+	<%end%>
 <% end %>
