@@ -1,12 +1,7 @@
 <%= render 'shared/error_messages', :object => f.object %>
-
-<%=
-	button_to_function "Details" do |page|
-  	page[:details].visual_effect :toggle_slide
-	end
-%>
-<%=kine_onglets @onglets, @onglet_selected%>
-
+<div class="actions button-container centrage">
+	<%=kine_onglets @onglets, @onglet_selected%>
+</div>
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%>
 	<!-- Onglet1 contenu : pathologie , praticien, patient medecin, commentaire, nombre de seance--> 
