@@ -1,0 +1,31 @@
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://maps-api-ssl.google.com/maps/api/js?v=3&sensor=true"></script>
+<script type="text/javascript">
+/*On g&eacute;ocode toutes les address et on les mets dans un tableau
+expos chaque valeur de expo sera un tableau qui contient lat, long,
+information sur l'expo*/
+	var geo_adresses = new Array(); // C'est dans ce tableau qu'on récupère les adresses qu'on veut géocoder.
+	codeAddress('51 rue des ruelles 91300 MASSY','<%=link_to("#{@patient.nom} #{@patient.prenom}", @patient)%> , <%="#{@adresse.concat}" %>', geo_adresses);//Cette fonction est dans application.js
+	google.load("visualization", "1", {packages:["map","table"]});
+			google.setOnLoadCallback(drawMap);
+			function drawMap() {
+        		var data = new google.visualization.DataTable();
+    		    data.addColumn('number', 'Lat');
+    		    data.addColumn('number', 'Lon');
+        		data.addColumn('string', 'Name');
+        		//data.addColumn('string', 'Description');
+        		//data.addRow([10.2222,10.22," Pierre"]);
+       			for (var j=0 ; j<geo_adresses.length ; j++){ 
+        			data.addRow([geo_adresses[j][0],geo_adresses[j][1],geo_adresses[j][2]+" "]);
+       			}
+        	var dataView = new google.visualization.DataView(data);
+       		//dataView.setColumns([0,1,2]);
+      		map = new google.visualization.Map(document.getElementById('map'));
+      		map.draw(dataView, {showTip: true});
+	}
+</script>
+<div id="user_map" class ='round'>
+	<h3>Voici la carte qui mène à votre patient <%= "#{@patient.nom} #{@patient.prenom}"%></h3>
+	<div id="map"></div>
+</div>
+L'adresse de votre patient <%= "#{@patient.nom} #{@patient.prenom}, #{@adresse.concat}"%>

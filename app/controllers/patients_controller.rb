@@ -102,5 +102,10 @@ class PatientsController < ApplicationController
     @patient.delete 
     redirect_to patients_path # FIXME : Audric : FIXED :)
   end  
-
+  
+  def map
+     @patient = Patient.find(params[:id])
+     @adresse = @patient.adresse
+     render 'map'
+  end
 end
