@@ -114,7 +114,7 @@ class OrdonnancesController < ApplicationController
     if !@ordonnance.patient.nil?
       @patient = @ordonnance.patient
     elsif !params[:patient].nil?
-      @patient = params[:patient]
+      @patient = Patient.find(params[:patient])
     end
     if !@patient.nil?
       @patient_pre = [@patient]

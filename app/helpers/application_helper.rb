@@ -44,7 +44,7 @@ module ApplicationHelper
    #  -selected est le numero de l'onglet qu'on veut sélectionner
    def kine_onglets(onglets, selected = 1)
      html_a_rendre = "
-       <div id='mes_onglets' class='centrage'>
+       <div id='mes_onglets' class='centrage button-group'>
     		  <ul class='button-group' >".html_safe
       i = 1
      onglets.each do |onglet|
