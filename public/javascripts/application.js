@@ -140,6 +140,19 @@ $(function() {
   });
 });
 /**
+ *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison patient rdv
+ */
+$(function() {
+  $("#rdv_patient_token").tokenInput("/patients.json", {
+    queryParam: "p",
+	crossDomain: false,
+    prePopulate: $("rdv_patient_token").data("pre"),
+    //theme: "mac",
+	preventDuplicates: true,
+	tokenLimit: 1 /*le nombre max qu'on autorise*/
+  });
+});
+/**
  *Cette fonction sert à avoir l'auto-complétion pour un formulaire simple-liaison ordonnance bilan
  */
 $(function() {

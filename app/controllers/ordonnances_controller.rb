@@ -28,8 +28,13 @@ class OrdonnancesController < ApplicationController
   def index
     @title = "Rechercher une/des ordonnance(s)"
     @ordonnances = Ordonnance.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+   # puts "_________ORDONNANCES SEARCH____________"
+    #print @ordonnances
+    #puts "_________COLONNE DIRECTION____________"
+    #print sort_column + " " + sort_direction
     respond_to do |format|
         format.html
+        format.js
         format.json { 
           @ordonnanceJson = Ordonnance.where("numero like ?", "%#{params[:q]}%")
           render :json => @ordonnanceJson.as_json #.map(&:attributes)
@@ -87,8 +92,8 @@ class OrdonnancesController < ApplicationController
   private
   #trouve le nom de la colonne a trier
   def sort_column
-    puts "ORDONNANCE COLONNE NAME" 
-    puts Ordonnance.column_names
+    #puts "ORDONNANCE COLONNE NAME" 
+    #puts Ordonnance.column_names
     Ordonnance.column_names.include?(params[:sort]) ? params[:sort] : "numero"
   end
   
@@ -104,7 +109,7 @@ class OrdonnancesController < ApplicationController
     @ordonnance = Ordonnance.find(params[:id])
   end
   
-  #Permet de charger le patient si il est definie sinon on charge le dernier cree par defaut
+  #Permet de charger le patient s'il est defini sinon on charge le dernier cree par defaut
   def patient
     if !@ordonnance.patient.nil?
       @patient = @ordonnance.patient

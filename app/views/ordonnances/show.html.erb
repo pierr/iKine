@@ -31,17 +31,22 @@
   		<% if @bilan.nil?%>
 			<%= add_button_link_to "Effectuer un bilan", { :controller => "bilans", :action => "new", :ordonnance => @ordonnance } %>
 		<% else %>
+		<div class="sidebar round">
 		 	<strong>Bilan initial</strong>  <%= @bilan.initial %><br />
 			<strong>Date bilan initial</strong>  <%= @bilan.date_initial %> <br />
 			<strong>Bilan intermédiaire</strong>  <%= @bilan.intermediaire %><br />
 			<strong>Date bilan intermédiaire </strong>  <%= @bilan.date_intermediaire %> <br />
 			<strong>Bilan final</strong>  <%= @bilan.final %><br />
 			<strong>Date bilan final </strong>  <%= @bilan.date_final %> <br />
-		
+		</div>
 		<%end %>
 	<%= kine_fin_contenu_onglet 2%>
 	<%= kine_debut_contenu_onglet 3%>	
   		<div class="field">
+			<strong>Patient</strong><br />
+    		<%=  @ordonnance.patient%>
+  		</div>
+		<div class="field">
 			<strong>Caisse</strong><br />
     		<%=  @ordonnance.caisse %>
 	  	</div>
@@ -70,7 +75,27 @@
 			<strong>Mutuelle</strong><br />
     		<%=  @ordonnance.mutuelle %>
   		</div>
-
+		<% if !@ordonnance.seances.nil?%>
+		<h3>Les séances de l'odronnances</h3>
+		<table class="pretty">
+		  <tr>
+		    <th><%=  "id"%></th>
+		    <th><%=  "commentaires"%></th>
+		    <th><%=  "Date debut"%></th>
+			<th><%=  "Domicile"%></th>
+			<th><%=  "Payée?"%></th>
+		  </tr>
+		  <% for seance in @ordonnance.seances %>
+		    <tr>
+		      <td><%= link_to "Voir la séance", seance_path(seance) %></td>
+		      <td><%= seance.commentaire %></td>
+		      <td><%= seance.date_debut %></td>
+			  <td><%= seance.a_domicile %></td>
+		      <td><%= seance.paye %></td>
+			</tr>
+		  <% end %>
+		</table>
+		<% end 	%>
 		<%= kine_fin_contenu_onglet 3%>
 		
 <%= kine_fin_contenu_onglets%>
