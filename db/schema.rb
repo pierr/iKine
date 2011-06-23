@@ -125,7 +125,6 @@ ActiveRecord::Schema.define(:version => 20110616122624) do
     t.boolean  "a_domicile"
     t.integer  "ordonnance_id"
     t.integer  "user_id"
-    t.integer  "patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

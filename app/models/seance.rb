@@ -42,6 +42,8 @@ class Seance < ActiveRecord::Base
   validates_presence_of :user_id, :patient_id, :ordonnance_id
   accepts_nested_attributes_for :ordonnance
   
+  has_one :patient, :through => :ordonnance
+  
   def patient_token=(id)
     self.patient_id = id
   end

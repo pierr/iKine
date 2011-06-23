@@ -11,7 +11,6 @@ class CreateSeances < ActiveRecord::Migration
       #Lien avec les autres objets de la base
       t.references :ordonnance
       t.references :user
-       t.references :patient
       
       
       
