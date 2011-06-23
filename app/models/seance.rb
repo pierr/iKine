@@ -57,8 +57,8 @@ class Seance < ActiveRecord::Base
   
   def self.search(search)
       if search
-        find(:all, :conditions => ['id LIKE ?', "%#{search}%"])
-       # where('patient_id LIKE ?', "%#{search}%")
+        #find(:all, :conditions => ['id LIKE ?', "%#{search}%"])
+        where('id LIKE ?', "%#{search}%")
       else
         scoped #Comme all mais ne fait pas la requete
       end
