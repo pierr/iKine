@@ -19,7 +19,7 @@ class SeancesController < ApplicationController
   def index
     @title = "Rechercher une/des seance(s)"
     @seances = Seance.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
-    print @seances
+
     respond_to do |format|
         format.html
         format.js

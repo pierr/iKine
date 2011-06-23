@@ -2,4 +2,9 @@
   <%= search_field_tag(:search, params[:search]) %>
   <%= search_button_submit_tag "Rechercher" %> <!-- #submit_tag("Rechercher") -->
   <%= add_button_link_to "Créer seance", new_seance_path %>
+
+<div id = "seances">
+	</br>
+	<%=render 'seances'%>
+</div>
 <% end %>
