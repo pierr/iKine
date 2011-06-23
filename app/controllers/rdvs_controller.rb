@@ -25,6 +25,9 @@ class RdvsController < ApplicationController
   # GET /rdvs/new.xml
   def new
     @rdv = Rdv.new
+     if(!params[:patient_id].nil?)
+        @rdv.patient = Patient.find(params[:patient_id])
+      end
 
     respond_to do |format|
       format.html # new.html.erb
