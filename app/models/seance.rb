@@ -56,14 +56,16 @@ class Seance < ActiveRecord::Base
   
   
   def self.search(search)
-    if search
-      where('patient_id LIKE ?', "%#{search}%")
-    else
-      scoped #Comme all mais ne fait pas la requete
-    end
+      if search
+        find(:all, :conditions => ['id LIKE ?', "%#{search}%"])
+       # where('patient_id LIKE ?', "%#{search}%")
+      else
+        scoped #Comme all mais ne fait pas la requete
+      end
   end
   
-    def pat
+  
+  def pat
     if patient.nil?
       return "pas de patient"
     else
