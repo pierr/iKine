@@ -3,7 +3,15 @@
 
 <% @onglets = ["Onglet 1","Onglet 2", "Onglet 3"]%>
 <% @onglet_selected = 1 %>
-<%=kine_onglets @onglets, @onglet_selected%>
+
+<div class="actions button-container centrage">
+	<%=kine_onglets @onglets, @onglet_selected%>
+	<div class="button-group">
+		<%= add_button_link_to "Créer ordonnance", new_ordonnance_path %>
+	</div>
+</div>
+
+
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
 
@@ -38,6 +46,8 @@
 			      <td><%= f.pathologie %></td>
 				  <td><%= f.nombre_seances %></td>  
 				  <td><%= f.med %></td>
+<td><%= add_button_link_to "Seance",{ :controller => "seances", :action => "new", :ordonnance => @ordonnance }  %></td>
+
 			    </tr>
 			  <% end %>
 			</table>
