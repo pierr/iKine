@@ -49,4 +49,15 @@ class Patient < ActiveRecord::Base
     self.id = id
   end
   
+  
+   #Methode qui permet de rechercher des ordonnances
+  def self.search(search)
+    if search
+      where('nom LIKE ? or prenom LIKE ?', "%#{search}%","%#{search}%")
+    else
+      scoped #Comme all mais ne fait pas la requete
+    end
+  end
+  
+  
 end

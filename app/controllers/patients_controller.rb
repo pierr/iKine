@@ -1,10 +1,13 @@
 class PatientsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   autocomplete :ville, :nom, :full => true
   def index
     @title = "mode all"
-    @patients = Patient.paginate :page => params[:page] , :per_page => 10
+    @patients = Patient.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
         respond_to do |format|
         format.html
+        format.js
         format.json { 
           patientsNom = Patient.where("nom like ?", "%#{params[:q]}%")
           patientsPrenom = Patient.where("prenom like ?", "%#{params[:q]}%")
@@ -25,8 +28,6 @@ class PatientsController < ApplicationController
     
     @ordonnances = @patient.ordonnances
     
-    
-    
   end
   
   def new
@@ -45,7 +46,6 @@ class PatientsController < ApplicationController
     
       ville_id = params[:ville][:ville_token]
     @adresse.code_insee_id= Ville.find(ville_id).code_insee.id
-   
     
     if(@patient.valid? && @adresse.valid?)
        @adresse.save
@@ -68,21 +68,14 @@ class PatientsController < ApplicationController
   end
   
   def update
-    
-    
-    
-    
-    
     @title="mode update"
     @patient = Patient.find(params[:id])
     @adresse = @patient.adresse
     @patient.attributes=(params[:patient])
     @adresse.attributes=(params[:adresse])
     
-    
     ville_id = params[:ville][:ville_token]
     @adresse.code_insee_id= Ville.find(ville_id).code_insee.id
-    
     
     if(@patient.valid? && @adresse.valid?)
        @adresse.save
@@ -103,4 +96,14 @@ class PatientsController < ApplicationController
     redirect_to patients_path # FIXME : Audric : FIXED :)
   end  
 
+  private
+  #trouve le nom de la colonne a trier
+  def sort_column
+    Patient.column_names.include?(params[:sort]) ? params[:sort] : "nom"
+  end
+  
+  #trouve la direction de tri
+  def sort_direction
+     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end
