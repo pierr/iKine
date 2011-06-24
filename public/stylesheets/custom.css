@@ -44,12 +44,9 @@ a:visited {
 
 /* Navigation */
 
+ 	
 nav {
-  float: right;
-}
-
-nav {
-  background-color: white;
+  /*background-color: white;*/
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -259,7 +256,10 @@ ul.users {
   background-image: url(/images/down_arrow.gif);
 }
 
-div.centrage {text-align: center;}
+.centrage {text-align: center;}
+.left {text-align: left;}
+.right {text-align: right;}
+
 
 /**************************/
 /*****DATE PICKER **********/
@@ -512,3 +512,6 @@ a.submit:focus{
     margin-top:20px;
     text-align:center;
 }
+/*Onglets*/
+
+

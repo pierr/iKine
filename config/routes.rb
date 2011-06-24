@@ -25,6 +25,8 @@ KineApp::Application.routes.draw do
   get "seances/new"
 
   get "seances/show"
+  
+
 
   #On ajoute les ressources (les tables accessibles)
   
@@ -76,6 +78,10 @@ end
   match 'search_user' , :to => 'users#index'
   match 'search_ordonnance', :to => 'ordonnances#index'
 
+  #
+  #get "patients/:id/map"
+  match ':patients(/:map(/:id))',:to => 'patients#map'
+  
   #match 'root_path' => redirect('/pages/home')
   #match 'about_path' => redirect('/pages/home')
   #match 'contact_path' => redirect('/pages/home')
@@ -88,7 +94,7 @@ end
 
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  #   match 'products/:id' => 'catalog#view', :as => :purchase
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

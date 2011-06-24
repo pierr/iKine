@@ -38,8 +38,7 @@ class Seance < ActiveRecord::Base
   # Le patient est dans l'odonnance belongs_to :patient, :validate => true
   belongs_to :user
   belongs_to :ordonnance, :validate => true
-  belongs_to :patient, :validate => true
-  validates_presence_of :user_id, :patient_id, :ordonnance_id
+  validates_presence_of :user_id, :ordonnance_id
   accepts_nested_attributes_for :ordonnance
   
   has_one :patient, :through => :ordonnance
@@ -59,8 +58,8 @@ class Seance < ActiveRecord::Base
   
   def self.search(search)
       if search
-        find(:all, :conditions => ['id LIKE ?', "%#{search}%"])
-       # where('patient_id LIKE ?', "%#{search}%")
+        #find(:all, :conditions => ['id LIKE ?', "%#{search}%"])
+        where('id LIKE ?', "%#{search}%")
       else
         scoped #Comme all mais ne fait pas la requete
       end

@@ -1,0 +1,9 @@
+<h1> <%=@title%> </h1>
+<%= form_for @seance, :validate => true do |f| %>
+  <%= render 'fields', :f=>f%>
+  <div data-role='controlgroup' data-type='horizontal'>
+    <%= link_to "Annuler" , seances_path, "data-role" => "button", "data-icon" => "delete" %>
+    <%= f.submit "Enregistrer", "data-role" => "button", "data-icon" => "check" %>
+  </div>
+
+<% end %>

@@ -17,4 +17,8 @@ class Adresse < ActiveRecord::Base
   has_many :patients # si si, ptet que des gens habitent dans la même maison...
   has_many :medecins
   has_many :rdvs
+  
+  def concat
+    "#{numero} #{rue} #{code_insee.ville.nom} FR"
+  end 
 end

@@ -13,7 +13,7 @@
     <tr>
       <td><%= link_to ordonnance.numero, ordonnance_path(ordonnance) %></td>
 	  <td><%= ordonnance.pat %></td>
-      <td><%= ordonnance.date %></td>
+      <td><%= ordonnance.date.strftime("%d/%m/%Y") %></td>
       <td><%= ordonnance.pathologie %></td>
 	  <td><%= ordonnance.nombre_seances %></td>  
 	  <td><%= ordonnance.med %></td>
