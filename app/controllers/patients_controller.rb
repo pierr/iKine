@@ -56,7 +56,13 @@ class PatientsController < ApplicationController
        @adresse.save
        @patient.adresse=@adresse # pour setter correctement l'adresse id de patient
        @patient.save
-       redirect_to(@patient) # aucune erreur => on affiche la page en mode view
+       puts "_____________________RDV______________"
+       puts params[:rdv]
+       if !params[:rdv].nil?
+           redirect_to(:controller=>"rdvs", :action => "new", :patient_id => @patient)
+        else
+          redirect_to(@patient) # aucune erreur => on affiche la page en mode view
+        end
     else # sinon, alors on a des erreurs et on réaffiche la page en mode new
        render 'new'
     end
@@ -76,6 +82,7 @@ class PatientsController < ApplicationController
         @adresse.save
         @patient.adresse=@adresse # pour setter correctement l'adresse id de patient
         @patient.save
+        puts "_________________ICI_________________"
         redirect_to(:controller=>"rdvs", :action => "new", :patient_id => @patient) # aucune erreur => on affiche la page en mode view
      else # sinon, alors on a des erreurs et on réaffiche la page en mode new
         render 'new'

@@ -14,9 +14,9 @@
 
 <div class="field">
 	<%= f.label :patient_token, "Patient" %><br />
- 	<%= f.text_field :patient_token, "data-pre" => [@rdv.patient].to_json %></br>
+ 	<%= f.text_field :patient_token, "data-pre" => [@rdv.patient].to_json %>
  </div>
-<%= add_button_link_to "Créer patient", { :controller => "patients", :action => "new", :rdv =>77} %>
+<%= add_button_link_to "Créer patient", { :controller => "patients", :action => "new", :rdv =>77} %></br></br>
 <div class="field">
 	<%= f.label :ordonnance_token, "Ordonnance" %><br />
  	<%= f.text_field :ordonnance_token, "data-pre" => @rdv.ordonnance.to_json %></br>
