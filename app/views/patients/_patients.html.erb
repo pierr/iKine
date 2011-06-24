@@ -1,0 +1,24 @@
+	<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="pretty">
+  <tr>
+	<th><%= sortable "nom"%></th>
+	<th><%= sortable "prenom"%></th>
+	<th><!%= sortable "patient_id", "Patient"%></th>
+	<th><!%= sortable "date" ,"Date d'emission"%></th>
+   	<th><!%= sortable "pathologie"%></th>
+ 	<th><!%= sortable "nombre_seances"%></th>  
+	<th><!%= sortable "medecin_id", "Medecin"%></th>
+  </tr>
+  <% for patient in @patients %>
+    <tr>
+      <td><%= link_to patient.nom, patient_path(patient) %></td>
+	  <td><%= patient.prenom %></td>
+      <td><!%= patient.date %></td>
+      <td><!%= patient.pathologie %></td>
+	  <td><!%= patient.nombre_seances %></td>  
+	  <td><!%= patient.med %></td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @patients%>

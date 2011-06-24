@@ -1,0 +1,27 @@
+<div class="field">
+
+	<%= f.label :user_token, "Praticien" %><br />
+	<%= f.text_field :user_token, "data-pre" => @user_pre.to_json %></br>
+
+	<%= kine_autocomplete_fied_edit(f, :patient_token, @patient, "Patient" )%>
+
+	<%= f.label :date %><br />
+	<%= f.text_field :date_debut , :class => 'datepicker'%>
+
+	<%= kine_text_fied_edit(f , :duree) %>
+
+	<%= f.label :commentaire %><br />
+	<%= f.text_area :commentaire %></br>
+
+	<%= kine_autocomplete_fied_edit(f, :ordonnance_token, @ordonnance, "Ordonnance" )%>
+
+</div>
+
+<div class="field">
+	<%= f.label :a_domicile, "Effectuee a domicile" %>
+ 	<%= f.check_box :a_domicile %>
+</div>
+<div class="field">
+	<%= f.label :paye, "Seance payee" %>
+ 	<%= f.check_box :paye %>
+ </div>
