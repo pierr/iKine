@@ -117,8 +117,7 @@ namespace :db do
                     :paye => false,
                     :a_domicile => false,
                     :ordonnance => Ordonnance.find(1+SecureRandom.random_number(n_ordonnance-1)),
-                    :user => User.find(1+SecureRandom.random_number(n_user-1)),
-                    :patient => Patient.find(1+SecureRandom.random_number(n_patient-1))
+                    :user => User.find(1+SecureRandom.random_number(n_user-1))
       )
       puts s.errors unless s.errors.size < 1 
     end

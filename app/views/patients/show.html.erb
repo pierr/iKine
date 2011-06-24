@@ -67,14 +67,10 @@ information sur l'expo*/
 			      <td><%= f.pathologie %></td>
 				  <td><%= f.nombre_seances %></td>  
 				  <td><%= f.med %></td>
-		<td><%= add_button_link_to "Seance", new_seance_path(:patient => @patient , :ordonnance => f) %></td>
+				  <td><%= add_button_link_to "Seance", new_seance_path(:patient => @patient , :ordonnance => f) %></td>
 			    </tr>
 			  <% end %>
 			</table>
-	
-
-
-
 
 	<%= kine_fin_contenu_onglet 2%>
 	<%= kine_debut_contenu_onglet 3%>
