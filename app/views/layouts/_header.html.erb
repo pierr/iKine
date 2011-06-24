@@ -8,9 +8,9 @@
 		<%= big_pill_button_link_to "Profile", current_user %>
  	  	<%= big_settings_pill_button_link_to "Param", edit_user_path(current_user) %>
       <%= big_chat_pill_button_link_to "Aide", help_path %>
-      	<%= big_unlock_negative_pill_button_link_to "Sign out", signout_path, :method => :delete %>
+      	<%= big_lock_negative_pill_button_link_to "Sign out", signout_path, :method => :delete %>
       <% else %>
-      	<%= big_lock_positive_pill_button_link_to "Sign in", signin_path %>
+      	<%= big_key_positive_pill_button_link_to "Sign in", signin_path %>
       <% end %>
 	<% end %>
   </nav>
