@@ -233,4 +233,11 @@ module ApplicationHelper
     return "<strong>#{label}</strong> #{display}".html_safe
    end
 
+   def iphone_icon(options)
+     options[:rel] = 'apple-touch-icon'
+     options[:rel] += '-precomposed' if options[:precomposed]
+     options[:precomposed] = nil if options[:precomposed]
+     options[:href] = image_path(options[:href])
+     [:link, options]
+   end
 end

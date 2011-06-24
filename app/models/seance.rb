@@ -44,7 +44,7 @@ class Seance < ActiveRecord::Base
   has_one :patient, :through => :ordonnance
   
   def patient_token=(id)
-    self.patient_id = id
+    #self.patient_id = id
   end
   
   def user_token=(id)
