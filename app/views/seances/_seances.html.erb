@@ -14,7 +14,7 @@
       <td><%= seance.pat %></td>
       <td><%= seance.user.nom %></td>
       <td><%= seance.commentaire %></td>
-      <td><%= seance.date_debut %></td>
+      <td><%= seance.date_debut.strftime("%d/%m/%Y") %></td>
     </tr>
   <% end %>
 </table>
