@@ -28,7 +28,7 @@ class PatientsController < ApplicationController
     @civilite = @patient.civilite
     
     @ordonnances = @patient.ordonnances
-    @onglets = ["Coordonn�es","Dossier m�dical", "Carte"]
+    @onglets = ["Coordonnées","Dossier médical", "Carte"]
     @onglets_selected = 1
     
     
