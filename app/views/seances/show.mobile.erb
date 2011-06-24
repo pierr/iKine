@@ -1,0 +1,40 @@
+		<div data-role="fieldcontain">
+    		<strong>Praticien</strong><br />
+    		<%=  @seance.user.prenom %>
+    		<%=  @seance.user.nom %>
+  		</div>
+		<div data-role="fieldcontain">
+			<strong>Patient</strong><br />
+			<%=  @seance.ordonnance.patient.prenom %>
+    		<%=  @seance.ordonnance.patient.nom %>
+  		</div>
+		<div data-role="fieldcontain">
+			<strong>Date debut</strong><br />
+    		<%=  @seance.date_debut.strftime("%d/%m/%Y") %>
+  		</div>
+		<div data-role="fieldcontain">
+			<strong>Commentaires</strong><br />
+    		<%=  @seance.commentaire %>
+	  	</div>
+		<div data-role="fieldcontain">
+			<strong>Ordonnance</strong><br />
+    		<%=  @seance.ordonnance.numero %>
+			<%=  @seance.ordonnance.date %>
+	  	</div>
+		<div data-role="fieldcontain">
+			<strong>Effectuee a domicile</strong><br />
+    		<%=  @seance.a_domicile %>
+	  	</div>
+		<div data-role="fieldcontain">
+			<strong>Seance payee</strong><br />
+    		<%=  @seance.paye %>
+	  	</div>
+
+<div data-role='controlgroup' data-type='horizontal'>
+<%= link_to "Modifier", edit_seance_path(@seance), "data-role" => "button" , "data-icon" => "gear"%>
+<%= link_to "Supprimer", @seance, :method => :delete,
+								   	  :confirm => "Etes vous certain?",
+                          	  	      :title => "Supprimer la seance #{@seance.id}",
+									  "data-role" => "button", 
+									  "data-icon" =>"delete" %>
+<%= link_to "Retour", seances_path, "data-role" => "button", "data-icon" =>"back" %>

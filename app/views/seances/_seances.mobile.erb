@@ -1,0 +1,13 @@
+<div data-role="content">	
+  <ul data-role="listview" data-filter="true"	>  
+  <% for seance in @seances %>
+    <li>
+      <%= link_to "voir la seance", seance_path(seance) %>
+      <%= seance.pat %>
+      <%= seance.user.nom %>
+      <%= seance.commentaire %>
+      <%= seance.date_debut.strftime("%d/%m/%Y") %>
+    </li>
+  <% end %>
+  </ul>
+</div>

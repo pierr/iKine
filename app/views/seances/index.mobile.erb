@@ -1,0 +1,5 @@
+<h1><%= @title%></h1>
+<div id = "seances">
+	<%=render 'seances'%>
+</div>
+<%= link_to "Créer seance", new_seance_path , "data-role" => "button", "data-icon" => "plus", "data-iconpos" =>"right"%>
