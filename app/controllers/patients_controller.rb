@@ -36,6 +36,11 @@ class PatientsController < ApplicationController
     @patient = Patient.new
     @adresse = Adresse.new
     @ville = Ville.new
+      if (!params[:rdv].nil?)
+        @retour_rdv=true
+      else
+        @retour_rdv=false
+      end
     
     @civiliteList = Civilite.all
   end
@@ -53,11 +58,39 @@ class PatientsController < ApplicationController
        @adresse.save
        @patient.adresse=@adresse # pour setter correctement l'adresse id de patient
        @patient.save
-       redirect_to(@patient) # aucune erreur => on affiche la page en mode view
+       puts "_____________________RDV______________"
+       puts params[:rdv]
+       if !params[:rdv].nil?
+           redirect_to(:controller=>"rdvs", :action => "new", :patient_id => @patient)
+        else
+          redirect_to(@patient) # aucune erreur => on affiche la page en mode view
+        end
     else # sinon, alors on a des erreurs et on réaffiche la page en mode new
        render 'new'
     end
   end
+  
+  #même fonction que create mais avec un retour vers un nouveau rendez-vous
+  def retour_to_rdv
+     @title="mode create"
+     @patient = Patient.new(params[:patient])
+     @adresse = Adresse.new(params[:adresse])
+
+       ville_id = params[:ville][:ville_token]
+     @adresse.code_insee_id= Ville.find(ville_id).code_insee.id
+
+
+     if(@patient.valid? && @adresse.valid?)
+        @adresse.save
+        @patient.adresse=@adresse # pour setter correctement l'adresse id de patient
+        @patient.save
+        puts "_________________ICI_________________"
+        redirect_to(:controller=>"rdvs", :action => "new", :patient_id => @patient) # aucune erreur => on affiche la page en mode view
+     else # sinon, alors on a des erreurs et on réaffiche la page en mode new
+        render 'new'
+     end
+   end
+  
 
   def edit
     @title="mode edit"

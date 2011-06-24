@@ -39,7 +39,12 @@
 		
 <%= kine_fin_contenu_onglets%>
 	<div class="actions">
+		<%if(@retour_rdv)%>
+			<%= hidden_field_tag :rdv, params[:rdv] %>
+			<%= link_to_function "Annuler" , "history.back()" , :class => "button round"  %>
+		<%else%>
+			<%= link_to "Annuler" , patients_path  , :class => "button round" %>
+		<%end%>
 		<%= f.submit "Créer" %>
-		<%= link_to "Annuler" , patients_path  , :class => "button round" %>
 	</div>
 <% end %>
