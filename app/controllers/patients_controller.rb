@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   
   autocomplete :ville, :nom, :full => true
   def index
-    @title = "mode all"
+    @title = "Rechercher un patient"
     @patients = Patient.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
         respond_to do |format|
         format.html
@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
   end
   
   def show
-    @title="mode show"
+    @title = "Patient"
     @patient = Patient.find(params[:id])
     @adresse = @patient.adresse
     @code_insee= @adresse.code_insee
@@ -35,6 +35,7 @@ class PatientsController < ApplicationController
   end
   
   def new
+    @title = "Patients | Mode creation"
     @title="mode new"
     @patient = Patient.new
     @adresse = Adresse.new
@@ -96,7 +97,7 @@ class PatientsController < ApplicationController
   
 
   def edit
-    @title="mode edit"
+    @title = "Modification du patient"
     @patient = Patient.find(params[:id])
     @adresse = @patient.adresse
     

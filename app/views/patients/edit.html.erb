@@ -1,5 +1,4 @@
-<h1>Patient | <%=@mode%></h1>
-<p>Find me in app/views/patient/edit.html.erb</p>
+<h1><%= @title%></h1>
 <%= form_for @patient , :validate => true do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 

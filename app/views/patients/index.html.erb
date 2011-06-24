@@ -1,3 +1,4 @@
+<h1><%= @title%></h1>
 <%= form_tag  patients_path, :action=>'search' ,:method => "get", :id=>"patients_search" do %>
   <%= search_field_tag(:search, params[:search]) %>
   <%= search_button_submit_tag "Rechercher" %> <!-- #submit_tag("Rechercher") -->
