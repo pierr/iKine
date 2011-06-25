@@ -83,10 +83,19 @@ information sur l'expo*/
 
 
 <br/>
-<%= link_to "Modifier", edit_patient_path(@patient) , :class => "button round" %>
-<%= link_to "Supprimer", @patient, :method => :delete  , 
-									:confirm => "Voulez-vous vraiment supprimer #{Civilite.find(@patient.civilite_id).nom} #{@patient.nom} #{@patient.prenom} ?",
-									:title => "Supprimer #{Civilite.find(@patient.civilite_id).nom} #{@patient.nom} #{@patient.prenom}" ,
-									:class => "button round" %>
-<%= link_to "Retour à la liste des patients", patients_path, :class => "button round" %>
+<div class="actions button-container">
+	
+	<div class= "button-group">
+		<%= button_link_to "Retour à la liste des patients", patients_path%>
+	</div>
+	<div class= "button-group right">
+		<%= edit_button_link_to "Modifier", edit_patient_path(@patient) %>
+		<%= negative_trash_button_link_to "Supprimer", @patient, :method => :delete  , 
+											:confirm => "Voulez-vous vraiment supprimer #{Civilite.find(@patient.civilite_id).nom} #{@patient.nom} #{@patient.prenom} ?",
+											:title => "Supprimer #{Civilite.find(@patient.civilite_id).nom} #{@patient.nom} #{@patient.prenom}"
+	%>
+	</div>
+</div>
+
+
 </div>
