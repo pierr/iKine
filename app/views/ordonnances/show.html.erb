@@ -1,5 +1,6 @@
 <h1>Ordonnances numero <%= "#{@ordonnance.numero}"%></h1>
 
+<div class="view_form">
 
 <div class="actions button-container centrage">
 		<%=kine_onglets @onglets, @onglet_selected%>
@@ -8,7 +9,7 @@
 	</div>		
 </div>
 
-<div class="view_form">
+
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
 		<div class="field">
