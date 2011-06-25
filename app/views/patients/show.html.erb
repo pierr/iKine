@@ -22,6 +22,8 @@ information sur l'expo*/
        		//dataView.setColumns([0,1,2]);
       		map = new google.visualization.Map(document.getElementById('map'));
       		map.draw(dataView, {showTip: true});
+			//document.getElementById('map').height="60%" 
+			//document.getElementById('map').width="50%"
 	}
 </script>
 
@@ -77,7 +79,7 @@ information sur l'expo*/
 	<%= kine_fin_contenu_onglet 2%>
 	<%= kine_debut_contenu_onglet 3%>
 			<h3>Voici la carte qui mène à votre patient <%= "#{@patient.nom} #{@patient.prenom}"%></h3>
-			<div id="map" height="50%" width="50%"></div>
+			<div id="map" height="60%" width="50%"></div>
 		L'adresse de votre patient <%= "#{@patient.nom} #{@patient.prenom}, #{@adresse.concat}"%>
 	<%= kine_fin_contenu_onglet 3%>
 		
