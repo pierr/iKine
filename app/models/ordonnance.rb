@@ -112,7 +112,7 @@ class Ordonnance < ActiveRecord::Base
   
   private
   def name
-      "#{numero} #{date}"
+      "Ordonnance #{numero} du #{date.strftime("%d/%m/%Y")}"
   end
   
 end

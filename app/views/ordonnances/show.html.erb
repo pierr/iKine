@@ -109,8 +109,8 @@
 			<div class= "button-group right">
 				<%= edit_button_link_to "Modifier", edit_ordonnance_path(@ordonnance) %>
 				<%= negative_trash_button_link_to "Supprimer", @ordonnance, :method => :delete,
-										   	  			 	 :confirm => "Etes vous certain?",
-		                          	  	      				 :title => "Supprimer l'ordonnance #{@ordonnance.numero}",
+										   	  			 	 				:confirm => "Etes vous certain?",
+		                          	  	      				 				:title => "Supprimer l'ordonnance #{@ordonnance.numero}",
 			%>
 			</div>
 		</div>

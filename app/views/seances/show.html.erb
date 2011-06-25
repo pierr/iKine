@@ -1,10 +1,11 @@
 <h1>Seance numero <%= "#{@seance.id}"%></h1>
 
-<%= link_to "Modifier", edit_seance_path(@seance), :class => "button" %>
-<%= link_to "Supprimer", @seance, :method => :delete,
- 									  :class => "button",
-								   	  :confirm => "Etes vous certain?",
-                          	  	      :title => "Supprimer la seance #{@seance.id}" %>
+<div class="view_form">
+	<div class="actions button-container centrage">
+		<div class="button-group right">
+			<%= positive_add_button_link_to "Rendez vous",{ :controller => "rdvs", :action => "new", :patient_id=> @seance.ordonnance.patient.id }  %>
+		</div>		
+	</div>
 
 		</br>
 		<div class="field">
@@ -27,8 +28,7 @@
 	  	</div>
   		<div class="field">
 			<strong>Ordonnance</strong><br />
-    		<%=  @seance.ordonnance.numero %>
-			<%=  @seance.ordonnance.date %>
+    		<%= "numero #{@seance.ordonnance.numero} du  #{@seance.ordonnance.date.strftime("%d/%m/%Y")}" %>
 	  	</div>
   		<div class="field">
 			<strong>Effectuee a domicile</strong><br />
@@ -39,4 +39,17 @@
     		<%=  @seance.paye %>
 	  	</div>
 
-<%= link_to "Retour", seances_path, :class => "button" %>
+<div class="actions button-container">
+	
+	<div class= "button-group">
+		<%= button_link_to "Toutes les Seances", seances_path%>
+	</div>
+	<div class= "button-group right">
+		<%= edit_button_link_to "Modifier", edit_seance_path(@seance) %>
+		<%= negative_trash_button_link_to "Supprimer", @seance, :method => :delete,
+	 									  						:confirm => "Etes vous certain?",
+	                          	  	      						:title => "Supprimer la seance #{@seance.id}"
+	%>
+	</div>
+</div>
+</div>
