@@ -3,7 +3,8 @@
   <%= search_field_tag(:search, params[:search]) %>
   <%= search_button_submit_tag "Rechercher" %> <!-- #submit_tag("Rechercher") -->
   <%= add_button_link_to "Créer patient", new_patient_path %>
-<div id = "patients">
+
+<div id = "patients" class="view_form">
 	<%=render 'patients'%>
 </div>
 <% end %>

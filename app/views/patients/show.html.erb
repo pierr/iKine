@@ -32,7 +32,7 @@ information sur l'expo*/
 	</div>
 </div>
 
-
+<div class="view_form">
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
 
@@ -89,3 +89,4 @@ information sur l'expo*/
 									:title => "Supprimer #{Civilite.find(@patient.civilite_id).nom} #{@patient.nom} #{@patient.prenom}" ,
 									:class => "button round" %>
 <%= link_to "Retour à la liste des patients", patients_path, :class => "button round" %>
+</div>

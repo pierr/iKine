@@ -1,9 +1,17 @@
 .container {
   width: 710px;
 }
-
+.main_page{
+background: #599bdc;
+border-color: #2a65a0;
+border-bottom-color: #3884CF;
+background-color: #599bdc;	
+}
 body {
-  background: #66B866;
+/*color: #fff; 
+  background: #599bdc;*/
+background-color: #3072b3;	
+
 }
 
 header {
@@ -128,6 +136,22 @@ td.sidebar {
   padding: 1em;
   vertical-align: top;
   background: #ffc;
+}
+.view_form {
+  width: 80%;
+  padding: 1em;
+  vertical-align: top;
+ background:#f7f7f7;  
+
+	background:-moz-linear-gradient(90deg, #ccc, #fff); /* Firefox */
+ background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc)); /* Webkit */
+ border:1px solid #aaa;
+ -moz-border-radius:10px;
+ -webkit-border-radius:10px;
+ -moz-box-shadow:0 0 15px #aaa;
+ -webkit-box-shadow:0 0 15px #aaa;
+ margin:60px auto 0;
+ /*background: #ffc;*/
 }
 
 .profile img.gravatar {
@@ -260,7 +284,9 @@ ul.users {
 .left {text-align: left;}
 .right {text-align: right;}
 
-
+td {
+background-color: #599bdc
+}
 /**************************/
 /*****DATE PICKER **********/
 /*
