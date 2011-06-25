@@ -2,9 +2,13 @@
 <%= form_for @patient , :validate => true do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 
-<% @onglets = ["Onglet 1","Onglet 2", "Onglet 3"]%>
-<% @onglet_selected = 1 %>
-<%=kine_onglets @onglets, @onglet_selected%>
+<%  
+	@onglets = ["Coordonnées"]
+    @onglets_selected = 1
+%>
+<div class = "centrage">
+	<%=kine_onglets @onglets, @onglet_selected%>
+</div>
 <%=kine_debut_contenu_onglets%> 
 	<%=kine_debut_contenu_onglet 1, true%> 
 
