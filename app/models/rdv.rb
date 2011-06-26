@@ -33,7 +33,7 @@ class Rdv < ActiveRecord::Base
      belongs_to :adresse
      
   def patient_token=(id)
-    self.aptient_id = id
+    self.patient_id = id
   end   
   def ordonnance_token=(id)
     self.ordonnance_id = id
