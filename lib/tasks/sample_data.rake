@@ -139,6 +139,14 @@ namespace :db do
   desc "Remplit la base avec des Villes"
   task :populate_ville => :environment do 
     puts "Ville" 
+    
+    puts "  Paris"
+    v = Ville.create(:nom => "Paris")
+      puts v.errors unless v.errors.size < 1
+    puts "  Creteil"
+    v = Ville.create(:nom => "Creteil")
+      puts v.errors unless v.errors.size < 1
+    
     99.times do |n|
       v = Ville.create(:nom => Faker::Name.name.split[0])
       puts v.errors unless v.errors.size < 1
@@ -150,9 +158,28 @@ namespace :db do
   desc "Remplit la base avec des Codes Insee, Code Postal"
   task :populate_code_insee_postal => :environment do
     puts "Code Insee Postals"  
+      puts "  Paris"
+      ci = CodeInsee.create :numero => "94", 
+                       :ville => Ville.find(1),
+                       :departement => Departement.find(1+SecureRandom.random_number(n_departement-1))             
+      puts ci.errors unless ci.errors.size < 1
+      cp = CodePostal.create :numero => "94",
+                        :code_insee=> CodeInsee.last
+      puts cp.errors unless cp.errors.size < 1
+      
+      
+      puts "  Creteil"
+      ci = CodeInsee.create :numero => "42", 
+                       :ville => Ville.find(2),
+                       :departement => Departement.find(1+SecureRandom.random_number(n_departement-1))             
+      puts ci.errors unless ci.errors.size < 1
+      cp = CodePostal.create :numero => "42",
+                        :code_insee=> CodeInsee.last
+      puts cp.errors unless cp.errors.size < 1
+    
     n_code_insee.times do |n|
       ci = CodeInsee.create :numero => n.to_s, 
-                       :ville => Ville.find(1+SecureRandom.random_number(n_ville-1)),
+                       :ville => Ville.find(3+SecureRandom.random_number(n_ville-1)),
                        :departement => Departement.find(1+SecureRandom.random_number(n_departement-1))             
       puts ci.errors unless ci.errors.size < 1
       cp = CodePostal.create :numero => n.to_s,
