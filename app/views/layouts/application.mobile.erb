@@ -2,11 +2,12 @@
 <html> 
 	<head>
     	<%= render 'layouts/stylesheets' %>
-    	<%= javascript_include_tag "jquery","/jquery.mobile-1.0b1/jquery.mobile-1.0b1.js", "mobile" , "rails.validations", "rails.validations.custom"%>
+    <%= javascript_include_tag "jquery.js","/jquery.mobile-1.0a4.1/jquery.mobile-1.0a4.1.js", "mobile" , "rails.validations", "rails.validations.custom"%>
+	<%# javascript_include_tag "jquery","/jquery.mobile-1.0b1/jquery.mobile-1.0b1.js", "mobile" , "rails.validations", "rails.validations.custom"%>
     	<%= yield(:head) %>
   </head>
   <body>
-	<div data-role="page" data-fullscreen="true">
+	<div data-role="page" >
 		<%= link_to "Site complet", root_url(:mobile => 0), :class => "button", :rel => "external" %>
 		 <%= render 'layouts/header' %><!-- /header -->
 		 <% unless flash.empty? %>

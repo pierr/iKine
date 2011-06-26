@@ -1,0 +1,7 @@
+<h1> <%=@title%> </h1
+
+<%= form_for @ordonnance, :validate => true  do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+  	<%= render 'fields', :f=>f%>
+  	<%= f.submit "Enregistrer", "data-role" => "button",  "data-icon" => "plus", "data-iconpos" =>"right" %>
+<% end %>
