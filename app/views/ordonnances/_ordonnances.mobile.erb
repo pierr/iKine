@@ -1,10 +1,8 @@
-<div data-role="content">	
+<div  class="center">	
   <ul data-role="listview" data-filter="true"	>  
 <% for ordonnance in @ordonnances %>
     <li>
-      <%= link_to ordonnance.numero, ordonnance_path(ordonnance) %>
-       <%= ordonnance.pathologie %>
-       <%= ordonnance.date.strftime("%d/%m/%Y") %>
+      <%=" Ordonnance" %> <%= link_to ordonnance.numero, ordonnance_path(ordonnance)  %> <%="#{ordonnance.pathologie}  #{ordonnance.date.strftime("%d/%m/%Y")}" %>
     </li>
   <% end %>
 </ul>
