@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Patient:</b>
+  <%= @rdv.patient.prenom %> <%= @rdv.patient.nom %>
+</p>
+
+<p>
   <b>Lieu:</b>
   <%= @rdv.lieu %>
 </p>
@@ -16,5 +21,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_rdv_path(@rdv) %> |
-<%= link_to 'Back', rdvs_path %>
+<%= button_link_to 'Modifier', edit_rdv_path(@rdv) %> |
+<%= button_link_to 'Retour', rdvs_path %>

@@ -4,6 +4,7 @@
 
 <table>
   <tr>
+	<th>Patient</th>
     <th>Lieu</th>
     <th>Contact</th>
     <th>Date</th>
@@ -14,12 +15,13 @@
 
 <% @rdvs.each do |rdv| %>
   <tr>
+    <td><%= rdv.patient.prenom %> <%= rdv.patient.nom %></td>
     <td><%= rdv.lieu %></td>
     <td><%= rdv.contact %></td>
     <td><%= rdv.date %></td>
-    <td><%= link_to 'Show', rdv %></td>
-    <td><%= link_to 'Edit', edit_rdv_path(rdv) %></td>
-    <td><%= link_to 'Destroy', rdv, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_link_to 'Voir', rdv %></td>
+    <td><%= button_link_to 'Modifier', edit_rdv_path(rdv) %></td>
+    <td><%= button_link_to 'Supprimer', rdv, :confirm => 'Etes-vous certain de vouloir supprimer le rendez-vous?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
