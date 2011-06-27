@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class RdvsController < ApplicationController
   # GET /rdvs
   # GET /rdvs.xml
@@ -47,7 +48,7 @@ class RdvsController < ApplicationController
 
     respond_to do |format|
       if @rdv.save
-        format.html { redirect_to(@rdv, :notice => 'Rdv was successfully created.') }
+        format.html { redirect_to(@rdv, :notice => 'Rendez-vous créé') }
         format.xml  { render :xml => @rdv, :status => :created, :location => @rdv }
       else
         format.html { render :action => "new" }
@@ -63,7 +64,7 @@ class RdvsController < ApplicationController
 
     respond_to do |format|
       if @rdv.update_attributes(params[:rdv])
-        format.html { redirect_to(@rdv, :notice => 'Rdv was successfully updated.') }
+        format.html { redirect_to(@rdv, :notice => 'Rendez-vous mis à jour.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
