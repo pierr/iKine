@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -39,6 +39,6 @@ gem 'css3buttons'
 
 #group :development do
   gem 'rspec-rails', '2.5.0'
-  gem 'annotate-models', '1.0.4' #Pour annoter les models il faut taper annotate
+  gem 'annotate'#-models', '1.0.4' #Pour annoter les models il faut taper annotate
   gem 'faker', '0.3.1' #C'est utilisé pour créer de fausses données dans la table
 #end
